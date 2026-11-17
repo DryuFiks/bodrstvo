@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Список чтения: рост до tech lead</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<script src="pwa.js" defer></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header data-speak>
+    <a class="back" href="index.html">← Все программы</a>
+    <p class="eyebrow">Чтение · 21:00 · 20 минут в день</p>
+    <h1>Список чтения: рост до tech lead</h1>
+    <p class="lead" data-say>Бесплатные материалы в порядке чтения. Они нужны для роста до <span lang="en">tech lead</span> и для разговора о зарплате. Описания составлены по названиям и по каталогу free-programming-books, книги целиком не прочитаны, поэтому сначала пролистайте оглавление. Сайт <span lang="en">staffeng.com</span> добавлен по памяти и не проверялся.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Голос
+          <select id="sp-voice"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Русский голос не найден.</b> Откройте страницу в Microsoft Edge и нажмите Ctrl+Shift+U: встроенное чтение вслух использует естественные голоса. Либо добавьте русский язык в настройках Windows (Время и язык, Язык и регион), в него входит голос.</p>
+
+  <article class="book" data-speak>
+    <div class="book-head">
+      <span class="num" aria-hidden="true">1</span>
+      <h2 data-say><span lang="en">How to Stand Out as a Software Engineer</span></h2>
+      <button type="button" class="speak-btn">▶ Слушать</button>
+    </div>
+    <p class="meta" data-say>Автор: <span lang="en">Landry Monga</span>. Язык: английский. Бесплатно, PDF.</p>
+    <p data-say>Ближе всего к вашей цели: как выделяться среди инженеров, то есть основа для повышения и разговора о зарплате.</p>
+    <p data-say>Начните отсюда. Сначала пролистайте оглавление и отметьте главы, которые нужны сейчас. Читайте по 20 минут в день. В конце записывайте одну мысль, которую примените на работе завтра.</p>
+    <a class="link" href="https://github.com/lvndry/how-to-stand-out-as-a-software-engineer/blob/main/how_to_stand_out_as_a_software_engineer.pdf" target="_blank" rel="noopener">Открыть PDF ↗</a>
+  </article>
+
+  <article class="book" data-speak>
+    <div class="book-head">
+      <span class="num" aria-hidden="true">2</span>
+      <h2 data-say><span lang="en">Software Engineering at Google</span></h2>
+      <button type="button" class="speak-btn">▶ Слушать</button>
+    </div>
+    <p class="meta" data-say>Авторы: <span lang="en">Titus Winters, Tom Manshreck, Hyrum Wright</span>. Язык: английский. Бесплатно, читать онлайн.</p>
+    <p data-say>Как устроены командная работа и руководство в большой инженерной компании. Это взгляд, который нужен <span lang="en">tech lead</span>.</p>
+    <p data-say>Не читайте подряд. Возьмите четыре главы: <span lang="en">How to Work Well on Teams</span>, <span lang="en">Knowledge Sharing</span>, <span lang="en">How to Lead a Team</span> и <span lang="en">Leading at Scale</span>. Их хватит на две недели.</p>
+    <a class="link" href="https://abseil.io/resources/swe-book" target="_blank" rel="noopener">Открыть книгу ↗</a>
+  </article>
+
+  <article class="book" data-speak>
+    <div class="book-head">
+      <span class="num" aria-hidden="true">3</span>
+      <h2 data-say><span lang="en">Succeed In Software</span></h2>
+      <button type="button" class="speak-btn">▶ Слушать</button>
+    </div>
+    <p class="meta" data-say>Автор: <span lang="en">Sean Cannon</span>. Язык: английский. Бесплатно, PDF и ePUB.</p>
+    <p data-say>Руководство по карьере в разработке: как расти от уровня к уровню.</p>
+    <p data-say>Читайте как справочник по этапам: что требуется на вашем уровне и что на следующем. Формат ePUB удобен для телефона и для чтения вслух.</p>
+    <a class="link" href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">Открыть на GitHub ↗</a>
+  </article>
+
+  <article class="book" data-speak>
+    <div class="book-head">
+      <span class="num" aria-hidden="true">4</span>
+      <h2 data-say><span lang="en">How to Do What You Love &amp; Earn What You’re Worth as a Programmer</span></h2>
+      <button type="button" class="speak-btn">▶ Слушать</button>
+    </div>
+    <p class="meta" data-say>Автор: <span lang="en">Reginald Braithwaite</span>. Язык: английский. Бесплатно, читать онлайн.</p>
+    <p data-say>По названию книга про деньги: как оценивать свою работу и вести разговор о зарплате.</p>
+    <p data-say>Откройте перед разговором о повышении, а не раньше.</p>
+    <a class="link" href="https://leanpub.com/dowhatyoulove/read" target="_blank" rel="noopener">Читать онлайн ↗</a>
+  </article>
+
+  <article class="book" data-speak>
+    <div class="book-head">
+      <span class="num" aria-hidden="true">5</span>
+      <h2 data-say><span lang="en">staffeng.com</span></h2>
+      <button type="button" class="speak-btn">▶ Слушать</button>
+    </div>
+    <p class="meta" data-say>Автор: <span lang="en">Will Larson</span> и другие. Язык: английский. Бесплатно, сайт.</p>
+    <p data-say>Истории инженеров, которые дошли до уровня staff, и разбор самой роли. Это бесплатная часть материалов автора книги <span lang="en">Staff Engineer</span>.</p>
+    <p data-say>По одной истории в субботу, 10–15 минут. Читайте с вопросом: что из этого можно сделать уже сейчас.</p>
+    <a class="link" href="https://staffeng.com" target="_blank" rel="noopener">Открыть сайт ↗</a>
+  </article>
+
+  <article class="book paid" data-speak>
+    <div class="book-head">
+      <span class="num" aria-hidden="true">+</span>
+      <h2 data-say>Платные, на потом</h2>
+      <button type="button" class="speak-btn">▶ Слушать</button>
+    </div>
+    <p data-say><span lang="en">Deep Work</span>, <span lang="en">Cal Newport</span>: как работать сосредоточенно. Пригодится на любом уровне.</p>
+    <p data-say><span lang="en">Staff Engineer</span>, <span lang="en">Will Larson</span>: путь на уровень выше senior.</p>
+    <p data-say>Покупайте, если бесплатные пошли и захочется глубже. Заранее проверьте, есть ли аудиоверсия: слушать такие книги проще, чем читать.</p>
+  </article>
+
+  <div class="rules">
+    <div data-speak>
+      <h3 data-say>Режим</h3>
+      <ul>
+        <li data-say>Понедельник–пятница, 21:00, 20 минут.</li>
+        <li data-say>Недели 1 и 2: книга 1.</li>
+        <li data-say>Недели 3 и 4: четыре главы из книги 2.</li>
+        <li data-say>Недели 5 и 6: книга 3.</li>
+        <li data-say>Суббота: одна история со <span lang="en">staffeng.com</span>.</li>
+        <li data-say>Книга 4: перед разговором о повышении.</li>
+      </ul>
+    </div>
+    <div data-speak>
+      <h3 data-say>Как слушать, а не читать</h3>
+      <ul>
+        <li data-say>Кнопки на этой странице читают русский текст, названия на английском читает английский голос, если он установлен.</li>
+        <li data-say>Сами книги на английском: откройте PDF или страницу в Microsoft Edge и нажмите Ctrl+Shift+U. Читает вслух естественными голосами и подсвечивает слова.</li>
+        <li data-say>Телефон: включите «Проговаривание экрана» на iPhone или «Озвучивание при нажатии» на Android.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+<script src="speak.js"></script>
+</body>
+</html>

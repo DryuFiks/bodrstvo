@@ -13,25 +13,48 @@
 </head>
 <body>
 <main>
-  <header>
+  <header data-speak>
     <a class="back" href="index.html">← Все программы</a>
     <p class="eyebrow">Рабочий день · 13:00 · 10 минут</p>
     <h1>Движение: ноги и поясница</h1>
-    <p class="lead">Короткая прогулка, затем упражнения, которые расходятся после долгого сидения.</p>
+    <p class="lead" data-say>Короткая прогулка, затем упражнения, которые расходятся после долгого сидения.</p>
   </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Голос
+          <select id="sp-voice"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Русский голос не найден.</b> Откройте страницу в Microsoft Edge и нажмите Ctrl+Shift+U: встроенное чтение вслух использует естественные голоса.</p>
 
   <div class="legend" aria-label="Обозначения на схемах">
     <span><i></i>тело</span>
     <span><i class="m"></i>что двигается или растягивается</span>
   </div>
 
-  <section class="block" id="b-main">
+  <section class="block" data-speak id="b-main">
     <div class="block-head">
-      <h2>Ходьба и ноги</h2><span class="mins">10 минут</span>
+      <h2 data-say>Ходьба и ноги</h2><span class="mins" data-say>10 минут</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="main"> Сделал</label>
     </div>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Шаг: ноги и руки работают в противофазе">
@@ -44,13 +67,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Пройтись</h3>
-        <p class="dose">5 минут</p>
-        <p class="cue">Обычным шагом, по комнате или на улице. Расправьте плечи, дышите ровно.</p>
+        <h3 data-say>Пройтись</h3>
+        <p class="dose" data-say>5 минут</p>
+        <p class="cue" data-say>Обычным шагом, по комнате или на улице. Расправьте плечи, дышите ровно.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Выпад: растяжка сгибателей бедра">
@@ -63,13 +87,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Выпад с растяжкой сгибателей бедра</h3>
-        <p class="dose">По 30 секунд на каждую ногу</p>
-        <p class="cue">Заднее колено на полу, корпус прямой. Слегка подайте таз вперёд.</p>
+        <h3 data-say>Выпад с растяжкой сгибателей бедра</h3>
+        <p class="dose" data-say>По 30 секунд на каждую ногу</p>
+        <p class="cue" data-say>Заднее колено на полу, корпус прямой. Слегка подайте таз вперёд.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Приседание: стоя, руки вперёд">
@@ -91,13 +116,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Приседания</h3>
-        <p class="dose">15 раз</p>
-        <p class="cue">Ноги на ширине плеч, пятки на полу, спина прямая. Вниз на вдохе, вверх на выдохе.</p>
+        <h3 data-say>Приседания</h3>
+        <p class="dose" data-say>15 раз</p>
+        <p class="cue" data-say>Ноги на ширине плеч, пятки на полу, спина прямая. Вниз на вдохе, вверх на выдохе.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Наклон к ногам с прямыми ногами">
@@ -110,13 +136,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Наклон к ногам</h3>
-        <p class="dose">30 секунд</p>
-        <p class="cue">Наклон идёт от таза, а не от поясницы. Не пружиньте, дышите ровно.</p>
+        <h3 data-say>Наклон к ногам</h3>
+        <p class="dose" data-say>30 секунд</p>
+        <p class="cue" data-say>Наклон идёт от таза, а не от поясницы. Не пружиньте, дышите ровно.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Стоя на всей стопе">
@@ -140,9 +167,10 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Подъёмы на носки</h3>
-        <p class="dose">20 раз</p>
-        <p class="cue">Вверх быстро, вниз медленно. В верхней точке задержитесь на секунду. При необходимости держитесь за стол.</p>
+        <h3 data-say>Подъёмы на носки</h3>
+        <p class="dose" data-say>20 раз</p>
+        <p class="cue" data-say>Вверх быстро, вниз медленно. В верхней точке задержитесь на секунду. При необходимости держитесь за стол.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
@@ -150,5 +178,6 @@
   <p class="progress" id="progress">Отмечайте блоки по мере выполнения.</p>
 </main>
 <script src="app.js"></script>
+<script src="speak.js"></script>
 </body>
 </html>

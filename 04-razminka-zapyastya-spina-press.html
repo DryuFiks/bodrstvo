@@ -13,25 +13,48 @@
 </head>
 <body>
 <main>
-  <header>
+  <header data-speak>
     <a class="back" href="index.html">← Все программы</a>
     <p class="eyebrow">Рабочий день · 15:30 · 5 минут</p>
     <h1>Разминка: запястья, спина, пресс</h1>
-    <p class="lead">Вечерняя разминка за рабочим столом. Помогает кистям, спине и корпусу после долгой работы за клавиатурой.</p>
+    <p class="lead" data-say>Вечерняя разминка за рабочим столом. Помогает кистям, спине и корпусу после долгой работы за клавиатурой.</p>
   </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Голос
+          <select id="sp-voice"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Русский голос не найден.</b> Откройте страницу в Microsoft Edge и нажмите Ctrl+Shift+U: встроенное чтение вслух использует естественные голоса.</p>
 
   <div class="legend" aria-label="Обозначения на схемах">
     <span><i></i>тело</span>
     <span><i class="m"></i>что двигается или растягивается</span>
   </div>
 
-  <section class="block" id="b-main">
+  <section class="block" data-speak id="b-main">
     <div class="block-head">
-      <h2>Разминка</h2><span class="mins">5 минут</span>
+      <h2 data-say>Разминка</h2><span class="mins" data-say>5 минут</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="main"> Сделал</label>
     </div>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Круги кистями: рука вытянута вперёд, вокруг кисти пунктирная окружность">
@@ -55,13 +78,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Круги и растяжка кистей</h3>
-        <p class="dose">По 20 секунд</p>
-        <p class="cue">Сначала круги в обе стороны. Затем вытяните руку, второй рукой мягко оттяните кисть на себя. Смените руку.</p>
+        <h3 data-say>Круги и растяжка кистей</h3>
+        <p class="dose" data-say>По 20 секунд</p>
+        <p class="cue" data-say>Сначала круги в обе стороны. Затем вытяните руку, второй рукой мягко оттяните кисть на себя. Смените руку.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Скрутка корпуса сидя на стуле">
@@ -76,13 +100,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Скрутка корпуса сидя</h3>
-        <p class="dose">По 20 секунд в каждую сторону</p>
-        <p class="cue">Сядьте прямо, поверните корпус в одну сторону, держась рукой за спинку или колено. Не тяните резко.</p>
+        <h3 data-say>Скрутка корпуса сидя</h3>
+        <p class="dose" data-say>По 20 секунд в каждую сторону</p>
+        <p class="cue" data-say>Сядьте прямо, поверните корпус в одну сторону, держась рукой за спинку или колено. Не тяните резко.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Планка на прямых руках">
@@ -95,13 +120,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Планка</h3>
-        <p class="dose">40 секунд</p>
-        <p class="cue">Живот втянут, ягодицы напряжены, таз не провисает. Дышите, не задерживая дыхание.</p>
+        <h3 data-say>Планка</h3>
+        <p class="dose" data-say>40 секунд</p>
+        <p class="cue" data-say>Живот втянут, ягодицы напряжены, таз не провисает. Дышите, не задерживая дыхание.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Потягивание: руки подняты вверх">
@@ -115,9 +141,10 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Потянуться вверх</h3>
-        <p class="dose">С глубоким вдохом</p>
-        <p class="cue">Поднимите руки, тянитесь вверх на вдохе. На выдохе опустите руки и расслабьте плечи.</p>
+        <h3 data-say>Потянуться вверх</h3>
+        <p class="dose" data-say>С глубоким вдохом</p>
+        <p class="cue" data-say>Поднимите руки, тянитесь вверх на вдохе. На выдохе опустите руки и расслабьте плечи.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
@@ -125,5 +152,6 @@
   <p class="progress" id="progress">Отмечайте блоки по мере выполнения.</p>
 </main>
 <script src="app.js"></script>
+<script src="speak.js"></script>
 </body>
 </html>

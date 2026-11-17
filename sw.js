@@ -1,10 +1,11 @@
 // Поднимайте версию, если меняете список файлов ниже.
-var CACHE = "bodr-v1";
+var CACHE = "bodr-v3";
 var FILES = [
   "./", "index.html",
   "01-zaryadka-15-min.html", "02-razminka-sheya-plechi-grud.html",
   "03-dvizhenie-nogi-poyasnitsa.html", "04-razminka-zapyastya-spina-press.html",
   "05-zal-pervoe-poseshchenie.html", "06-plan-zala-grud-plechi-spina-ruki.html",
+  "07-chtenie-rost-do-tech-lead.html", "speak.js",
   "style.css", "app.js", "pwa.js", "manifest.webmanifest",
   "fonts/fonts.css", "fonts/inter-latin.woff2", "fonts/inter-cyrillic.woff2", "fonts/space-grotesk-latin.woff2",
   "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"

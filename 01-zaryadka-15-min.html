@@ -13,12 +13,35 @@
 </head>
 <body>
 <main>
-  <header>
+  <header data-speak>
     <a class="back" href="index.html">← Все программы</a>
     <p class="eyebrow">Утренняя последовательность · без инвентаря</p>
     <h1>Зарядка на 15 минут</h1>
-    <p class="lead">Суставы, спина, растяжка, живот и заминка. Движения медленные, без рывков. В растяжке лёгкое напряжение, не боль.</p>
+    <p class="lead" data-say>Суставы, спина, растяжка, живот и заминка. Движения медленные, без рывков. В растяжке лёгкое напряжение, не боль.</p>
   </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Голос
+          <select id="sp-voice"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Русский голос не найден.</b> Откройте страницу в Microsoft Edge и нажмите Ctrl+Shift+U: встроенное чтение вслух использует естественные голоса.</p>
 
   <nav aria-label="Блоки зарядки">
     <div class="strip" id="strip">
@@ -36,18 +59,18 @@
     <span><i class="m"></i>что двигается или растягивается</span>
   </div>
 
-  <div class="minimum">
-    <h2>Если совсем нет сил</h2>
-    <p>Сделайте только блок 1 и «кошку-корову» из блока 2. Это 5 минут, и день всё равно начнётся с движения.</p>
+  <div class="minimum" data-speak>
+    <h2 data-say>Если совсем нет сил</h2>
+    <p data-say>Сделайте только блок 1 и «кошку-корову» из блока 2. Это 5 минут, и день всё равно начнётся с движения.</p>
   </div>
 
   <!-- 1. СУСТАВЫ -->
-  <section class="block" id="b-joints">
+  <section class="block" data-speak id="b-joints">
     <div class="block-head">
-      <h2>1. Суставы</h2><span class="mins">3 минуты</span>
+      <h2 data-say>1. Суставы</h2><span class="mins" data-say>3 минуты</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="joints"> Сделал</label>
     </div>
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Фигура спереди, суставы отмечены точками">
@@ -66,24 +89,25 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Круги по суставам, сверху вниз</h3>
-        <p class="dose">По 20–30 секунд на каждый</p>
+        <h3 data-say>Круги по суставам, сверху вниз</h3>
+        <p class="dose" data-say>По 20–30 секунд на каждый</p>
         <ul>
-          <li>шея</li><li>плечи</li><li>локти</li><li>кисти</li><li>таз</li><li>колени</li><li>стопы</li>
+          <li data-say>шея</li><li data-say>плечи</li><li data-say>локти</li><li data-say>кисти</li><li data-say>таз</li><li data-say>колени</li><li data-say>стопы</li>
         </ul>
-        <p class="cue">Медленно, в обе стороны. Без рывков.</p>
+        <p class="cue" data-say>Медленно, в обе стороны. Без рывков.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
 
   <!-- 2. СПИНА -->
-  <section class="block" id="b-back">
+  <section class="block" data-speak id="b-back">
     <div class="block-head">
-      <h2>2. Спина</h2><span class="mins">3 минуты</span>
+      <h2 data-say>2. Спина</h2><span class="mins" data-say>3 минуты</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="back"> Сделал</label>
     </div>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Кошка: спина выгнута вверх, голова опущена">
@@ -105,13 +129,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>«Кошка-корова»</h3>
-        <p class="dose">10 раз</p>
-        <p class="cue">На четвереньках: ладони под плечами, колени под тазом. На выдохе округлите спину, на вдохе прогнитесь.</p>
+        <h3 data-say>«Кошка-корова»</h3>
+        <p class="dose" data-say>10 раз</p>
+        <p class="cue" data-say>На четвереньках: ладони под плечами, колени под тазом. На выдохе округлите спину, на вдохе прогнитесь.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Нитка в иголку: стартовое положение, одна рука поднята вверх">
@@ -133,13 +158,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>«Нитка в иголку»</h3>
-        <p class="dose">По 5 раз в каждую сторону</p>
-        <p class="cue">Из упора на четвереньках поднимите руку вверх вслед за взглядом, затем проведите её под корпусом и опустите плечо к полу.</p>
+        <h3 data-say>«Нитка в иголку»</h3>
+        <p class="dose" data-say>По 5 раз в каждую сторону</p>
+        <p class="cue" data-say>Из упора на четвереньках поднимите руку вверх вслед за взглядом, затем проведите её под корпусом и опустите плечо к полу.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Стоя, спина прямая">
@@ -160,21 +186,22 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Наклон вперёд с круглой спиной</h3>
-        <p class="dose">5–8 раз плавно</p>
-        <p class="cue">Опускайтесь по одному позвонку, голова и руки тяжёлые. Вставайте так же медленно, обратно. Колени чуть мягкие.</p>
+        <h3 data-say>Наклон вперёд с круглой спиной</h3>
+        <p class="dose" data-say>5–8 раз плавно</p>
+        <p class="cue" data-say>Опускайтесь по одному позвонку, голова и руки тяжёлые. Вставайте так же медленно, обратно. Колени чуть мягкие.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
 
   <!-- 3. РАСТЯЖКА -->
-  <section class="block" id="b-stretch">
+  <section class="block" data-speak id="b-stretch">
     <div class="block-head">
-      <h2>3. Растяжка</h2><span class="mins">3 минуты</span>
+      <h2 data-say>3. Растяжка</h2><span class="mins" data-say>3 минуты</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="stretch"> Сделал</label>
     </div>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Выпад: задняя нога опущена на колено, бедро растягивается">
@@ -187,13 +214,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Выпад: растяжка сгибателей бедра</h3>
-        <p class="dose">По 30 секунд на каждую ногу</p>
-        <p class="cue">Заднее колено на полу, корпус прямой. Слегка подайте таз вперёд, пока не почувствуете растяжение спереди бедра.</p>
+        <h3 data-say>Выпад: растяжка сгибателей бедра</h3>
+        <p class="dose" data-say>По 30 секунд на каждую ногу</p>
+        <p class="cue" data-say>Заднее колено на полу, корпус прямой. Слегка подайте таз вперёд, пока не почувствуете растяжение спереди бедра.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Наклон к ногам с прямыми ногами, руки тянутся к стопам">
@@ -206,13 +234,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Наклон к ногам</h3>
-        <p class="dose">30 секунд</p>
-        <p class="cue">Наклон идёт от таза, а не от поясницы. Тянитесь макушкой вперёд, дышите ровно. Не пружиньте.</p>
+        <h3 data-say>Наклон к ногам</h3>
+        <p class="dose" data-say>30 секунд</p>
+        <p class="cue" data-say>Наклон идёт от таза, а не от поясницы. Тянитесь макушкой вперёд, дышите ровно. Не пружиньте.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Собака мордой вниз: таз высоко, тело в форме перевёрнутой буквы V">
@@ -225,21 +254,22 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>«Собака мордой вниз»</h3>
-        <p class="dose">30 секунд</p>
-        <p class="cue">Толкайте пол руками, таз тяните вверх и назад. Если задняя поверхность бёдер тянет сильно, слегка согните колени.</p>
+        <h3 data-say>«Собака мордой вниз»</h3>
+        <p class="dose" data-say>30 секунд</p>
+        <p class="cue" data-say>Толкайте пол руками, таз тяните вверх и назад. Если задняя поверхность бёдер тянет сильно, слегка согните колени.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
 
   <!-- 4. ЖИВОТ -->
-  <section class="block" id="b-abs">
+  <section class="block" data-speak id="b-abs">
     <div class="block-head">
-      <h2>4. Живот</h2><span class="mins">4 минуты</span>
+      <h2 data-say>4. Живот</h2><span class="mins" data-say>4 минуты</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="abs"> Сделал</label>
     </div>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Планка на прямых руках: тело одной прямой линией">
@@ -252,13 +282,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Планка</h3>
-        <p class="dose">30–40 секунд, 2 подхода</p>
-        <p class="cue">Живот втянут, ягодицы напряжены, таз не провисает и не торчит вверх. Дышите, не задерживая дыхание.</p>
+        <h3 data-say>Планка</h3>
+        <p class="dose" data-say>30–40 секунд, 2 подхода</p>
+        <p class="cue" data-say>Живот втянут, ягодицы напряжены, таз не провисает и не торчит вверх. Дышите, не задерживая дыхание.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Лёжа на спине, ноги согнуты над тазом">
@@ -280,13 +311,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Обратные скручивания</h3>
-        <p class="dose">12 раз</p>
-        <p class="cue">Подтяните колени к груди и оторвите таз от пола за счёт низа живота, не раскачиваясь. Вниз медленно.</p>
+        <h3 data-say>Обратные скручивания</h3>
+        <p class="dose" data-say>12 раз</p>
+        <p class="cue" data-say>Подтяните колени к груди и оторвите таз от пола за счёт низа живота, не раскачиваясь. Вниз медленно.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Мёртвый жук: руки вверх, ноги согнуты">
@@ -307,13 +339,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>«Мёртвый жук»</h3>
-        <p class="dose">10 раз на каждую сторону</p>
-        <p class="cue">Одновременно опускайте одну руку за голову и вытягивайте противоположную ногу. Поясница прижата к полу. Затем смените сторону.</p>
+        <h3 data-say>«Мёртвый жук»</h3>
+        <p class="dose" data-say>10 раз на каждую сторону</p>
+        <p class="cue" data-say>Одновременно опускайте одну руку за голову и вытягивайте противоположную ногу. Поясница прижата к полу. Затем смените сторону.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Боковая планка: тело в одну линию, верхняя рука поднята">
@@ -326,21 +359,22 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Боковая планка</h3>
-        <p class="dose">По 20 секунд на каждую сторону</p>
-        <p class="cue">Упор на предплечье под плечом. Тело одной линией, таз не проваливается. Если тяжело, опустите нижнее колено на пол.</p>
+        <h3 data-say>Боковая планка</h3>
+        <p class="dose" data-say>По 20 секунд на каждую сторону</p>
+        <p class="cue" data-say>Упор на предплечье под плечом. Тело одной линией, таз не проваливается. Если тяжело, опустите нижнее колено на пол.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
 
   <!-- 5. ЗАМИНКА -->
-  <section class="block" id="b-cool">
+  <section class="block" data-speak id="b-cool">
     <div class="block-head">
-      <h2>5. Заминка</h2><span class="mins">2 минуты</span>
+      <h2 data-say>5. Заминка</h2><span class="mins" data-say>2 минуты</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="cool"> Сделал</label>
     </div>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Поза ребёнка: таз на пятках, корпус опущен вперёд, руки вытянуты">
@@ -353,13 +387,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Поза ребёнка</h3>
-        <p class="dose">30 секунд</p>
-        <p class="cue">Расслабьте шею и плечи, вытяните руки вперёд, дышите в поясницу.</p>
+        <h3 data-say>Поза ребёнка</h3>
+        <p class="dose" data-say>30 секунд</p>
+        <p class="cue" data-say>Расслабьте шею и плечи, вытяните руки вперёд, дышите в поясницу.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Бабочка: сидя, подошвы вместе, колени разведены">
@@ -372,13 +407,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>«Бабочка»</h3>
-        <p class="dose">30 секунд</p>
-        <p class="cue">Сядьте, подошвы сведите вместе, колени мягко опускайте к полу. Спина длинная, плечи вниз.</p>
+        <h3 data-say>«Бабочка»</h3>
+        <p class="dose" data-say>30 секунд</p>
+        <p class="cue" data-say>Сядьте, подошвы сведите вместе, колени мягко опускайте к полу. Спина длинная, плечи вниз.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Глубокое дыхание: сидя, вокруг груди дуги, показывающие вдох и выдох">
@@ -391,15 +427,17 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Глубокий вдох и выдох</h3>
-        <p class="dose">Оставшееся время</p>
-        <p class="cue">Вдох носом, медленный выдох ртом. Выдох делайте длиннее вдоха.</p>
+        <h3 data-say>Глубокий вдох и выдох</h3>
+        <p class="dose" data-say>Оставшееся время</p>
+        <p class="cue" data-say>Вдох носом, медленный выдох ртом. Выдох делайте длиннее вдоха.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
 
-  <p class="progression"><b>Как прогрессировать.</b> Первые две недели делайте один круг. Потом добавляйте по 10 секунд к планке и по 2–3 повтора к остальным упражнениям.</p>
+  <p class="progression" data-say><b>Как прогрессировать.</b> Первые две недели делайте один круг. Потом добавляйте по 10 секунд к планке и по 2–3 повтора к остальным упражнениям.</p>
 </main>
 <script src="app.js"></script>
+<script src="speak.js"></script>
 </body>
 </html>

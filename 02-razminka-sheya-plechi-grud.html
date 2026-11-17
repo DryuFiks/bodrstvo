@@ -13,25 +13,48 @@
 </head>
 <body>
 <main>
-  <header>
+  <header data-speak>
     <a class="back" href="index.html">← Все программы</a>
     <p class="eyebrow">Рабочий день · 11:00 · 5 минут</p>
     <h1>Разминка: шея, плечи, грудь</h1>
-    <p class="lead">Встаньте из-за стола. Эта разминка снимает зажим в шее и плечах после первых часов за компьютером.</p>
+    <p class="lead" data-say>Встаньте из-за стола. Эта разминка снимает зажим в шее и плечах после первых часов за компьютером.</p>
   </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Голос
+          <select id="sp-voice"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Русский голос не найден.</b> Откройте страницу в Microsoft Edge и нажмите Ctrl+Shift+U: встроенное чтение вслух использует естественные голоса.</p>
 
   <div class="legend" aria-label="Обозначения на схемах">
     <span><i></i>тело</span>
     <span><i class="m"></i>что двигается или растягивается</span>
   </div>
 
-  <section class="block" id="b-main">
+  <section class="block" data-speak id="b-main">
     <div class="block-head">
-      <h2>Разминка</h2><span class="mins">5 минут</span>
+      <h2 data-say>Разминка</h2><span class="mins" data-say>5 минут</span><button type="button" class="speak-btn">▶ Слушать</button>
       <label><input type="checkbox" data-b="main"> Сделал</label>
     </div>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Круги плечами: пунктирные окружности вокруг плеч">
@@ -45,13 +68,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Круги плечами</h3>
-        <p class="dose">10 раз</p>
-        <p class="cue">Большие плавные круги назад. Затем столько же вперёд, если нужно.</p>
+        <h3 data-say>Круги плечами</h3>
+        <p class="dose" data-say>10 раз</p>
+        <p class="cue" data-say>Большие плавные круги назад. Затем столько же вперёд, если нужно.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Наклон головы в сторону к плечу">
@@ -65,13 +89,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Наклоны головы</h3>
-        <p class="dose">По 20 секунд в каждую сторону</p>
-        <p class="cue">Опускайте ухо к плечу, не поднимая плечо навстречу. Ощущение растяжения сбоку шеи.</p>
+        <h3 data-say>Наклоны головы</h3>
+        <p class="dose" data-say>По 20 секунд в каждую сторону</p>
+        <p class="cue" data-say>Опускайте ухо к плечу, не поднимая плечо навстречу. Ощущение растяжения сбоку шеи.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Руки в замок за спиной, грудь раскрыта вперёд">
@@ -85,13 +110,14 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Раскрыть грудь</h3>
-        <p class="dose">30 секунд</p>
-        <p class="cue">Сцепите руки в замок за спиной, отведите их назад и немного вверх. Лопатки сводятся, взгляд вперёд.</p>
+        <h3 data-say>Раскрыть грудь</h3>
+        <p class="dose" data-say>30 секунд</p>
+        <p class="cue" data-say>Сцепите руки в замок за спиной, отведите их назад и немного вверх. Лопатки сводятся, взгляд вперёд.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
 
-    <article class="ex">
+    <article data-speak class="ex">
       <div class="figs">
         <figure>
           <svg viewBox="0 0 240 150" role="img" aria-label="Поворот корпуса стоя, руки перед грудью">
@@ -105,9 +131,10 @@
         </figure>
       </div>
       <div class="txt">
-        <h3>Повороты корпуса стоя</h3>
-        <p class="dose">10 раз</p>
-        <p class="cue">Ноги на месте, таз почти неподвижен. Поворачивайте плечи и грудную клетку, на каждом повороте выдох.</p>
+        <h3 data-say>Повороты корпуса стоя</h3>
+        <p class="dose" data-say>10 раз</p>
+        <p class="cue" data-say>Ноги на месте, таз почти неподвижен. Поворачивайте плечи и грудную клетку, на каждом повороте выдох.</p>
+        <button type="button" class="speak-btn">▶ Слушать</button>
       </div>
     </article>
   </section>
@@ -115,5 +142,6 @@
   <p class="progress" id="progress">Отмечайте блоки по мере выполнения.</p>
 </main>
 <script src="app.js"></script>
+<script src="speak.js"></script>
 </body>
 </html>
