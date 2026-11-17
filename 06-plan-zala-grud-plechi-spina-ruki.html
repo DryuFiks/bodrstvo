@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>План зала: верх тела</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<script src="pwa.js" defer></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="back" href="index.html">← Все программы</a>
+    <p class="eyebrow">Цель: мышечная масса · 3 раза в неделю · около 70 минут</p>
+    <h1>План зала: верх тела</h1>
+    <p class="lead">Акцент на грудь, плечи, спину и руки. Ноги и пресс идут как поддержка (зелёная полоса слева у карточки). Три тренировки А, Б, В идут по кругу: что бы ни выпало на Ср, Пт или Вс, делайте следующую по порядку.</p>
+  </header>
+
+  <div class="note">
+    <b>Это общий план, а не индивидуальная программа.</b> Составлен под цель «набрать массу», 3 дня в неделю, зал с тренажёрами, гантелями и штангой. Вы давно не занимались, поэтому первые две недели идут в мягком режиме. При боли (не при мышечном жжении) остановитесь и покажите упражнение тренеру. Схемы упрощённые: положение тела и траектория показаны, настройку тренажёра покажет сотрудник зала.
+  </div>
+
+  <nav aria-label="Тренировки">
+    <div class="strip" id="strip">
+      <a href="#day-a" style="--m:1" data-b="a"><b>А</b><span>Грудь и плечи</span></a>
+      <a href="#day-b" style="--m:1" data-b="b"><b>Б</b><span>Спина и руки</span></a>
+      <a href="#day-v" style="--m:1" data-b="v"><b>В</b><span>Верх, объём</span></a>
+    </div>
+    <p class="progress" id="progress" style="margin-top:8px">Отмечайте тренировки по мере выполнения.</p>
+  </nav>
+
+  <div class="legend" aria-label="Обозначения на схемах">
+    <span><i></i>тело</span>
+    <span><i class="m"></i>что двигается</span>
+    <span><i style="border-top-color: var(--muted)"></i>штанга, гантели, тренажёр</span>
+  </div>
+
+  <section class="block" id="rules">
+    <div class="block-head"><h2>Правила на каждую тренировку</h2></div>
+    <div class="rules">
+      <div>
+        <h3>Старт: недели 1–2</h3>
+        <p>По 2 подхода на каждое упражнение вместо 3. Вес лёгкий: в конце подхода остаётся 3–4 повторения в запасе. Цель этих двух недель: вернуть технику и привыкнуть к нагрузке.</p>
+      </div>
+      <div>
+        <h3>Дальше: с недели 3</h3>
+        <p>3 подхода. Вес такой, чтобы в конце оставалось 1–2 повторения в запасе, до отказа не идём. Базовые упражнения отдыхом 2–3 минуты, остальные 60–90 секунд.</p>
+      </div>
+      <div>
+        <h3>Как расти</h3>
+        <p>Если во всех подходах вы выполнили верх диапазона повторов с хорошей техникой, на следующей тренировке добавьте вес: 2,5 кг на штангу, 1–2 кг на гантель. Записывайте веса в заметки телефона.</p>
+      </div>
+      <div>
+        <h3>Разминка</h3>
+        <p>5 минут на дорожке или велотренажёре, круги по суставам из зарядки, затем 1–2 лёгких подхода первого упражнения.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="day-a">
+    <div class="block-head">
+      <h2>Тренировка А. Грудь и плечи</h2><span class="mins">около 70 минут</span>
+      <label><input type="checkbox" data-b="a"> Сделал</label>
+    </div>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Штанга опущена к груди"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 112 H172 M62 112 V141 M120 112 V141"/><circle class="h" cx="46" cy="99" r="9"/><path class="b" d="M58 104 H128 M128 104 L156 100 L160 138 L172 138"/><path class="a" d="M72 102 L58 90 L72 84"/><circle class="e" cx="72" cy="84" r="6"/></svg><figcaption>Вниз до груди</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки выпрямлены, штанга над грудью"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 112 H172 M62 112 V141 M120 112 V141"/><circle class="h" cx="46" cy="99" r="9"/><path class="b" d="M58 104 H128 M128 104 L156 100 L160 138 L172 138"/><path class="a" d="M72 102 V56"/><circle class="e" cx="72" cy="56" r="6"/></svg><figcaption>Вверх</figcaption></figure></div>
+      <div class="txt">
+        <h3>1. Жим штанги лёжа</h3>
+        <div class="set-info"><b>3 × 6–8</b><span>отдых 2–3 мин</span></div>
+        <div class="tags"><span class="tag">грудь</span><span class="tag">базовое</span></div>
+        <p class="cue">Лопатки сведены, штанга касается груди, таз не отрывается. Страховка у стойки.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Гантели на уровне груди"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M112 114 L70 62 M96 114 H156 M104 114 V141"/><circle class="h" cx="66" cy="56" r="9"/><path class="b" d="M108 106 L78 70 M108 106 L146 104 L150 138 L164 138"/><path class="a" d="M80 72 L94 88 L92 60"/><path class="q" d="M84 60 H100"/></svg><figcaption>Гантели у груди</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки выпрямлены, гантели над грудью"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M112 114 L70 62 M96 114 H156 M104 114 V141"/><circle class="h" cx="66" cy="56" r="9"/><path class="b" d="M108 106 L78 70 M108 106 L146 104 L150 138 L164 138"/><path class="a" d="M80 72 L90 26"/><path class="q" d="M82 26 H98"/></svg><figcaption>Вверх</figcaption></figure></div>
+      <div class="txt">
+        <h3>2. Жим гантелей на наклонной скамье (30°)</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 2 мин</span></div>
+        <div class="tags"><span class="tag">грудь</span></div>
+        <p class="cue">Локти примерно под 45° к корпусу, внизу чувствуется растяжение груди.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Гантели на уровне плеч"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M70 112 H112 M64 50 V112"/><circle class="h" cx="72" cy="42" r="10"/><path class="b" d="M70 110 V56 M70 110 H112 V138 L128 138"/><path class="a" d="M72 62 L84 76 L84 44"/><path class="q" d="M77 44 H93"/></svg><figcaption>Гантели у плеч</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки выпрямлены над головой"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M70 112 H112 M64 50 V112"/><circle class="h" cx="72" cy="42" r="10"/><path class="b" d="M70 110 V56 M70 110 H112 V138 L128 138"/><path class="a" d="M72 62 L84 14"/><path class="q" d="M76 14 H92"/></svg><figcaption>Вверх</figcaption></figure></div>
+      <div class="txt">
+        <h3>3. Жим гантелей сидя</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 2 мин</span></div>
+        <div class="tags"><span class="tag">плечи</span><span class="tag">базовое</span></div>
+        <p class="cue">Не прогибайте поясницу, спина прижата к спинке.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки опущены, гантели у бёдер"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="120" cy="24" r="12"/><path class="b" d="M120 40 V85 M96 46 H144 M110 85 H130 M110 85 L108 112 L108 138 M130 85 L132 112 L132 138"/><path class="a" d="M96 46 L90 70 L88 92 M144 46 L150 70 L152 92"/><path class="q" d="M82 94 H94 M146 94 H158"/></svg><figcaption>Руки вдоль тела</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки разведены в стороны до плеч"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="120" cy="24" r="12"/><path class="b" d="M120 40 V85 M96 46 H144 M110 85 H130 M110 85 L108 112 L108 138 M130 85 L132 112 L132 138"/><path class="a" d="M96 46 L54 52 M144 46 L186 52"/><path class="q" d="M48 44 V60 M192 44 V60"/></svg><figcaption>До уровня плеч</figcaption></figure></div>
+      <div class="txt">
+        <h3>4. Махи гантелей в стороны</h3>
+        <div class="set-info"><b>3 × 12–15</b><span>отдых 60–90 с</span></div>
+        <div class="tags"><span class="tag">плечи</span></div>
+        <p class="cue">Лёгкий вес, локоть чуть согнут. Без раскачки корпусом.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Предплечья согнуты, локти у корпуса"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="b" d="M100 46 V68"/><path class="q" d="M150 12 V141 M142 12 H158"/><circle class="e" cx="150" cy="12" r="4"/><path class="a" d="M100 68 L124 50"/><path class="q" d="M124 50 L150 12"/></svg><figcaption>Исходное</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки выпрямлены вниз"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="b" d="M100 46 V68"/><path class="q" d="M150 12 V141 M142 12 H158"/><circle class="e" cx="150" cy="12" r="4"/><path class="a" d="M100 68 L116 98"/><path class="q" d="M116 98 L150 12"/></svg><figcaption>Разогнуть</figcaption></figure></div>
+      <div class="txt">
+        <h3>5. Разгибания рук на верхнем блоке</h3>
+        <div class="set-info"><b>3 × 10–12</b><span>отдых 60–90 с</span></div>
+        <div class="tags"><span class="tag">трицепс</span></div>
+        <p class="cue">Локти прижаты к корпусу, двигаются только предплечья.</p>
+      </div>
+    </article>
+    <article class="ex sup">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Жим ногами, колени согнуты"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="40" cy="82" r="10"/><path class="b" d="M78 118 L52 94"/><path class="a" d="M78 118 L112 88 L140 114"/><path class="q" d="M132 96 L148 130"/></svg><figcaption>Исходное положение</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Жим ногами, ноги выпрямлены"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="40" cy="82" r="10"/><path class="b" d="M78 118 L52 94"/><path class="a" d="M78 118 L168 90"/><path class="q" d="M166 74 L178 108"/></svg><figcaption>Выжать платформу</figcaption></figure></div>
+      <div class="txt">
+        <h3>6. Жим ногами</h3>
+        <div class="set-info"><b>3 × 10–12</b><span>отдых 2 мин</span></div>
+        <div class="tags"><span class="tag">ноги</span><span class="tag s">поддержка</span></div>
+        <p class="cue">Стопы на ширине плеч, колени не блокировать вверху.</p>
+      </div>
+    </article>
+    <article class="ex sup">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Лёжа на спине, колени согнуты"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="30" cy="130" r="9"/><path class="b" d="M42 130 H110"/><path class="b" d="M110 130 L130 98 L152 130"/></svg><figcaption>Лёжа</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Плечи оторваны от пола"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="52" cy="102" r="9"/><path class="a" d="M110 130 Q80 128 62 112"/><path class="b" d="M110 130 L130 98 L152 130"/></svg><figcaption>Плечи от пола</figcaption></figure></div>
+      <div class="txt">
+        <h3>7. Скручивания на полу или на блоке</h3>
+        <div class="set-info"><b>3 × 12–15</b><span>отдых 60 с</span></div>
+        <div class="tags"><span class="tag">пресс</span><span class="tag s">поддержка</span></div>
+        <p class="cue">Скручивайте корпус, а не тяните руками. Выдох на усилии.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="block" id="day-b">
+    <div class="block-head">
+      <h2>Тренировка Б. Спина и руки</h2><span class="mins">около 70 минут</span>
+      <label><input type="checkbox" data-b="b"> Сделал</label>
+    </div>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки вытянуты вверх к рукояти"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M100 108 H140 V138"/><circle class="h" cx="100" cy="44" r="10"/><path class="b" d="M100 108 V58"/><path class="a" d="M100 62 L116 16"/><path class="q" d="M104 16 H128 M116 16 V2"/></svg><figcaption>Руки вверху</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Рукоять у груди, локти вниз"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M100 108 H140 V138"/><circle class="h" cx="100" cy="44" r="10"/><path class="b" d="M100 108 V58"/><path class="a" d="M100 62 L120 80 L112 58"/><path class="q" d="M100 56 H126 M113 56 V2"/></svg><figcaption>Рукоять к груди</figcaption></figure></div>
+      <div class="txt">
+        <h3>1. Тяга верхнего блока</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 2 мин</span></div>
+        <div class="tags"><span class="tag">спина</span><span class="tag">базовое</span></div>
+        <p class="cue">Тяните рукоять к верху груди, сводя лопатки. Плечи не поднимайте к ушам. Позже можно перейти на подтягивания.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Наклон вперёд, штанга на вытянутых руках"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="160" cy="42" r="9"/><path class="b" d="M96 76 L146 50 M96 76 L108 108 L106 138 L124 138"/><path class="a" d="M146 52 L148 96"/><circle class="e" cx="148" cy="100" r="6"/></svg><figcaption>Штанга внизу</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Штанга подтянута к животу"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="160" cy="42" r="9"/><path class="b" d="M96 76 L146 50 M96 76 L108 108 L106 138 L124 138"/><path class="a" d="M146 52 L128 76 L146 86"/><circle class="e" cx="146" cy="88" r="6"/></svg><figcaption>К животу</figcaption></figure></div>
+      <div class="txt">
+        <h3>2. Тяга штанги в наклоне</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 2–3 мин</span></div>
+        <div class="tags"><span class="tag">спина</span><span class="tag">базовое</span></div>
+        <p class="cue">Спина прямая, тяните штангу к низу живота. Если поясница устаёт, замените тягой гантели одной рукой с упором на скамью.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки вытянуты к рукояти"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="72" cy="44" r="10"/><path class="b" d="M70 108 V58 M70 108 L118 102 L130 126"/><path class="q" d="M136 108 V138"/><path class="a" d="M72 62 L120 74"/><path class="q" d="M120 64 V84 M120 74 H230"/></svg><figcaption>Руки вперёд</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Рукоять у живота, локти назад"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="72" cy="44" r="10"/><path class="b" d="M70 108 V58 M70 108 L118 102 L130 126"/><path class="q" d="M136 108 V138"/><path class="a" d="M72 62 L52 76 L92 80"/><path class="q" d="M92 70 V90 M92 80 H230"/></svg><figcaption>Рукоять к животу</figcaption></figure></div>
+      <div class="txt">
+        <h3>3. Горизонтальная тяга на блоке</h3>
+        <div class="set-info"><b>3 × 10–12</b><span>отдых 90 с</span></div>
+        <div class="tags"><span class="tag">спина</span></div>
+        <p class="cue">Без раскачки корпусом, локти идут вдоль тела.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки сведены перед корпусом"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M92 100 H148"/><circle class="h" cx="120" cy="30" r="12"/><path class="b" d="M120 42 V100 M106 100 L102 138 M134 100 L138 138 M96 50 H144"/><path class="a" d="M96 50 L106 74 L120 82 M144 50 L134 74 L120 82"/></svg><figcaption>Руки вместе</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки разведены в стороны"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M92 100 H148"/><circle class="h" cx="120" cy="30" r="12"/><path class="b" d="M120 42 V100 M106 100 L102 138 M134 100 L138 138 M96 50 H144"/><path class="a" d="M96 50 L52 54 M144 50 L188 54"/></svg><figcaption>Разведены назад</figcaption></figure></div>
+      <div class="txt">
+        <h3>4. Обратные разведения (задняя дельта)</h3>
+        <div class="set-info"><b>3 × 12–15</b><span>отдых 60–90 с</span></div>
+        <div class="tags"><span class="tag">плечи</span></div>
+        <p class="cue">В тренажёре «бабочка» или с гантелями в наклоне. Лёгкий вес.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки опущены, гриф у бёдер"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="b" d="M100 46 V72"/><path class="a" d="M100 72 L104 94"/><circle class="e" cx="105" cy="98" r="5"/></svg><figcaption>Руки внизу</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Предплечья подняты, гриф у плеч"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="b" d="M100 46 V72"/><path class="a" d="M100 72 L124 52"/><circle class="e" cx="126" cy="49" r="5"/></svg><figcaption>Гриф к плечам</figcaption></figure></div>
+      <div class="txt">
+        <h3>5. Подъём штанги (EZ) на бицепс</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 90 с</span></div>
+        <div class="tags"><span class="tag">бицепс</span></div>
+        <p class="cue">Локти неподвижны, корпус не раскачивайте.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки опущены, гантели вертикально"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="120" cy="24" r="12"/><path class="b" d="M120 40 V85 M96 46 H144 M110 85 H130 M110 85 L108 112 L108 138 M130 85 L132 112 L132 138"/><path class="a" d="M96 46 L88 68 L88 92 M144 46 L152 68 L152 92"/><path class="q" d="M88 86 V100 M152 86 V100"/></svg><figcaption>Руки внизу</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Предплечья подняты"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="120" cy="24" r="12"/><path class="b" d="M120 40 V85 M96 46 H144 M110 85 H130 M110 85 L108 112 L108 138 M130 85 L132 112 L132 138"/><path class="a" d="M96 46 L88 68 L94 44 M144 46 L152 68 L146 44"/><path class="q" d="M94 37 V51 M146 37 V51"/></svg><figcaption>К плечам</figcaption></figure></div>
+      <div class="txt">
+        <h3>6. Сгибания «молот» с гантелями</h3>
+        <div class="set-info"><b>2 × 10–12</b><span>отдых 60–90 с</span></div>
+        <div class="tags"><span class="tag">бицепс</span><span class="tag">предплечья</span></div>
+        <p class="cue">Ладони смотрят друг на друга, медленный спуск.</p>
+      </div>
+    </article>
+    <article class="ex sup">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Стоя с гантелями у бёдер"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="a" d="M100 46 L103 90"/><circle class="e" cx="104" cy="94" r="5"/></svg><figcaption>Стоя</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Наклон вперёд, таз отведён назад"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="150" cy="58" r="9"/><path class="b" d="M80 80 L134 62 M80 80 L88 110 L88 138 L106 138"/><path class="a" d="M134 62 L128 106"/><circle class="e" cx="128" cy="110" r="5"/></svg><figcaption>Наклон с отведением таза</figcaption></figure></div>
+      <div class="txt">
+        <h3>7. Румынская тяга с гантелями</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 2 мин</span></div>
+        <div class="tags"><span class="tag">ноги и поясница</span><span class="tag s">поддержка</span></div>
+        <p class="cue">Первые 3 недели очень лёгкий вес. Таз уходит назад, спина прямая, гантели скользят вдоль ног.</p>
+      </div>
+    </article>
+    <article class="ex sup">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Лёжа, ноги подняты вертикально"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="28" cy="128" r="9"/><path class="b" d="M40 130 H108"/><path class="a" d="M108 130 V60"/></svg><figcaption>Ноги вверху</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Ноги опущены вперёд"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="28" cy="128" r="9"/><path class="b" d="M40 130 H108"/><path class="a" d="M108 130 L156 82"/></svg><figcaption>Вниз под контролем</figcaption></figure></div>
+      <div class="txt">
+        <h3>8. Подъём ног лёжа или в висе</h3>
+        <div class="set-info"><b>3 × 10–12</b><span>отдых 60 с</span></div>
+        <div class="tags"><span class="tag">пресс</span><span class="tag s">поддержка</span></div>
+        <p class="cue">Поясница прижата к скамье, без рывков.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="block" id="day-v">
+    <div class="block-head">
+      <h2>Тренировка В. Верх тела, объём</h2><span class="mins">около 70 минут</span>
+      <label><input type="checkbox" data-b="v"> Сделал</label>
+    </div>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Лёжа, гантели у груди"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 112 H172 M62 112 V141 M120 112 V141"/><circle class="h" cx="46" cy="99" r="9"/><path class="b" d="M58 104 H128 M128 104 L156 100 L160 138 L172 138"/><path class="a" d="M72 102 L58 90 L72 84"/><path class="q" d="M64 84 H80"/></svg><figcaption>Гантели у груди</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Лёжа, гантели над грудью"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 112 H172 M62 112 V141 M120 112 V141"/><circle class="h" cx="46" cy="99" r="9"/><path class="b" d="M58 104 H128 M128 104 L156 100 L160 138 L172 138"/><path class="a" d="M72 102 V56"/><path class="q" d="M64 56 H80"/></svg><figcaption>Вверх</figcaption></figure></div>
+      <div class="txt">
+        <h3>1. Жим гантелей лёжа</h3>
+        <div class="set-info"><b>3 × 10–12</b><span>отдых 2 мин</span></div>
+        <div class="tags"><span class="tag">грудь</span><span class="tag">базовое</span></div>
+        <p class="cue">Большая амплитуда, внизу растяжение груди, вверху гантели над грудью.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Упор на скамью, рука с гантелью вниз"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 104 H92 M48 104 V141 M84 104 V141"/><circle class="h" cx="50" cy="52" r="9"/><path class="b" d="M66 58 L136 66 M66 58 V100 M136 66 L150 110 L152 138 L168 138"/><path class="a" d="M82 60 L86 104"/><path class="q" d="M78 108 H94"/></svg><figcaption>Рука вниз</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Гантель подтянута к поясу"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 104 H92 M48 104 V141 M84 104 V141"/><circle class="h" cx="50" cy="52" r="9"/><path class="b" d="M66 58 L136 66 M66 58 V100 M136 66 L150 110 L152 138 L168 138"/><path class="a" d="M82 60 L108 82 L92 86"/><path class="q" d="M84 88 H100"/></svg><figcaption>Локоть к тазу</figcaption></figure></div>
+      <div class="txt">
+        <h3>2. Тяга гантели одной рукой</h3>
+        <div class="set-info"><b>3 × 10–12 на руку</b><span>отдых 90 с</span></div>
+        <div class="tags"><span class="tag">спина</span></div>
+        <p class="cue">Упор рукой и коленом на скамью, тяните локоть к тазу.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Штанга на уровне плеч"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="a" d="M100 46 L110 66 L108 42"/><circle class="e" cx="108" cy="40" r="6"/></svg><figcaption>Штанга у плеч</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки выпрямлены, штанга над головой"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="a" d="M100 46 L122 8"/><circle class="e" cx="122" cy="6" r="6"/></svg><figcaption>Над головой</figcaption></figure></div>
+      <div class="txt">
+        <h3>3. Жим штанги стоя</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 2–3 мин</span></div>
+        <div class="tags"><span class="tag">плечи</span><span class="tag">базовое</span></div>
+        <p class="cue">Пресс и ягодицы напряжены, поясницу не выгибайте. Можно заменить жимом в тренажёре.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки разведены, тросы вверх к блокам"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="120" cy="24" r="12"/><path class="b" d="M120 40 V85 M96 46 H144 M110 85 H130 M110 85 L108 112 L108 138 M130 85 L132 112 L132 138"/><path class="a" d="M96 46 L60 62 M144 46 L180 62"/><path class="q" d="M30 10 H40 M200 10 H210"/><circle class="e" cx="34" cy="10" r="4"/><circle class="e" cx="206" cy="10" r="4"/><path class="t" d="M60 62 L34 10 M180 62 L206 10"/></svg><figcaption>Руки в стороны</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки сведены перед корпусом"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="120" cy="24" r="12"/><path class="b" d="M120 40 V85 M96 46 H144 M110 85 H130 M110 85 L108 112 L108 138 M130 85 L132 112 L132 138"/><path class="a" d="M96 46 L106 76 L120 88 M144 46 L134 76 L120 88"/><path class="q" d="M30 10 H40 M200 10 H210"/><circle class="e" cx="34" cy="10" r="4"/><circle class="e" cx="206" cy="10" r="4"/><path class="t" d="M120 88 L34 10 M120 88 L206 10"/></svg><figcaption>Руки вместе</figcaption></figure></div>
+      <div class="txt">
+        <h3>4. Сведения на блоках (кроссовер)</h3>
+        <div class="set-info"><b>3 × 12–15</b><span>отдых 60–90 с</span></div>
+        <div class="tags"><span class="tag">грудь</span></div>
+        <p class="cue">Локти слегка согнуты, как будто обнимаете большую бочку. Можно заменить разведением гантелей лёжа.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки вытянуты к канату"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="q" d="M170 20 V50"/><circle class="e" cx="170" cy="30" r="4"/><path class="a" d="M100 46 L150 36"/><path class="q" d="M150 36 L170 30"/></svg><figcaption>Руки вперёд</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Канат у лба, локти в стороны"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="q" d="M170 20 V50"/><circle class="e" cx="170" cy="30" r="4"/><path class="a" d="M100 46 L120 44 L112 28"/><path class="q" d="M112 28 L170 30"/></svg><figcaption>К лицу</figcaption></figure></div>
+      <div class="txt">
+        <h3>5. Тяга к лицу на блоке</h3>
+        <div class="set-info"><b>3 × 12–15</b><span>отдых 60–90 с</span></div>
+        <div class="tags"><span class="tag">задняя дельта</span><span class="tag">верх спины</span></div>
+        <p class="cue">Тяните канат к лбу, локти выше кистей. Лёгкий вес, хорошо для осанки.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Руки опущены"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="b" d="M100 46 V72"/><path class="a" d="M100 72 L104 94"/><circle class="e" cx="105" cy="98" r="5"/></svg><figcaption>Руки внизу</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Предплечья подняты"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="24" r="10"/><path class="b" d="M100 36 V82 M100 82 V138 L118 138"/><path class="b" d="M100 46 V72"/><path class="a" d="M100 72 L124 52"/><circle class="e" cx="126" cy="49" r="5"/></svg><figcaption>К плечам</figcaption></figure></div>
+      <div class="txt">
+        <h3>6. Суперсет, часть 1: сгибания рук на нижнем блоке</h3>
+        <div class="set-info"><b>2 × 12</b><span>отдых без отдыха</span></div>
+        <div class="tags"><span class="tag">бицепс</span><span class="tag">суперсет</span></div>
+        <p class="cue">Делаете это упражнение, сразу второе, затем отдых 90 секунд.</p>
+      </div>
+    </article>
+    <article class="ex">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Лёжа, гантель над грудью"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 112 H172 M62 112 V141 M120 112 V141"/><circle class="h" cx="46" cy="99" r="9"/><path class="b" d="M58 104 H128 M128 104 L156 100 L160 138 L172 138"/><path class="a" d="M72 102 V52"/><path class="q" d="M64 52 H80"/></svg><figcaption>Руки вверху</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Лёжа, гантель опущена к голове"><line class="g" x1="10" y1="141" x2="230" y2="141"/><path class="q" d="M40 112 H172 M62 112 V141 M120 112 V141"/><circle class="h" cx="46" cy="99" r="9"/><path class="b" d="M58 104 H128 M128 104 L156 100 L160 138 L172 138"/><path class="a" d="M72 102 V66 L52 80"/><path class="q" d="M44 82 L58 76"/></svg><figcaption>Гантель за голову</figcaption></figure></div>
+      <div class="txt">
+        <h3>7. Суперсет, часть 2: французский жим с гантелью</h3>
+        <div class="set-info"><b>2 × 12</b><span>отдых 90 с после пары</span></div>
+        <div class="tags"><span class="tag">трицепс</span><span class="tag">суперсет</span></div>
+        <p class="cue">Плечо неподвижно, сгибается только локоть. Гантель опускайте медленно.</p>
+      </div>
+    </article>
+    <article class="ex sup">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Штанга на плечах, стоя"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="22" r="10"/><path class="b" d="M100 34 V82 M100 82 V138 L120 138"/><circle class="e" cx="96" cy="40" r="6"/><path class="b" d="M96 40 L112 52"/></svg><figcaption>Стоя со штангой</figcaption></figure><figure><svg viewBox="0 0 240 150" role="img" aria-label="Присед, таз назад"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="100" cy="45" r="10"/><path class="b" d="M82 102 L96 58 M104 138 L126 138"/><path class="a" d="M82 102 L122 106 L104 138"/><circle class="e" cx="92" cy="62" r="6"/><path class="b" d="M92 62 L108 70"/></svg><figcaption>Вниз</figcaption></figure></div>
+      <div class="txt">
+        <h3>8. Приседания со штангой на плечах</h3>
+        <div class="set-info"><b>3 × 8–10</b><span>отдых 2–3 мин</span></div>
+        <div class="tags"><span class="tag">ноги</span><span class="tag s">поддержка</span></div>
+        <p class="cue">Первые недели лёгкая штанга, колени идут по линии носков. При сомнениях по технике попросите тренера показать или возьмите жим ногами.</p>
+      </div>
+    </article>
+    <article class="ex sup">
+      <div class="figs"><figure><svg viewBox="0 0 240 150" role="img" aria-label="Планка на прямых руках"><line class="g" x1="10" y1="141" x2="230" y2="141"/><circle class="h" cx="47" cy="91" r="9"/><path class="b" d="M62 96 V138 M192 137 L206 137"/><path class="a" d="M62 96 L192 137"/></svg><figcaption>Голова, спина, пятки</figcaption></figure></div>
+      <div class="txt">
+        <h3>9. Планка</h3>
+        <div class="set-info"><b>3 × 40 с</b><span>отдых 60 с</span></div>
+        <div class="tags"><span class="tag">пресс</span><span class="tag s">поддержка</span></div>
+        <p class="cue">Тело одной линией, таз не провисает.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="block" id="more">
+    <div class="block-head"><h2>Чтобы мышцы росли</h2></div>
+    <div class="rules">
+      <div>
+        <h3>Питание</h3>
+        <ul>
+          <li>Белок: около 1,6–2,2 г на кг веса в день.</li>
+          <li>Небольшой профицит калорий: примерно на 250–300 ккал больше нормы.</li>
+          <li>Ориентиры общие, не индивидуальная диета.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Восстановление</h3>
+        <ul>
+          <li>Сон 8 часов: он уже стоит в календаре.</li>
+          <li>Между тренировками на одни и те же мышцы хотя бы 48 часов.</li>
+          <li>Лёгкая усталость нормальна, боль в суставе нет.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Когда пересмотреть план</h3>
+        <p>Через 6–8 недель. К тому времени будут видны веса и самочувствие, и план можно будет подправить под результат. Пришлите заметки и фото, если захотите.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

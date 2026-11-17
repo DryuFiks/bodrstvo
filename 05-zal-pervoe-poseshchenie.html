@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зал: первое посещение</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<script src="pwa.js" defer></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="back" href="index.html">← Все программы</a>
+    <p class="eyebrow">Ср и Пт 18:00 · Вс 17:00 · около часа</p>
+    <h1>Зал: первое посещение</h1>
+    <p class="lead">Знакомство с залом, лёгкая программа на всё тело, без рекордов. Цель первого раза: разобраться с тренажёрами и уйти с ощущением «могу ещё».</p>
+  </header>
+
+  <div class="note">
+    <b>Это общий шаблон для новичка, а не индивидуальная программа.</b> Если на входе предлагают вводную тренировку с тренером, возьмите её. При боли в суставах или спине, головокружении или проблемах со здоровьем остановитесь и спросите тренера или врача.
+  </div>
+
+  <nav aria-label="Этапы тренировки">
+    <div class="strip" id="strip">
+      <a href="#b-warm" style="--m:6" data-b="warm"><b>5–8 мин</b><span>Разогрев</span></a>
+      <a href="#b-main" style="--m:30" data-b="main"><b>около 30 мин</b><span>Тренажёры</span></a>
+      <a href="#b-cool" style="--m:5" data-b="cool"><b>5 мин</b><span>Растяжка</span></a>
+    </div>
+    <p class="progress" id="progress" style="margin-top:8px">Отмечайте блоки по мере выполнения.</p>
+  </nav>
+
+  <div class="legend" aria-label="Обозначения на схемах">
+    <span><i></i>тело</span>
+    <span><i class="m"></i>что двигается или растягивается</span>
+  </div>
+
+  <div class="minimum">
+    <h2>Что взять с собой</h2>
+    <p>Спортивную форму и сменную обувь, воду, полотенце.</p>
+  </div>
+
+  <!-- РАЗОГРЕВ -->
+  <section class="block" id="b-warm">
+    <div class="block-head">
+      <h2>1. Разогрев</h2><span class="mins">5–8 минут</span>
+      <label><input type="checkbox" data-b="warm"> Сделал</label>
+    </div>
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Шаг: лёгкая ходьба">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="100" cy="24" r="10"/>
+            <path class="b" d="M100 36 V82 M100 46 L88 66 L92 86 M100 46 L114 64 L126 76"/>
+            <path class="a" d="M100 82 L122 112 L124 138 L138 138 M100 82 L80 112 L66 134"/>
+          </svg>
+          <figcaption>Лёгкий темп</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Беговая дорожка или велотренажёр</h3>
+        <p class="dose">5–8 минут в лёгком темпе</p>
+        <p class="cue">Можно говорить полными предложениями. Затем 1–2 минуты круги по суставам из зарядки: плечи, таз, колени.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- ТРЕНАЖЁРЫ -->
+  <section class="block" id="b-main">
+    <div class="block-head">
+      <h2>2. Тренажёры</h2><span class="mins">около 30 минут</span>
+      <label><input type="checkbox" data-b="main"> Сделал</label>
+    </div>
+    <p class="progression"><b>Как делать.</b> Каждое упражнение 2 подхода. Вес выбирайте такой, чтобы в конце подхода оставалось 2–3 повторения в запасе. Отдых между подходами 60–90 секунд. Движения плавные, без рывков. Просите сотрудников зала показать, как настроить сиденье и упор.</p>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Жим ногами: колени согнуты">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="40" cy="82" r="10"/>
+            <path class="b" d="M78 118 L52 94"/>
+            <path class="a" d="M78 118 L112 88 L140 114"/>
+            <path class="g" style="stroke-width:5" d="M132 96 L148 130"/>
+          </svg>
+          <figcaption>Исходное положение</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Жим ногами: ноги выпрямлены, колени не заблокированы">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="40" cy="82" r="10"/>
+            <path class="b" d="M78 118 L52 94"/>
+            <path class="a" d="M78 118 L168 90"/>
+            <path class="g" style="stroke-width:5" d="M166 74 L178 108"/>
+          </svg>
+          <figcaption>Выжать платформу</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Жим ногами</h3>
+        <p class="dose">2 × 12</p>
+        <p class="cue">Стопы на ширине плеч, поясница прижата к спинке. Вверху не распрямляйте колени до упора. Платформу опускайте медленно.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Тяга верхнего блока: руки вверху, держат рукоять">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M100 108 H140 V138"/>
+            <circle class="h" cx="100" cy="44" r="10"/>
+            <path class="b" d="M100 108 V58"/>
+            <path class="a" d="M100 62 L116 16"/>
+            <path class="g" style="stroke-width:5" d="M104 16 H128 M116 16 V2"/>
+          </svg>
+          <figcaption>Руки вверху</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Тяга верхнего блока: рукоять у груди, локти вниз">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M100 108 H140 V138"/>
+            <circle class="h" cx="100" cy="44" r="10"/>
+            <path class="b" d="M100 108 V58"/>
+            <path class="a" d="M100 62 L120 80 L112 58"/>
+            <path class="g" style="stroke-width:5" d="M100 56 H126 M113 56 V2"/>
+          </svg>
+          <figcaption>Рукоять к груди</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Тяга верхнего блока</h3>
+        <p class="dose">2 × 10–12</p>
+        <p class="cue">Тяните рукоять к верху груди, сводя лопатки. Плечи не поднимайте к ушам. Вверх руки возвращайте под контролем.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Жим от груди: рукояти у груди">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M70 108 H115 V138"/>
+            <circle class="h" cx="70" cy="42" r="10"/>
+            <path class="b" d="M70 108 V56"/>
+            <path class="g" style="stroke-width:5" d="M56 54 V110"/>
+            <path class="a" d="M72 62 L58 74 L88 68"/>
+            <path class="g" style="stroke-width:5" d="M88 60 V78"/>
+          </svg>
+          <figcaption>Рукояти у груди</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Жим от груди: руки выпрямлены вперёд">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M70 108 H115 V138"/>
+            <circle class="h" cx="70" cy="42" r="10"/>
+            <path class="b" d="M70 108 V56"/>
+            <path class="g" style="stroke-width:5" d="M56 54 V110"/>
+            <path class="a" d="M72 62 L116 66"/>
+            <path class="g" style="stroke-width:5" d="M116 58 V76"/>
+          </svg>
+          <figcaption>Вперёд, локти не блокировать</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Жим от груди в тренажёре</h3>
+        <p class="dose">2 × 10–12</p>
+        <p class="cue">Спина прижата к подушке, лопатки сведены. Локти немного ниже плеч. Назад возвращайтесь медленно.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Горизонтальная тяга: руки вперёд">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="72" cy="44" r="10"/>
+            <path class="b" d="M70 108 V58 M70 108 L118 102 L130 126"/>
+            <path class="g" style="stroke-width:5" d="M136 108 V138"/>
+            <path class="a" d="M72 62 L120 74"/>
+            <path class="g" style="stroke-width:5" d="M120 64 V84 M120 74 H230"/>
+          </svg>
+          <figcaption>Руки вперёд</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Горизонтальная тяга: рукоять у живота, локти назад">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="72" cy="44" r="10"/>
+            <path class="b" d="M70 108 V58 M70 108 L118 102 L130 126"/>
+            <path class="g" style="stroke-width:5" d="M136 108 V138"/>
+            <path class="a" d="M72 62 L52 76 L92 80"/>
+            <path class="g" style="stroke-width:5" d="M92 70 V90 M92 80 H230"/>
+          </svg>
+          <figcaption>Рукоять к животу</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Горизонтальная тяга</h3>
+        <p class="dose">2 × 10–12</p>
+        <p class="cue">Спина прямая, не раскачивайтесь корпусом. Тяните локти назад вдоль тела, сводя лопатки.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Планка на прямых руках">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="47" cy="91" r="9"/>
+            <path class="b" d="M62 96 V138 M192 137 L206 137"/>
+            <path class="a" d="M62 96 L192 137"/>
+          </svg>
+          <figcaption>Голова, спина и пятки в одну линию</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Планка</h3>
+        <p class="dose">2 × 30 секунд</p>
+        <p class="cue">Завершающее упражнение. Живот втянут, таз не провисает. Если тяжело, опустите колени на пол.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- РАСТЯЖКА -->
+  <section class="block" id="b-cool">
+    <div class="block-head">
+      <h2>3. Растяжка после зала</h2><span class="mins">5 минут</span>
+      <label><input type="checkbox" data-b="cool"> Сделал</label>
+    </div>
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Наклон к ногам с прямыми ногами">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M100 82 V138 L118 138 M140 112 L142 136"/>
+            <path class="a" d="M100 82 L140 112"/>
+            <circle class="h" cx="148" cy="125" r="8"/>
+          </svg>
+          <figcaption>Задняя поверхность бёдер</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Поза ребёнка">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M80 116 L122 136 L62 138"/>
+            <path class="a" d="M80 116 L136 124 M136 120 L212 126"/>
+            <circle class="h" cx="148" cy="135" r="8"/>
+          </svg>
+          <figcaption>Спина и плечи</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Наклон к ногам и поза ребёнка</h3>
+        <p class="dose">По 30–45 секунд, затем повторить</p>
+        <p class="cue">Дышите ровно, тянитесь без боли. Завершите несколькими глубокими вдохами и выдохами.</p>
+      </div>
+    </article>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

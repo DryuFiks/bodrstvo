@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зарядка на 15 минут</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<script src="pwa.js" defer></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="back" href="index.html">← Все программы</a>
+    <p class="eyebrow">Утренняя последовательность · без инвентаря</p>
+    <h1>Зарядка на 15 минут</h1>
+    <p class="lead">Суставы, спина, растяжка, живот и заминка. Движения медленные, без рывков. В растяжке лёгкое напряжение, не боль.</p>
+  </header>
+
+  <nav aria-label="Блоки зарядки">
+    <div class="strip" id="strip">
+      <a href="#b-joints" style="--m:3" data-b="joints"><b>3 мин</b><span>Суставы</span></a>
+      <a href="#b-back" style="--m:3" data-b="back"><b>3 мин</b><span>Спина</span></a>
+      <a href="#b-stretch" style="--m:3" data-b="stretch"><b>3 мин</b><span>Растяжка</span></a>
+      <a href="#b-abs" style="--m:4" data-b="abs"><b>4 мин</b><span>Живот</span></a>
+      <a href="#b-cool" style="--m:2" data-b="cool"><b>2 мин</b><span>Заминка</span></a>
+    </div>
+    <p class="progress" id="progress" style="margin-top:8px">Отмечайте блоки по мере выполнения.</p>
+  </nav>
+
+  <div class="legend" aria-label="Обозначения на схемах">
+    <span><i></i>тело</span>
+    <span><i class="m"></i>что двигается или растягивается</span>
+  </div>
+
+  <div class="minimum">
+    <h2>Если совсем нет сил</h2>
+    <p>Сделайте только блок 1 и «кошку-корову» из блока 2. Это 5 минут, и день всё равно начнётся с движения.</p>
+  </div>
+
+  <!-- 1. СУСТАВЫ -->
+  <section class="block" id="b-joints">
+    <div class="block-head">
+      <h2>1. Суставы</h2><span class="mins">3 минуты</span>
+      <label><input type="checkbox" data-b="joints"> Сделал</label>
+    </div>
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Фигура спереди, суставы отмечены точками">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="120" cy="24" r="12"/>
+            <path class="b" d="M120 40 V85 M96 46 H144 M96 46 L84 68 L80 92 M144 46 L156 68 L160 92 M110 85 H130 M110 85 L108 112 L108 138 M130 85 L132 112 L132 138"/>
+            <circle class="j" cx="120" cy="40" r="5"/>
+            <circle class="j" cx="96" cy="46" r="5"/><circle class="j" cx="144" cy="46" r="5"/>
+            <circle class="j" cx="84" cy="68" r="5"/><circle class="j" cx="156" cy="68" r="5"/>
+            <circle class="j" cx="80" cy="92" r="5"/><circle class="j" cx="160" cy="92" r="5"/>
+            <circle class="j" cx="110" cy="85" r="5"/><circle class="j" cx="130" cy="85" r="5"/>
+            <circle class="j" cx="108" cy="112" r="5"/><circle class="j" cx="132" cy="112" r="5"/>
+            <circle class="j" cx="108" cy="138" r="5"/><circle class="j" cx="132" cy="138" r="5"/>
+          </svg>
+          <figcaption>Оранжевые точки: что разминаем</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Круги по суставам, сверху вниз</h3>
+        <p class="dose">По 20–30 секунд на каждый</p>
+        <ul>
+          <li>шея</li><li>плечи</li><li>локти</li><li>кисти</li><li>таз</li><li>колени</li><li>стопы</li>
+        </ul>
+        <p class="cue">Медленно, в обе стороны. Без рывков.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 2. СПИНА -->
+  <section class="block" id="b-back">
+    <div class="block-head">
+      <h2>2. Спина</h2><span class="mins">3 минуты</span>
+      <label><input type="checkbox" data-b="back"> Сделал</label>
+    </div>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Кошка: спина выгнута вверх, голова опущена">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M70 85 V132 L40 132 M150 85 V132 M150 85 L158 97"/>
+            <path class="a" d="M70 85 Q110 50 150 85"/>
+            <circle class="h" cx="165" cy="104" r="9"/>
+          </svg>
+          <figcaption>Кошка: выдох</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Корова: спина прогнута вниз, голова поднята">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M70 85 V132 L40 132 M150 85 V132 M150 85 L162 76"/>
+            <path class="a" d="M70 85 Q110 108 150 85"/>
+            <circle class="h" cx="170" cy="68" r="9"/>
+          </svg>
+          <figcaption>Корова: вдох</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>«Кошка-корова»</h3>
+        <p class="dose">10 раз</p>
+        <p class="cue">На четвереньках: ладони под плечами, колени под тазом. На выдохе округлите спину, на вдохе прогнитесь.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Нитка в иголку: стартовое положение, одна рука поднята вверх">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M70 85 V132 L40 132 M70 85 H150 M150 85 V132 M150 85 L158 80"/>
+            <path class="a" d="M150 85 V36"/>
+            <circle class="h" cx="167" cy="76" r="9"/>
+          </svg>
+          <figcaption>Рука вверх</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Нитка в иголку: рука проведена под корпусом, плечо опущено">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M70 85 V132 L40 132 M70 85 L140 102 M140 102 L138 132 M140 102 L148 108"/>
+            <path class="a" d="M140 102 Q124 126 98 129"/>
+            <circle class="h" cx="158" cy="114" r="9"/>
+          </svg>
+          <figcaption>Рука под корпус</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>«Нитка в иголку»</h3>
+        <p class="dose">По 5 раз в каждую сторону</p>
+        <p class="cue">Из упора на четвереньках поднимите руку вверх вслед за взглядом, затем проведите её под корпусом и опустите плечо к полу.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Стоя, спина прямая">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="100" cy="24" r="10"/>
+            <path class="b" d="M100 36 V82 M100 44 L104 80 M100 82 V138 L118 138"/>
+          </svg>
+          <figcaption>Стоя</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Наклон вперёд с круглой спиной, руки свободно висят">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M100 82 V138 L118 138 M132 108 L140 136"/>
+            <path class="a" d="M100 82 Q138 78 132 108"/>
+            <circle class="h" cx="127" cy="121" r="9"/>
+          </svg>
+          <figcaption>Позвонок за позвонком вниз</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Наклон вперёд с круглой спиной</h3>
+        <p class="dose">5–8 раз плавно</p>
+        <p class="cue">Опускайтесь по одному позвонку, голова и руки тяжёлые. Вставайте так же медленно, обратно. Колени чуть мягкие.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 3. РАСТЯЖКА -->
+  <section class="block" id="b-stretch">
+    <div class="block-head">
+      <h2>3. Растяжка</h2><span class="mins">3 минуты</span>
+      <label><input type="checkbox" data-b="stretch"> Сделал</label>
+    </div>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Выпад: задняя нога опущена на колено, бедро растягивается">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="100" cy="40" r="10"/>
+            <path class="b" d="M100 52 V105 M100 62 L140 103 M100 105 H150 V138 L168 138"/>
+            <path class="a" d="M100 105 L62 138 L22 138"/>
+          </svg>
+          <figcaption>Бедро и пах задней ноги тянутся</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Выпад: растяжка сгибателей бедра</h3>
+        <p class="dose">По 30 секунд на каждую ногу</p>
+        <p class="cue">Заднее колено на полу, корпус прямой. Слегка подайте таз вперёд, пока не почувствуете растяжение спереди бедра.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Наклон к ногам с прямыми ногами, руки тянутся к стопам">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M100 82 V138 L118 138 M140 112 L142 136"/>
+            <path class="a" d="M100 82 L140 112"/>
+            <circle class="h" cx="148" cy="125" r="8"/>
+          </svg>
+          <figcaption>Ноги прямые, тянемся к стопам</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Наклон к ногам</h3>
+        <p class="dose">30 секунд</p>
+        <p class="cue">Наклон идёт от таза, а не от поясницы. Тянитесь макушкой вперёд, дышите ровно. Не пружиньте.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Собака мордой вниз: таз высоко, тело в форме перевёрнутой буквы V">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M45 138 L130 50"/>
+            <path class="a" d="M130 50 L205 138"/>
+            <circle class="h" cx="96" cy="112" r="9"/>
+          </svg>
+          <figcaption>Таз вверх, пятки к полу</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>«Собака мордой вниз»</h3>
+        <p class="dose">30 секунд</p>
+        <p class="cue">Толкайте пол руками, таз тяните вверх и назад. Если задняя поверхность бёдер тянет сильно, слегка согните колени.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 4. ЖИВОТ -->
+  <section class="block" id="b-abs">
+    <div class="block-head">
+      <h2>4. Живот</h2><span class="mins">4 минуты</span>
+      <label><input type="checkbox" data-b="abs"> Сделал</label>
+    </div>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Планка на прямых руках: тело одной прямой линией">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="47" cy="91" r="9"/>
+            <path class="b" d="M62 96 V138 M192 137 L206 137"/>
+            <path class="a" d="M62 96 L192 137"/>
+          </svg>
+          <figcaption>Голова, спина и пятки в одну линию</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Планка</h3>
+        <p class="dose">30–40 секунд, 2 подхода</p>
+        <p class="cue">Живот втянут, ягодицы напряжены, таз не провисает и не торчит вверх. Дышите, не задерживая дыхание.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Лёжа на спине, ноги согнуты над тазом">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="26" cy="130" r="9"/>
+            <path class="b" d="M38 130 H112 M42 137 H88"/>
+            <path class="a" d="M112 130 V88 L152 88"/>
+          </svg>
+          <figcaption>Колени над тазом</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Таз поднят от пола, колени приближены к груди">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="26" cy="130" r="9"/>
+            <path class="b" d="M38 130 H100 M42 137 H88"/>
+            <path class="a" d="M100 130 L116 118 L92 88 L130 88"/>
+          </svg>
+          <figcaption>Таз отрывается от пола</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Обратные скручивания</h3>
+        <p class="dose">12 раз</p>
+        <p class="cue">Подтяните колени к груди и оторвите таз от пола за счёт низа живота, не раскачиваясь. Вниз медленно.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Мёртвый жук: руки вверх, ноги согнуты">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="46" cy="130" r="9"/>
+            <path class="b" d="M58 130 H130 M70 130 V72 M130 130 V88 L170 88"/>
+          </svg>
+          <figcaption>Руки вверх, колени 90°</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Одна рука отведена назад, противоположная нога вытянута">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="46" cy="130" r="9"/>
+            <path class="b" d="M58 130 H130 M70 130 V72 M130 130 V88 L170 88"/>
+            <path class="a" d="M70 130 L30 100 M130 130 L206 136"/>
+          </svg>
+          <figcaption>Рука назад, противоположная нога вперёд</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>«Мёртвый жук»</h3>
+        <p class="dose">10 раз на каждую сторону</p>
+        <p class="cue">Одновременно опускайте одну руку за голову и вытягивайте противоположную ногу. Поясница прижата к полу. Затем смените сторону.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Боковая планка: тело в одну линию, верхняя рука поднята">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="47" cy="91" r="9"/>
+            <path class="b" d="M62 96 V138 M192 137 L206 137"/>
+            <path class="a" d="M62 96 L192 137 M62 96 V46"/>
+          </svg>
+          <figcaption>Таз приподнят, верхняя рука вверх</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Боковая планка</h3>
+        <p class="dose">По 20 секунд на каждую сторону</p>
+        <p class="cue">Упор на предплечье под плечом. Тело одной линией, таз не проваливается. Если тяжело, опустите нижнее колено на пол.</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 5. ЗАМИНКА -->
+  <section class="block" id="b-cool">
+    <div class="block-head">
+      <h2>5. Заминка</h2><span class="mins">2 минуты</span>
+      <label><input type="checkbox" data-b="cool"> Сделал</label>
+    </div>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Поза ребёнка: таз на пятках, корпус опущен вперёд, руки вытянуты">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <path class="b" d="M80 116 L122 136 L62 138"/>
+            <path class="a" d="M80 116 L136 124 M136 120 L212 126"/>
+            <circle class="h" cx="148" cy="135" r="8"/>
+          </svg>
+          <figcaption>Таз к пяткам, лоб к полу</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Поза ребёнка</h3>
+        <p class="dose">30 секунд</p>
+        <p class="cue">Расслабьте шею и плечи, вытяните руки вперёд, дышите в поясницу.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Бабочка: сидя, подошвы вместе, колени разведены">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="120" cy="30" r="11"/>
+            <path class="b" d="M120 42 V100 M120 52 L104 96 L112 128 M120 52 L136 96 L128 128"/>
+            <path class="a" d="M120 100 L78 126 L118 134 M120 100 L162 126 L122 134"/>
+          </svg>
+          <figcaption>Подошвы вместе, колени вниз</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>«Бабочка»</h3>
+        <p class="dose">30 секунд</p>
+        <p class="cue">Сядьте, подошвы сведите вместе, колени мягко опускайте к полу. Спина длинная, плечи вниз.</p>
+      </div>
+    </article>
+
+    <article class="ex">
+      <div class="figs">
+        <figure>
+          <svg viewBox="0 0 240 150" role="img" aria-label="Глубокое дыхание: сидя, вокруг груди дуги, показывающие вдох и выдох">
+            <line class="g" x1="10" y1="141" x2="230" y2="141"/>
+            <circle class="h" cx="120" cy="30" r="11"/>
+            <path class="b" d="M120 42 V100 M120 52 L104 96 L112 128 M120 52 L136 96 L128 128 M120 100 L78 126 L118 134 M120 100 L162 126 L122 134"/>
+            <path class="a" d="M92 58 Q82 72 92 88 M148 58 Q158 72 148 88 M80 54 Q64 72 80 92 M160 54 Q176 72 160 92"/>
+          </svg>
+          <figcaption>Грудная клетка расширяется на вдохе</figcaption>
+        </figure>
+      </div>
+      <div class="txt">
+        <h3>Глубокий вдох и выдох</h3>
+        <p class="dose">Оставшееся время</p>
+        <p class="cue">Вдох носом, медленный выдох ртом. Выдох делайте длиннее вдоха.</p>
+      </div>
+    </article>
+  </section>
+
+  <p class="progression"><b>Как прогрессировать.</b> Первые две недели делайте один круг. Потом добавляйте по 10 секунд к планке и по 2–3 повтора к остальным упражнениям.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
