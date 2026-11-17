@@ -14,28 +14,32 @@
 <body>
 <main>
   <header data-speak>
-    <a class="back" href="index.html">← Все программы</a>
-    <p class="eyebrow">Чтение · 21:00 · 20 минут в день</p>
-    <h1>Список чтения: рост до tech lead</h1>
-    <p class="lead" data-say>Бесплатные материалы в порядке чтения. Они нужны для роста до <span lang="en">tech lead</span> и для разговора о зарплате. Описания составлены по названиям и по каталогу free-programming-books, книги целиком не прочитаны, поэтому сначала пролистайте оглавление. Сайт <span lang="en">staffeng.com</span> добавлен по памяти и не проверялся.</p>
+    <a class="back" href="index.html" data-en="← All programs">← Все программы</a>
+    <p class="eyebrow" data-en="Reading · 21:00 · 20 minutes a day">Чтение · 21:00 · 20 минут в день</p>
+    <h1 data-en="Reading list: growing to tech lead">Список чтения: рост до tech lead</h1>
+    <p class="lead" data-say data-en="Free materials in reading order, for growing to tech lead and for salary conversations. The summaries are built from chapter outlines and the authors' own descriptions. The books were not read in full, so skim the table of contents first.">Бесплатные материалы в порядке чтения. Они нужны для роста до <span lang="en">tech lead</span> и для разговора о зарплате. Пересказы составлены по оглавлениям глав и описаниям авторов, книги целиком не прочитаны, поэтому сначала пролистайте оглавление.</p>
   </header>
 
   <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
     <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
     <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
     <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <div class="langsw" role="group" aria-label="Язык страницы и озвучки">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
     <details class="sp-more">
-      <summary>Скорость и голос</summary>
+      <summary data-en="Speed and voice">Скорость и голос</summary>
       <div class="sp-opts">
-        <label>Скорость
+        <label><span data-en="Speed">Скорость</span>
           <select id="sp-rate">
-            <option value="0.8">Медленно</option>
-            <option value="1" selected>Обычная</option>
-            <option value="1.2">Быстрее</option>
-            <option value="1.5">Быстро</option>
+            <option value="0.8" data-en="Slow">Медленно</option>
+            <option value="1" data-en="Normal" selected>Обычная</option>
+            <option value="1.2" data-en="Faster">Быстрее</option>
+            <option value="1.5" data-en="Fast">Быстро</option>
           </select>
         </label>
-        <label>Голос
+        <label><span data-en="Russian voice">Русский голос</span>
           <select id="sp-voice"></select>
         </label>
       </div>
@@ -49,10 +53,17 @@
       <h2 data-say><span lang="en">How to Stand Out as a Software Engineer</span></h2>
       <button type="button" class="speak-btn">▶ Слушать</button>
     </div>
-    <p class="meta" data-say>Автор: <span lang="en">Landry Monga</span>. Язык: английский. Бесплатно, PDF.</p>
-    <p data-say>Ближе всего к вашей цели: как выделяться среди инженеров, то есть основа для повышения и разговора о зарплате.</p>
-    <p data-say>Начните отсюда. Сначала пролистайте оглавление и отметьте главы, которые нужны сейчас. Читайте по 20 минут в день. В конце записывайте одну мысль, которую примените на работе завтра.</p>
-    <a class="link" href="https://github.com/lvndry/how-to-stand-out-as-a-software-engineer/blob/main/how_to_stand_out_as_a_software_engineer.pdf" target="_blank" rel="noopener">Открыть PDF ↗</a>
+    <p class="meta" data-say data-en="Author: Landry Monga. Language: English. Free, PDF and online.">Автор: <span lang="en">Landry Monga</span>. Язык: английский. Бесплатно, PDF и онлайн.</p>
+    <p data-say data-en="Closest to your goal: how to stand out among engineers, which is the basis for promotion and salary talks.">Ближе всего к вашей цели: как выделяться среди инженеров, то есть основа для повышения и разговора о зарплате.</p>
+    <p data-say data-en="Start here. Skim the table of contents first and mark the chapters you need now. Read 20 minutes a day, and finish each session by writing down one idea to apply at work tomorrow.">Начните отсюда. Сначала пролистайте оглавление и отметьте главы, которые нужны сейчас. Читайте по 20 минут в день. В конце записывайте одну мысль, которую примените на работе завтра.</p>
+    <div class="sum">
+      <p class="sum-h" data-say data-en="Short summary">Краткий пересказ</p>
+      <p data-say data-en="The author collected the experience that helped land a job at a top company and stand out in a competitive industry. The advice is practical and meant for engineers at any career stage.">Автор собрал опыт, который помог попасть в сильную компанию и выделиться в конкурентной отрасли. Советы практические, для инженеров на любом этапе карьеры.</p>
+    </div>
+    <div class="links">
+      <a class="link" href="https://github.com/lvndry/how-to-stand-out-as-a-software-engineer/blob/main/how_to_stand_out_as_a_software_engineer.pdf" target="_blank" rel="noopener" data-en="Open PDF ↗">Открыть PDF ↗</a>
+      <a class="link" href="https://gem-asparagus-164.notion.site/How-to-stand-out-as-a-software-engineer-ee33eafaefe247a7aebccf55b54fac94?pvs=4" target="_blank" rel="noopener" data-en="Read online ↗">Читать онлайн ↗</a>
+    </div>
   </article>
 
   <article class="book" data-speak>
@@ -61,10 +72,25 @@
       <h2 data-say><span lang="en">Software Engineering at Google</span></h2>
       <button type="button" class="speak-btn">▶ Слушать</button>
     </div>
-    <p class="meta" data-say>Авторы: <span lang="en">Titus Winters, Tom Manshreck, Hyrum Wright</span>. Язык: английский. Бесплатно, читать онлайн.</p>
-    <p data-say>Как устроены командная работа и руководство в большой инженерной компании. Это взгляд, который нужен <span lang="en">tech lead</span>.</p>
-    <p data-say>Не читайте подряд. Возьмите четыре главы: <span lang="en">How to Work Well on Teams</span>, <span lang="en">Knowledge Sharing</span>, <span lang="en">How to Lead a Team</span> и <span lang="en">Leading at Scale</span>. Их хватит на две недели.</p>
-    <a class="link" href="https://abseil.io/resources/swe-book" target="_blank" rel="noopener">Открыть книгу ↗</a>
+    <p class="meta" data-say data-en="Authors: Titus Winters, Tom Manshreck, Hyrum Wright. Language: English. Free, read online.">Авторы: <span lang="en">Titus Winters, Tom Manshreck, Hyrum Wright</span>. Язык: английский. Бесплатно, читать онлайн.</p>
+    <p data-say data-en="How teamwork and leadership work in a large engineering company. This is the view a tech lead needs.">Как устроены командная работа и руководство в большой инженерной компании. Это взгляд, который нужен <span lang="en">tech lead</span>.</p>
+    <p data-say data-en="Don't read it front to back. Take four chapters: How to Work Well on Teams, Knowledge Sharing, How to Lead a Team and Leading at Scale. They fit into two weeks.">Не читайте подряд. Возьмите четыре главы: <span lang="en">How to Work Well on Teams</span>, <span lang="en">Knowledge Sharing</span>, <span lang="en">How to Lead a Team</span> и <span lang="en">Leading at Scale</span>. Их хватит на две недели.</p>
+    <div class="sum">
+      <p class="sum-h" data-say data-en="Short summary of the four chapters">Краткий пересказ четырёх глав</p>
+      <ul>
+        <li data-say data-en="Chapter 2, working in a team. Don't hide your code or play the lone genius. Teamwork rests on three pillars: humility, respect and trust. Take criticism calmly and review failures without hunting for someone to blame.">Глава 2, работа в команде. Не прячьте код и не изображайте гения-одиночку. Командная работа держится на трёх опорах: скромность, уважение и доверие. Спокойно принимайте критику, сбои разбирайте без поиска виноватых.</li>
+        <li data-say data-en="Chapter 3, knowledge sharing. Psychological safety comes first: people must not be afraid to ask. Put questions to the wider community, not only the colleague at the next desk. Share what you know through documentation, talks and office hours.">Глава 3, обмен знаниями. Сначала психологическая безопасность: людям нельзя бояться спрашивать. Задавайте вопросы сообществу, а не только соседу по столу. Делитесь знаниями через документацию, доклады и часы консультаций.</li>
+        <li data-say data-en="Chapter 5, leading a team. The difference between an engineering manager, a tech lead and a mix of both. Leadership as serving the team. Typical mistakes: hiring pushovers, ignoring weak performance, ignoring people problems, trying to be everyone's friend, lowering the hiring bar, treating the team like children. Useful habits: remove roadblocks, set clear goals, be honest, teach and mentor.">Глава 5, как вести команду. Чем отличаются инженерный менеджер, <span lang="en">tech lead</span> и совмещение ролей. Лидерство как служение команде. Типичные ошибки: брать слабых, не замечать слабую работу, игнорировать людские проблемы, дружить со всеми, занижать планку найма, опекать как детей. Полезные привычки: убирать препятствия, ставить ясные цели, быть честным, учить и наставлять.</li>
+        <li data-say data-en="Chapter 6, leading at scale. Keep deciding: look for blind spots, weigh trade-offs, decide and then iterate. Keep preparing to step away: build a team that runs without you. Keep scaling yourself: separate the important from the urgent, learn to drop some tasks, protect your energy.">Глава 6, лидерство в масштабе. Постоянно принимайте решения: ищите слепые зоны, взвешивайте компромиссы, решайте и дорабатывайте. Постоянно готовьте почву, чтобы команда работала без вас. Постоянно масштабируйте себя: отделяйте важное от срочного, учитесь отпускать задачи, берегите энергию.</li>
+      </ul>
+    </div>
+    <div class="links">
+      <a class="link" href="https://abseil.io/resources/swe-book/html/toc.html" target="_blank" rel="noopener" data-en="Table of contents ↗">Оглавление ↗</a>
+      <a class="link" href="https://abseil.io/resources/swe-book/html/ch02.html" target="_blank" rel="noopener" data-en="Chapter 2 ↗">Глава 2 ↗</a>
+      <a class="link" href="https://abseil.io/resources/swe-book/html/ch03.html" target="_blank" rel="noopener" data-en="Chapter 3 ↗">Глава 3 ↗</a>
+      <a class="link" href="https://abseil.io/resources/swe-book/html/ch05.html" target="_blank" rel="noopener" data-en="Chapter 5 ↗">Глава 5 ↗</a>
+      <a class="link" href="https://abseil.io/resources/swe-book/html/ch06.html" target="_blank" rel="noopener" data-en="Chapter 6 ↗">Глава 6 ↗</a>
+    </div>
   </article>
 
   <article class="book" data-speak>
@@ -73,10 +99,16 @@
       <h2 data-say><span lang="en">Succeed In Software</span></h2>
       <button type="button" class="speak-btn">▶ Слушать</button>
     </div>
-    <p class="meta" data-say>Автор: <span lang="en">Sean Cannon</span>. Язык: английский. Бесплатно, PDF и ePUB.</p>
-    <p data-say>Руководство по карьере в разработке: как расти от уровня к уровню.</p>
-    <p data-say>Читайте как справочник по этапам: что требуется на вашем уровне и что на следующем. Формат ePUB удобен для телефона и для чтения вслух.</p>
-    <a class="link" href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">Открыть на GitHub ↗</a>
+    <p class="meta" data-say data-en="Author: Sean Cannon. Language: English. Free, PDF and ePUB.">Автор: <span lang="en">Sean Cannon</span>. Язык: английский. Бесплатно, PDF и ePUB.</p>
+    <p data-say data-en="A career guide for developers: how to grow from level to level.">Руководство по карьере в разработке: как расти от уровня к уровню.</p>
+    <p data-say data-en="Read it as a reference by stage: what is required at your level and at the next one. The ePUB format is handy on a phone and for reading aloud.">Читайте как справочник по этапам: что требуется на вашем уровне и что на следующем. Формат ePUB удобен для телефона и для чтения вслух.</p>
+    <div class="sum">
+      <p class="sum-h" data-say data-en="Short summary">Краткий пересказ</p>
+      <p data-say data-en="By the author's own description, the topics are: traits of strong developers, stable and maintainable code, testing, documentation and version control, functional style and clean code, teamwork, mentoring and career growth.">По описанию автора, темы такие: качества сильных разработчиков, устойчивый и поддерживаемый код, тесты, документация и контроль версий, функциональный подход и чистый код, работа в команде, наставничество и рост карьеры.</p>
+    </div>
+    <div class="links">
+      <a class="link" href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener" data-en="Open on GitHub ↗">Открыть на GitHub ↗</a>
+    </div>
   </article>
 
   <article class="book" data-speak>
@@ -85,10 +117,12 @@
       <h2 data-say><span lang="en">How to Do What You Love &amp; Earn What You’re Worth as a Programmer</span></h2>
       <button type="button" class="speak-btn">▶ Слушать</button>
     </div>
-    <p class="meta" data-say>Автор: <span lang="en">Reginald Braithwaite</span>. Язык: английский. Бесплатно, читать онлайн.</p>
-    <p data-say>По названию книга про деньги: как оценивать свою работу и вести разговор о зарплате.</p>
-    <p data-say>Откройте перед разговором о повышении, а не раньше.</p>
-    <a class="link" href="https://leanpub.com/dowhatyoulove/read" target="_blank" rel="noopener">Читать онлайн ↗</a>
+    <p class="meta" data-say data-en="Author: Reginald Braithwaite. Language: English. Free, read online.">Автор: <span lang="en">Reginald Braithwaite</span>. Язык: английский. Бесплатно, читать онлайн.</p>
+    <p data-say data-en="By its title the book is about money: how to value your work and hold a salary conversation.">По названию книга про деньги: как оценивать свою работу и вести разговор о зарплате.</p>
+    <p data-say data-en="Open it before a promotion conversation, not earlier.">Откройте перед разговором о повышении, а не раньше.</p>
+    <div class="links">
+      <a class="link" href="https://leanpub.com/dowhatyoulove/read" target="_blank" rel="noopener" data-en="Read online ↗">Читать онлайн ↗</a>
+    </div>
   </article>
 
   <article class="book" data-speak>
@@ -97,41 +131,55 @@
       <h2 data-say><span lang="en">staffeng.com</span></h2>
       <button type="button" class="speak-btn">▶ Слушать</button>
     </div>
-    <p class="meta" data-say>Автор: <span lang="en">Will Larson</span> и другие. Язык: английский. Бесплатно, сайт.</p>
-    <p data-say>Истории инженеров, которые дошли до уровня staff, и разбор самой роли. Это бесплатная часть материалов автора книги <span lang="en">Staff Engineer</span>.</p>
-    <p data-say>По одной истории в субботу, 10–15 минут. Читайте с вопросом: что из этого можно сделать уже сейчас.</p>
-    <a class="link" href="https://staffeng.com" target="_blank" rel="noopener">Открыть сайт ↗</a>
+    <p class="meta" data-say data-en="Author: Will Larson and others. Language: English. Free, website.">Автор: <span lang="en">Will Larson</span> и другие. Язык: английский. Бесплатно, сайт.</p>
+    <p data-say data-en="Stories of engineers who reached the staff level and a breakdown of the role itself. This is the free part of the material from the author of the book Staff Engineer.">Истории инженеров, которые дошли до уровня <span lang="en">staff</span>, и разбор самой роли. Это бесплатная часть материалов автора книги <span lang="en">Staff Engineer</span>.</p>
+    <p data-say data-en="One story on Saturday, 10 to 15 minutes. Read with a question in mind: what of this can I do right now.">По одной истории в субботу, 10–15 минут. Читайте с вопросом: что из этого можно сделать уже сейчас.</p>
+    <div class="sum">
+      <p class="sum-h" data-say data-en="Short summary">Краткий пересказ</p>
+      <p data-say data-en="From the site's front page: stories of staff and principal engineers, plus guides on working on what matters, staying aligned with leadership, promotion packets, managing technical quality and engineering strategy. The promotion packet guide is useful for a salary conversation.">По главной странице сайта: истории инженеров уровней <span lang="en">staff</span> и <span lang="en">principal</span> и руководства: работать над важным, оставаться согласованным с руководством, готовить пакет на повышение, следить за техническим качеством, инженерная стратегия. Руководство про пакет на повышение пригодится для разговора о зарплате.</p>
+    </div>
+    <div class="links">
+      <a class="link" href="https://staffeng.com" target="_blank" rel="noopener" data-en="Open the site ↗">Открыть сайт ↗</a>
+    </div>
   </article>
 
   <article class="book paid" data-speak>
     <div class="book-head">
       <span class="num" aria-hidden="true">+</span>
-      <h2 data-say>Платные, на потом</h2>
+      <h2 data-say data-en="Paid, for later">Платные, на потом</h2>
       <button type="button" class="speak-btn">▶ Слушать</button>
     </div>
-    <p data-say><span lang="en">Deep Work</span>, <span lang="en">Cal Newport</span>: как работать сосредоточенно. Пригодится на любом уровне.</p>
-    <p data-say><span lang="en">Staff Engineer</span>, <span lang="en">Will Larson</span>: путь на уровень выше senior.</p>
-    <p data-say>Покупайте, если бесплатные пошли и захочется глубже. Заранее проверьте, есть ли аудиоверсия: слушать такие книги проще, чем читать.</p>
+    <p data-say data-en="Deep Work, Cal Newport: how to work with sustained focus. Useful at any level."><span lang="en">Deep Work</span>, <span lang="en">Cal Newport</span>: как работать сосредоточенно. Пригодится на любом уровне.</p>
+    <p data-say data-en="Staff Engineer, Will Larson: the path to the level above senior."><span lang="en">Staff Engineer</span>, <span lang="en">Will Larson</span>: путь на уровень выше <span lang="en">senior</span>.</p>
+    <p data-say data-en="Buy them if the free ones work for you and you want to go deeper. Check in advance whether an audio version exists: listening to such books is easier than reading them.">Покупайте, если бесплатные пошли и захочется глубже. Заранее проверьте, есть ли аудиоверсия: слушать такие книги проще, чем читать.</p>
   </article>
 
   <div class="rules">
     <div data-speak>
-      <h3 data-say>Режим</h3>
+      <h3 data-say data-en="Schedule">Режим</h3>
       <ul>
-        <li data-say>Понедельник–пятница, 21:00, 20 минут.</li>
-        <li data-say>Недели 1 и 2: книга 1.</li>
-        <li data-say>Недели 3 и 4: четыре главы из книги 2.</li>
-        <li data-say>Недели 5 и 6: книга 3.</li>
-        <li data-say>Суббота: одна история со <span lang="en">staffeng.com</span>.</li>
-        <li data-say>Книга 4: перед разговором о повышении.</li>
+        <li data-say data-en="Monday to Friday, 21:00, 20 minutes.">Понедельник–пятница, 21:00, 20 минут.</li>
+        <li data-say data-en="Weeks 1 and 2: book 1.">Недели 1 и 2: книга 1.</li>
+        <li data-say data-en="Weeks 3 and 4: four chapters of book 2.">Недели 3 и 4: четыре главы из книги 2.</li>
+        <li data-say data-en="Weeks 5 and 6: book 3.">Недели 5 и 6: книга 3.</li>
+        <li data-say data-en="Saturday: one story from staffeng.com.">Суббота: одна история со <span lang="en">staffeng.com</span>.</li>
+        <li data-say data-en="Book 4: before the promotion conversation.">Книга 4: перед разговором о повышении.</li>
       </ul>
     </div>
     <div data-speak>
-      <h3 data-say>Как слушать, а не читать</h3>
+      <h3 data-say data-en="Listening instead of reading">Как слушать, а не читать</h3>
       <ul>
-        <li data-say>Кнопки на этой странице читают русский текст, названия на английском читает английский голос, если он установлен.</li>
-        <li data-say>Сами книги на английском: откройте PDF или страницу в Microsoft Edge и нажмите Ctrl+Shift+U. Читает вслух естественными голосами и подсвечивает слова.</li>
-        <li data-say>Телефон: включите «Проговаривание экрана» на iPhone или «Озвучивание при нажатии» на Android.</li>
+        <li data-say data-en="The buttons on this page read the text in the selected language: a Russian voice in RU mode and an English voice in EN mode, if one is installed.">Кнопки на странице читают текст на выбранном языке: русским голосом в режиме RU и английским в режиме EN, если голос установлен.</li>
+        <li data-say data-en="The books themselves are in English: open the PDF or the page in Microsoft Edge and press Ctrl+Shift+U. It reads aloud with natural voices and highlights the words.">Сами книги на английском: откройте PDF или страницу в Microsoft Edge и нажмите Ctrl+Shift+U. Читает вслух естественными голосами и подсвечивает слова.</li>
+        <li data-say data-en="Phone: turn on Speak Screen on iPhone or Select to Speak on Android.">Телефон: включите «Проговаривание экрана» на iPhone или «Озвучивание при нажатии» на Android.</li>
+      </ul>
+    </div>
+    <div data-speak>
+      <h3 data-say data-en="Russian text of the books">Русский текст книг</h3>
+      <ul>
+        <li data-say data-en="A full translation is not included here: the free books are published under a licence that forbids distributing translations. So this page has summaries of the chapters instead.">Полного перевода здесь нет: бесплатные книги выпущены под лицензией, которая запрещает распространять переводы. Поэтому на странице пересказ глав.</li>
+        <li data-say data-en="For yourself, you can translate the original in the browser. In Microsoft Edge open the English page, such as the online book or staffeng.com, choose translation to Russian in the address bar, then press Ctrl+Shift+U. A Russian voice will read the page.">Для себя оригинал можно перевести в браузере. В Microsoft Edge откройте английскую страницу, например онлайн-версию книги или <span lang="en">staffeng.com</span>, выберите перевод на русский в адресной строке и нажмите Ctrl+Shift+U. Страницу прочитает русский голос.</li>
+        <li data-say data-en="A PDF can be translated on the Documents tab of Google Translate. Keep the translated file for yourself and do not publish it.">PDF переводит вкладка «Документы» в Google Переводчике. Переведённый файл оставьте себе и не публикуйте.</li>
       </ul>
     </div>
   </div>

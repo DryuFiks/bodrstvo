@@ -162,7 +162,7 @@
   button.sp.main { background: var(--accent); color: var(--bg); }
   button.sp:disabled { opacity: .45; cursor: default; }
   button.sp:focus-visible, .speak-btn:focus-visible, .speakbar summary:focus-visible, .link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .sp-more { flex-basis: 100%; font-size: 14px; color: var(--muted); }
+  .sp-more { flex: 1 1 150px; font-size: 14px; color: var(--muted); }
   .sp-more summary { cursor: pointer; width: fit-content; padding: 6px 0; }
   .sp-opts { display: flex; flex-wrap: wrap; gap: 8px 16px; padding-top: 6px; }
   .sp-opts label { display: flex; align-items: center; gap: 8px; }
@@ -186,3 +186,11 @@
   }
   .txt .speak-btn { align-self: flex-start; margin-top: 6px; min-height: 40px; }
   .block-head .speak-btn { min-height: 36px; padding: 0 12px; font-size: 13px; }
+  .langsw { display: flex; border: 1px solid var(--accent); border-radius: 999px; overflow: hidden; }
+  .langsw button { font: inherit; font-size: 13px; font-weight: 600; min-height: 42px; min-width: 46px; border: 0; background: transparent; color: var(--accent); cursor: pointer; }
+  .langsw button[aria-pressed="true"] { background: var(--accent); color: var(--bg); }
+  .langsw button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .book .sum { background: var(--fig); border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+  .book .sum .sum-h { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 14px; }
+  .book .sum ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 15px; }
+  .book .links { display: flex; flex-wrap: wrap; gap: 0 16px; }

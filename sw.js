@@ -1,5 +1,5 @@
 // Поднимайте версию, если меняете список файлов ниже.
-var CACHE = "bodr-v3";
+var CACHE = "bodr-v4";
 var FILES = [
   "./", "index.html",
   "01-zaryadka-15-min.html", "02-razminka-sheya-plechi-grud.html",

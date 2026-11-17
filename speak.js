@@ -73,7 +73,7 @@
           walk(c, c.getAttribute("lang") || lang);
         }
       }
-    })(root, "ru");
+    })(root, (root.getAttribute("lang") || "ru").slice(0, 2));
     return out;
   }
   // Режем на куски до 180 знаков: длинные реплики в Chrome обрываются на 15 секундах.
@@ -127,7 +127,7 @@
       if (!/[.!?…:;]$/.test(last.t)) { last.t += "."; }
       var unit = el.closest("[data-speak]") || el;
       segs.forEach(function (s) {
-        chunks(speakText(s.t)).forEach(function (c) { items.push({ t: c, lang: s.lang, el: unit }); });
+        chunks(s.lang === "en" ? s.t : speakText(s.t)).forEach(function (c) { items.push({ t: c, lang: s.lang, el: unit }); });
       });
     });
     return items;
@@ -135,15 +135,46 @@
 
   var queue = [], idx = 0, token = 0, active = null, root = null, playing = false, paused = false, allMode = false;
 
+  // Подписи кнопок. Переключатель RU/EN есть только на странице, где заданы data-en и кнопки [data-lang].
+  var T = {
+    ru: { all: "▶ Слушать всё", allOn: "■ Остановить", pause: "⏸ Пауза", resume: "▶ Продолжить", stop: "■ Стоп", listen: "▶ Слушать" },
+    en: { all: "▶ Listen to all", allOn: "■ Stop all", pause: "⏸ Pause", resume: "▶ Resume", stop: "■ Stop", listen: "▶ Listen" }
+  };
+  var langBtns = Array.prototype.slice.call(document.querySelectorAll("[data-lang]"));
+  var swaps = Array.prototype.slice.call(document.querySelectorAll("[data-en]"));
+  var LKEY = "bodr-lang";
+  var uiLang = "ru";
+  if (langBtns.length) {
+    try { uiLang = localStorage.getItem(LKEY) === "en" ? "en" : "ru"; } catch (e) { uiLang = "ru"; }
+  }
+
   function render() {
-    allBtn.textContent = playing && allMode ? "■ Остановить" : "▶ Слушать всё";
+    var s = T[uiLang];
+    allBtn.textContent = playing && allMode ? s.allOn : s.all;
     pauseBtn.disabled = !playing;
     stopBtn.disabled = !playing;
-    pauseBtn.textContent = paused ? "▶ Продолжить" : "⏸ Пауза";
+    stopBtn.textContent = s.stop;
+    pauseBtn.textContent = paused ? s.resume : s.pause;
     cardBtns.forEach(function (b) {
       var on = playing && !allMode && b.closest("[data-speak]") === root;
-      b.textContent = on ? "■ Стоп" : "▶ Слушать";
+      b.textContent = on ? s.stop : s.listen;
     });
+  }
+  // Подмена текста: русский оригинал запоминается, английский берётся из data-en.
+  function applyLang() {
+    swaps.forEach(function (el) {
+      if (el._ru === undefined) { el._ru = el.innerHTML; }
+      if (uiLang === "en") {
+        el.textContent = el.getAttribute("data-en");
+        el.setAttribute("lang", "en");
+      } else {
+        el.innerHTML = el._ru;
+        el.removeAttribute("lang");
+      }
+    });
+    langBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === uiLang)); });
+    document.documentElement.setAttribute("data-ui", uiLang);
+    render();
   }
   function mark(el) {
     if (active) { active.classList.remove("speaking"); }
@@ -207,6 +238,16 @@
   stopBtn.addEventListener("click", stop);
   rateSel.addEventListener("change", save);
   voiceSel.addEventListener("change", save);
+  langBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      var next = b.getAttribute("data-lang") === "en" ? "en" : "ru";
+      if (next === uiLang) return;
+      stop();
+      uiLang = next;
+      try { localStorage.setItem(LKEY, uiLang); } catch (e) {}
+      applyLang();
+    });
+  });
   window.addEventListener("pagehide", function () { synth.cancel(); });
-  render();
+  if (langBtns.length) { applyLang(); } else { render(); }
 })();
