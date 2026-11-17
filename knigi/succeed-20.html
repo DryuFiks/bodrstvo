@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Seventeen - Comprehensive Analysis: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Seventeen - Comprehensive Analysis</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER SEVENTEEN</h3>
+<h3 class="sub" data-say data-unit>Comprehensive Analysis</h3>
+<p data-say><span class="s">When presented with a new project, we often want to understand what we're getting ourselves into and get a clear picture of the scope and state of things before putting pen to paper.</span></p>
+<p data-say><span class="s">Typically this scenario pops up either when we are freelancing and need to bid on a project which has an existing presence or if we work for an agency and need to help the sales team understand the scope of the work so they can bid and eventually get an SoW in front of the prospect.</span></p>
+<p data-say><span class="s">Bidding on greenfield projects is a very different approach; we won't cover that in this chapter.</span> <span class="s">We typically have much more control over the stack and infrastructure and need to work with the client much more at the product level.</span></p>
+<p data-say><span class="s">Bidding on projects with some established infrastructure presents many questions that need to be answered before you can even think about writing code.</span></p>
+<ul>
+<li data-say><span class="s">Are we replacing the existing product entirely?</span></li>
+<li data-say><span class="s">Are we extending the existing product?</span></li>
+<li data-say><span class="s">Are we making a new product that depends on the existing product?</span></li>
+<li data-say><span class="s">Are we simply upgrading the presentation layer of the existing product?</span></li>
+<li data-say><span class="s">Are we being asked to fix or improve part of the existing product's core infrastructure, like improving security or performance, for example?</span></li>
+</ul>
+<p data-say><span class="s">These are some examples of questions that I would be asking which would lead to follow-up questions like whether or not we need to work on legacy code or if we're going to leverage APIs that talk to the legacy system, and which team would be responsible for developing those endpoints and payload contracts.</span></p>
+<p data-say><span class="s">Ultimately we want to find out the underlying deliverable for which we would be assuming responsibility.</span> <span class="s">We don't have to get this perfect.</span> <span class="s">Still, we do need our SoW to be written in such a way that if the client suddenly expects us to take responsibility for legacy support, the scope and budget are adjusted so we are compensated for our time and materials.</span></p>
+<p data-say><span class="s">When I do a comprehensive analysis for a new project, I always assume the worst possible scenario.</span> <span class="s">A missed detail could end up costing us more money than we earn from the project.</span> <span class="s">Things I want to understand first are typically:</span></p>
+<ul>
+<li data-say><span class="s">Which programming language or languages are we dealing with?</span></li>
+<li data-say><span class="s">Which frameworks or libraries are currently implemented?</span> <span class="s">Have they been maintained, deprecated, or in need of updates?</span> <span class="s">We don't need to necessarily worry about upgrading these tools, and often it's better if we don't and leave them alone because there's a significant risk of introducing regressions.</span> <span class="s">We don't want to deal with that if we don't have to.</span></li>
+<li data-say><span class="s">Is the code under version control?</span> <span class="s">Does it use one of the common ones like Git or Subversion, or is it some custom proprietary thing that will throw a giant learning curve wrench in the ramp-up?</span> <span class="s">Is the code deployed to a self-hosted repo or in the cloud?</span></li>
+</ul>
+<ol>
+<li data-say><span class="s">is a big deal when it comes to developer provisioning.</span> <span class="s">How quickly can we onboard new devs to the project and handle access management?</span> <span class="s">Self-hosted repos often have to be provisioned internally from the client, so we must be aware of process bottlenecks.</span></li>
+</ol>
+<ul>
+<li data-say><span class="s">Is there a content management system (CMS) in place?</span> <span class="s">How is it deployed and managed?</span> <span class="s">Does it have an edit history, or is there a risk of devs clobbering data while we test and build?</span> <span class="s">Is there a sandbox tier, or can we run the CMS locally even?</span> <span class="s">Does the CMS offer an API or generate static files on disk?</span></li>
+</ul>
+<ol>
+<li data-say><span class="s">giant monolith CMS can create development nightmares because replicating the local dev environment becomes extremely difficult.</span> <span class="s">Often we're stuck working with what the client has, so knowing this upfront can help set realistic expectations with prospects.</span></li>
+</ol>
+<ul>
+<li data-say><span class="s">Does the CMS provider offer a docker container that can be run locally?</span> <span class="s">Does it need a license, or can we run it for free?</span></li>
+<li data-say><span class="s">Regardless of whether there is a CMS, can we run the existing product locally and offline?</span> <span class="s">If not, do we need to be on a VPN to work?</span> <span class="s">This can create challenges when we have offshore devs on our team because often, client SecOps put restrictions on onshore IP access only.</span> <span class="s">This may require offshore devs to daisy-chain VPNs and can really slow down deliverables.</span></li>
+<li data-say><span class="s">What databases are in play?</span> <span class="s">Are they SQL?</span> <span class="s">NoSQL?</span> <span class="s">Graph?</span> <span class="s">Is there a data warehouse, and do we need to care about it, or are the backups automated?</span> <span class="s">Is there an ORM being used or raw queries?</span></li>
+<li data-say><span class="s">Are devs allowed to write queries, or do we need to go through a DBA?</span> <span class="s">Is the existing product using database migrations, or how are devs expected to get database table alterations and schema changes deployed?</span></li>
+<li data-say><span class="s">Is the database using any replication?</span> <span class="s">Like CouchDB for a mobile app?</span> <span class="s">Is the existing product a big data app with hundreds of billions of records, and can we work locally with a significantly smaller subset of the data?</span></li>
+<li data-say><span class="s">Is there a cache layer?</span> <span class="s">What kind of cache is being used?</span> <span class="s">An in-memory database like Memcached or Redis?</span> <span class="s">A file cache?</span> <span class="s">Waterfall cache?</span> <span class="s">Are devs able to purge cache, and do we have insight on cache expiration?</span></li>
+</ul>
+<ol>
+<li data-say><span class="s">cache is excellent for end-user experience and keeping database costs down, but it creates development nightmares when we want to troubleshoot things rapidly.</span> <span class="s">We must understand what cache is in play and how much control we have.</span></li>
+</ol>
+<ul>
+<li data-say><span class="s">Which keys are being used in the system?</span> <span class="s">SSH keys, API keys, and so on.</span> <span class="s">Would each developer need their own keys, or would we share keys?</span> <span class="s">How are keys managed so they remain secret?</span> <span class="s">For example, would our code need to make calls to AWS Secrets Manager or something, or can we blindly expect keys to be provided from DevOps through environment variables?</span> <span class="s">Are keys rotated or are they persistent?</span> <span class="s">How should we fetch and refresh keys?</span> <span class="s">Can we subscribe to a refresh event or do we need to poll the secrets store?</span></li>
+<li data-say><span class="s">Are devs able to remotely connect to deployed instances of servers or databases using SSH or other credentials?</span> <span class="s">If not, how are we expected to troubleshoot issues remotely?</span></li>
+<li data-say><span class="s">What kind of logging is being used?</span> <span class="s">Are we allowed to connect to a remote logging service like Splunk or an ELK stack?</span> <span class="s">Does the existing product do trace logging and round-trip logging?</span> <span class="s">Is there any instrumentation in place like New Relic that would complement the logs?</span></li>
+<li data-say><span class="s">How does the existing product handle permissions?</span> <span class="s">Does it use RBAC or another approach?</span> <span class="s">How are roles and permissions created and managed?</span> <span class="s">Are they managed externally through an admin interface, or is it all baked into the code and managed by devs?</span></li>
+<li data-say><span class="s">How does the existing product handle authentication?</span> <span class="s">Does it use JWT or Cookies for sessions?</span> <span class="s">Does it use OAuth or basic auth?</span> <span class="s">Does it use SAML or OICD for single sign-on?</span></li>
+</ul>
+<ol>
+<li data-say><span class="s">always want to understand authentication for apps to assess if our local dev environment can leverage the same authentication strategy if possible.</span> <span class="s">Often I'll see projects where the auth gate only exists on prod--devs and internal staff get a free pass to a non-authenticated experience.</span> <span class="s">This is ok if the auth gate is its own deployed app and is managed by DevOps and SecOps.</span> <span class="s">They can just put the gate in front of whatever URLs they want to and use middleware to check to see whether deployed apps have been gated.</span> <span class="s">However, we still want to understand what's currently in place and whether or not we need to accommodate it.</span></li>
+</ol>
+<p data-say><span class="s">The sample comprehensive analysis I shared above is a guide.</span> <span class="s">Every project is different, so the research for your project may vary.</span> <span class="s">This type of analysis works well for most web projects, but projects in other tech verticals like games or IoT will require additional inquiry.</span> <span class="s">We will want to know if the game supports multiple platforms.</span> <span class="s">We will need to determine if we're expected to build or help finish a new game, or work on DLC or patch releases for an existing game, for example.</span> <span class="s">An IoT project opens up even further inquiries, like if we will be issued a developer's kit or if we're expected to ship hardware back and forth as firmware requirements change.</span></p>
+<p data-say><span class="s">Not all of this knowledge needs to be obtained before bidding on a project, but the analysis can help us decide how to structure our SoW.</span> <span class="s">Typically for freelance projects, I'll sell an initial 8-hour comprehensive analysis SoW--one day to deep dive into their system and ask all these questions I just mentioned.</span> <span class="s">The more unknowns that come from the analysis, the more I'll lean toward time and materials (T&amp;M).</span> <span class="s">If the analysis proves that the project is very straightforward, then I'll consider a fixed bid with a clause that if the scope increases, so will the invoices.</span> <span class="s">I've worked on a project where a competitor charged $200,000 for a three-week comprehensive analysis.</span> <span class="s">Two hundred grand just to get a quote!</span> <span class="s">Always charge for the time you spend on someone else's project.</span> <span class="s">You don't have to be writing code to be spending time.</span></p>
+<p data-say><span class="s">If they don't want to pay me for my time to do the comprehensive analysis, I typically move on because my time is precious.</span> <span class="s">For huge clients like Salesforce or Google, we may want to do a comprehensive analysis on credit because we want to get our foot in the door as quickly as possible.</span> <span class="s">I don't typically recommend ever doing any assessment work for free.</span> <span class="s">Still, depending on the prospect, it may be wise to take a loss if we can use them on our portfolio to gain additional work in the future.</span></p>
+<p data-say><span class="s">If you work for an agency, you'll likely do these kinds of deep dives regularly, and who cares if the prospect pays your agency or not because the agency will pay you either way.</span> <span class="s">There's a lot more pressure, though, because the agency will depend on you to expose as much potential profit leak as possible before they sign an SoW.</span></p>
+<p data-say><span class="s">Your homework for this chapter is to take the list of questions I just covered and answer them for your current project.</span> <span class="s">Don't just answer them from memory.</span> <span class="s">Pretend you were just granted access--where would you need to look to find the answers?</span> <span class="s">Who would you need to ask?</span> <span class="s">Who would you need to ask to learn who else you would need to ask?</span></p>
+<p data-say><span class="s">Don't spend an entire day on this, obviously but feel out the steps involved in doing a deep dive on your own project and see if there's anything I listed that you don't yet know.</span> <span class="s">This could be an excellent opportunity for you to improve your overall understanding of your project.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-19.html">← Chapter Sixteen - Cancerous Traits To Avoid</a>
+    <a href="succeed-21.html">Chapter Eighteen - Security →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

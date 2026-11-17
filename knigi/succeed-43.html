@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Forty - Developer Relationships: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Three - Collaboration · Оригинал на английском</p>
+    <h1 lang="en">Chapter Forty - Developer Relationships</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Less Experienced</a></li><li><a href="#s2" lang="en">Equals</a></li><li><a href="#s3" lang="en">More Experienced</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER FORTY</h3>
+<h3 class="sub" data-say data-unit>Developer Relationships</h3>
+<p data-say><span class="s">This chapter will cover the art of working with other devs.</span> <span class="s">To simplify this, I'm going to leave titles out of it, so don't get caught up so much in Junior, Mid, Senior, Principal, and so on here, but rather let's group the devs into three primary buckets: devs who you feel are less experienced than you, devs who you feel are about where you are, and devs who you feel are more experienced than you.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Less Experienced</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Let's start with less experienced devs.</span> <span class="s">As I mentioned in an earlier chapter, the 80/20 rule suggests that 80% of the devs on any given project will be responsible for delivering 20% of the quality work, and so we consider the 80% to be the entry-level tier of devs.</span> <span class="s">These are typically recent boot camp or college graduates, interns, or, even if they have experience at other companies, maybe they're new to your company or project stack and not contributing at your level.</span></p>
+<p data-say><span class="s">If you're a brand new developer at the bottom of your respective totem pole, that's fine!</span> <span class="s">There's only one direction for you to go: up, my friend!</span> <span class="s">Take this lesson as future advice when you pass up your peers and want to extend your hand behind you.</span></p>
+<p data-say><span class="s">Before we dive in too much, I want to split the less experienced group into two separate groups: devs who recognize they are novices and devs who don't.</span> <span class="s">The former tend to take feedback well, ask intelligent questions, respond to direction, and typically want to collaborate much more than the latter.</span> <span class="s">The latter tend to be stubborn and insist on challenging good with bad ideas because they're so caught up in being right that they forget we're here to get it right.</span> <span class="s">If the team chooses a route better than their approach, they will often act like it's simply an alternative, not an improvement.</span></p>
+<p data-say><span class="s">We ultimately want to champion the novice devs who understand their place.</span> <span class="s">We want to give them opportunities to grow and shine.</span> <span class="s">We want to pair up with them as much as possible and be there for them as the go-to resource anytime they are stuck or want advice on best practices.</span> <span class="s">Why?</span> <span class="s">Because the more devs on our team we can mold into doing things that align with our vision, the easier the team becomes to work with overall.</span> <span class="s">We start creating ambassadors who echo our recommendations.</span> <span class="s">And maybe it's not our vision or our recommendations.</span> <span class="s">Maybe it's that of the CTO even, but cohesion and consistency far outweigh personal preferences almost every time.</span></p>
+<p data-say><span class="s">I've mentioned previously that it's not uncommon for four or five devs on a daily standup to say something like, &quot;Yesterday, Sean helped me with ticket 123&quot; or &quot;Today I'm pairing with Sean on feature XYZ.&quot;</span> <span class="s">Helping these devs not only helps the project succeed, but it'll ultimately come my way to make me look really good to the execs.</span> <span class="s">Helping novice devs succeed makes us look like great leaders, and when it comes time to put devs in leadership positions, it'll be a simple decision for management to look to us as that resource.</span></p>
+<p data-say><span class="s">Regarding that other bucket of devs who lack the skill and don't want to admit it, I tend to simply do what I can to ensure those devs get tickets that don't require the rest of the team to depend on them.</span> <span class="s">For example, when we build APIs for clients, typically someone has to write the Swagger docs, or someone has to write smoke screen tests in Postman, someone has to write the load tests in JMeter, someone has to write the README instructions, and so on.</span> <span class="s">For the front end of website work, someone has to create the React Storybook examples.</span> <span class="s">For bug tickets, we can split them into two tasks--the first is finding and reproducing the bug, and the second is fixing it.</span> <span class="s">We can assign the first part to the problematic devs and the second to the devs we trust.</span></p>
+<p data-say><span class="s">Most devs don't want to do grunt work, and most don't want to work with novice and arrogant devs, so this is a perfect place for those devs to help out.</span> <span class="s">Not only can we carve off work streams for them so they don't lower morale and introduce bugs in our code, but they can also start to grow and get a better understanding of all the moving parts of the system as they're authoring the documentation.</span></p>
+<p data-say><span class="s">It's a win/win whether they realize it or not.</span> <span class="s">If they're novices and arrogant to the point where they're making other devs want to quit, or if they're jeopardizing the quality or integrity of the project, I'll usually do what I can to transition them off the project entirely.</span> <span class="s">These days it's easy for me because I can remove them myself.</span> <span class="s">Even more likely, I won't hire them in the first place because they'll never make it past my interview screening process.</span> <span class="s">Several years ago, when I was in the lower to middle regions of the dev pool, I had no say in who hires who, and I'd have to use the appropriate channels to voice my concerns.</span></p>
+<p data-say><span class="s">Remember, complaining is a slippery slope.</span> <span class="s">Focus on the process, not the person, and, more importantly, accompany your concern with a recommendation for improvement.</span> <span class="s">If you complain with no proposed solution, you can come off as entitled and make yourself look bad.</span> <span class="s">If you complain about a particular dev, management often requires you and the dev to mediate and &quot;work things out.&quot;</span> <span class="s">Your concern needs to be about the velocity of the team's deliverables or the high amount of bug tickets being introduced that are pulling the team off features.</span> <span class="s">Suppose you list a handful of bugs that should never have been created in the first place, and the engineering manager notices that they were all introduced by the same dev.</span> <span class="s">In that case, the manager can have a direct conversation with that dev, and things will likely work out in your favor.</span></p>
+<p data-say><span class="s">The more you grow and shine, the less you have to deal with these devs and the more influence you'll have on how you want to leverage them or not.</span> <span class="s">You can lead by example and influence and inspire devs instead of insisting others change to accommodate your worldview.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Equals</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Let's move on to equals.</span> <span class="s">This group of devs will change as you grow, so you must know where you fit in the mix.</span> <span class="s">For example, when you're junior, your equals are junior, and when you're senior, your equals are senior.</span> <span class="s">Try to recognize other devs on any project who remind you of yourself when you work with them.</span> <span class="s">These are devs whom, if you paired with them on a new feature, either of you could drive or navigate, and the velocity and quality would be indifferent.</span></p>
+<p data-say><span class="s">Equals are my favorite devs to work with because alignment on any project is key to having a powerhouse engineering team.</span> <span class="s">Devs who are equal in capability and experience and equal in process and approach are the best of the best.</span> <span class="s">Regardless if you're both right or wrong about a particular issue or situation, you can both grow and fail together.</span> <span class="s">You can treat these devs as an extension of yourself, where maybe they learn something cool over the weekend, and you get a free lesson on Monday or vice versa.</span></p>
+<p data-say><span class="s">Having another version of you on a project also allows you to bounce ideas off someone without fear of embarrassment.</span> <span class="s">Often if we ask less experienced devs what they think, we may feel like we're risking our image of appearing to be their senior, like a teacher asking a student for help or advice.</span> <span class="s">If we ask a more experienced dev for advice, we may feel we're risking looking like we're not ready for that promotion we're hoping for.</span> <span class="s">Most of the time, that's a personal thing, and we just need to get over it because any of us on any project will be smarter than another dev in some area or some tool and worse in others.</span></p>
+<p data-say><span class="s">We all have different tools on our belts and have different levels of comfort with each one.</span> <span class="s">For example, where I may be an expert in JavaScript, I'm an admitted novice in bleeding edge CSS.</span> <span class="s">My competence in CSS is several years behind.</span> <span class="s">If I happen to be helping with some front-end web work, I'll sometimes catch myself wanting to use Flexbox and then be reminded that the conventions have changed to use CSS grids.</span> <span class="s">A novice dev who may have just learned about CSS grids and only knows about CSS grids will be better at that tool than me, regardless if I have 25 more years of programming experience than them.</span> <span class="s">So I have no problem asking for help or advice on a particular tool where I recognize someone has a competency that I lack.</span></p>
+<p data-say><span class="s">Equals are also great because if we are brought in late on a project, and one or more of our equals was on the project from the beginning, our ramp-up will be much faster and more intuitive.</span> <span class="s">They really can make our jobs easier.</span> <span class="s">There will be an inherent risk that management will see us as interchangeable, where they can replace any of us with another, and we become commodities.</span> <span class="s">It's up to us to recognize that technical competence is a mere slice of our value, so how we'll rise above them is all the other skills you're learning in this book that they are not.</span></p>
+<p data-say><span class="s">As you grow and become a leader in your field, you'll commonly hear the phrase, &quot;I wish we could clone you,&quot; because you'll be offering so much more value than anybody else.</span> <span class="s">Regardless of where you are right now, imagine if you were cloned; who on your team right now most closely resembles that clone?</span> <span class="s">That's your equal.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>More Experienced</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The last group of devs I want to address is the more experienced devs.</span> <span class="s">These devs are the best thing to happen to you on a project.</span> <span class="s">The first thing you want to do is buddy up with these devs and get them to be your mentors.</span> <span class="s">You want to leverage their experience and learn from them as quickly as possible so they can help you deliver more wins than you could deliver by learning things the hard way, studying on your own time, and so on.</span></p>
+<p data-say><span class="s">These more experienced devs may not even be your senior in the dev ranks.</span> <span class="s">You may not report to them, and they may not even earn more money than you.</span> <span class="s">You just have to recognize certain devs that make you say, &quot;Wow, this person is really smart&quot; or &quot;This dev is so much more organized and ahead of the curve on these projects; their process is so tuned compared to mine,&quot; and then model after them as much as you can where it makes sense.</span></p>
+<p data-say><span class="s">I may earn $100,000 more than another dev on my project whom I look up to as an engineer, and I'm still latching on to them like an excited puppy to learn everything they offer.</span> <span class="s">I may have twenty years on them as a programmer, but they may not have a family and may dedicate every night and every weekend to learning all the tools.</span> <span class="s">Maybe they've only been a dev for five years, but all five years have been in an industry sector where I've never worked, and our new project is part of that sector.</span> <span class="s">Where I can see certain problems coming a mile away that they may not recognize, they may be able to offer patterns or conventions for certain tools that we're using that are inherently better than my current conventions.</span> <span class="s">They may be able to offer insight into certain compliance rules for governing bodies that I wouldn't even be aware of.</span> <span class="s">Part of the journey to being the best is recognizing the value in the rest of our team and not letting our ego get in the way.</span></p>
+<p data-say><span class="s">Keep in mind that more experienced devs may only have a handful of things to offer that you can't, and so if you can identify what those things are, ramp up on them quickly and become their equals, you'll grow faster than anybody else on your team.</span> <span class="s">Once you become their equal, find the next more experienced dev and start again.</span> <span class="s">Climb the mountain of expertise one hill at a time by finding people ahead of you who've already accomplished what you want to accomplish, do what they did, and follow their path, just like this book outlines.</span> <span class="s">I promise you it works.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-42.html">← Chapter Thirty-Nine - Vertical Relationships</a>
+    <a href="succeed-44.html">Chapter Forty-One - Location Matters →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

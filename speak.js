@@ -15,14 +15,23 @@
   var pauseBtn = document.getElementById("sp-pause");
   var stopBtn = document.getElementById("sp-stop");
   var rateSel = document.getElementById("sp-rate");
-  var voiceSel = document.getElementById("sp-voice");
+  // На страницах книг русского выбора нет, на страницах упражнений нет английского: недостающий заменяем пустым.
+  var voiceSel = document.getElementById("sp-voice") || document.createElement("select");
+  var voiceEnSel = document.getElementById("sp-voice-en") || document.createElement("select");
+  var hasRuSel = !!document.getElementById("sp-voice");
   var cardBtns = Array.prototype.slice.call(document.querySelectorAll(".speak-btn"));
   var KEY = "bodr-speak";
 
   var saved = {};
   try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { saved = {}; }
   function save() {
-    try { localStorage.setItem(KEY, JSON.stringify({ rate: rateSel.value, voice: voiceSel.value })); } catch (e) {}
+    try {
+      localStorage.setItem(KEY, JSON.stringify({
+        rate: rateSel.value,
+        voice: voiceSel.value || saved.voice,
+        voiceEn: voiceEnSel.value || saved.voiceEn
+      }));
+    } catch (e) {}
   }
 
   var voices = [];
@@ -44,7 +53,24 @@
     });
     if (prev) { voiceSel.value = prev; }
     if (!voiceSel.value && ru.length) { voiceSel.selectedIndex = 0; }
-    if (note) { note.hidden = ru.length > 0 || voices.length === 0; }
+
+    var en = byLang("en").sort(function (a, b) { return nice(a) - nice(b); });
+    var prevEn = voiceEnSel.value || saved.voiceEn;
+    voiceEnSel.innerHTML = "";
+    en.forEach(function (v) {
+      var o = document.createElement("option");
+      o.value = v.name;
+      o.textContent = v.name;
+      voiceEnSel.appendChild(o);
+    });
+    if (prevEn) { voiceEnSel.value = prevEn; }
+    if (!voiceEnSel.value && en.length) { voiceEnSel.selectedIndex = 0; }
+
+    // Подсказка про голос: на страницах книг нужен английский, на остальных русский.
+    if (note) {
+      var missing = hasRuSel ? ru.length === 0 : en.length === 0;
+      note.hidden = !missing || voices.length === 0;
+    }
   }
   loadVoices();
   if (synth.addEventListener) { synth.addEventListener("voiceschanged", loadVoices); }
@@ -57,6 +83,7 @@
   }
   function enVoice() {
     var list = byLang("en").sort(function (a, b) { return nice(a) - nice(b); });
+    for (var i = 0; i < list.length; i++) { if (list[i].name === voiceEnSel.value) return list[i]; }
     return list[0] || null;
   }
 
@@ -73,7 +100,7 @@
           walk(c, c.getAttribute("lang") || lang);
         }
       }
-    })(root, (root.getAttribute("lang") || "ru").slice(0, 2));
+    })(root, ((root.closest("[lang]") || document.documentElement).getAttribute("lang") || "ru").slice(0, 2));
     return out;
   }
   // Режем на куски до 180 знаков: длинные реплики в Chrome обрываются на 15 секундах.
@@ -120,15 +147,23 @@
     var items = [];
     var els = Array.prototype.slice.call(root.querySelectorAll("[data-say]"));
     if (root.hasAttribute && root.hasAttribute("data-say")) { els.unshift(root); }
-    els.forEach(function (el) {
-      var segs = segments(el);
+    function add(node, unit) {
+      var segs = segments(node);
       if (!segs.length) return;
       var last = segs[segs.length - 1];
       if (!/[.!?…:;]$/.test(last.t)) { last.t += "."; }
-      var unit = el.closest("[data-speak]") || el;
       segs.forEach(function (s) {
         chunks(s.lang === "en" ? s.t : speakText(s.t)).forEach(function (c) { items.push({ t: c, lang: s.lang, el: unit }); });
       });
+    }
+    els.forEach(function (el) {
+      // В книгах абзац разбит на предложения (.s): подсвечивается и читается предложение, а не весь абзац.
+      var sents = el.querySelectorAll(".s");
+      if (sents.length) {
+        Array.prototype.forEach.call(sents, function (sp) { add(sp, sp); });
+      } else {
+        add(el, el.hasAttribute("data-unit") ? el : (el.closest("[data-speak]") || el));
+      }
     });
     return items;
   }
@@ -238,6 +273,21 @@
   stopBtn.addEventListener("click", stop);
   rateSel.addEventListener("change", save);
   voiceSel.addEventListener("change", save);
+  voiceEnSel.addEventListener("change", save);
+
+  // Книги: щелчок по предложению или заголовку запускает чтение с этого места до конца главы.
+  if (document.body.classList.contains("reader")) {
+    document.addEventListener("click", function (e) {
+      if (e.target.closest("a, button, select, summary, details")) return;
+      var sel = window.getSelection && window.getSelection();
+      if (sel && String(sel).length) return;
+      var unit = e.target.closest(".s, [data-unit]");
+      if (!unit) return;
+      var all = itemsOf(document), from = -1;
+      for (var i = 0; i < all.length; i++) { if (all[i].el === unit) { from = i; break; } }
+      if (from >= 0) { play(all.slice(from), true, null); }
+    });
+  }
   langBtns.forEach(function (b) {
     b.addEventListener("click", function () {
       var next = b.getAttribute("data-lang") === "en" ? "en" : "ru";

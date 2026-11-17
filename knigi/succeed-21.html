@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Eighteen - Security: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Eighteen - Security</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Law 1</a></li><li><a href="#s2" lang="en">Law 2</a></li><li><a href="#s3" lang="en">Law 3</a></li><li><a href="#s4" lang="en">Live By These Laws</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER EIGHTEEN</h3>
+<h3 class="sub" data-say data-unit>Security</h3>
+<p data-say><span class="s">Security is the most crucial aspect of any project we work on.</span> <span class="s">I want to list three laws I live by when securing my projects.</span> <span class="s">Live by these three laws, and you will give security the attention it deserves.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Law 1</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<h3 class="sub" data-say data-unit>Always assume your users are smarter than you.</h3>
+<p data-say><span class="s">I see this time and time again on projects.</span> <span class="s">The application will have a security exploit, and the dev team will brush it off as a low risk because the only way the exploit can be achieved is if a user knows how to do something clever.</span> <span class="s">Some of the best hackers in the world are among the most intelligent people in the world.</span> <span class="s">The moment you think your site is &quot;secure enough&quot; is when you should obtain a security consulting firm to run penetration tests on your system.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Law 2</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<h3 class="sub" data-say data-unit>If your project has a back door, assume everybody knows about it.</h3>
+<p data-say><span class="s">Obfuscation is not security.</span> <span class="s">Just because your application has a big sign that reads &quot;enter here&quot; doesn't mean everybody will do that.</span> <span class="s">If your website has a query string parameter ?admin=true, which will bypass the login, then you need to act as if that is in the public-issued docs and everybody knows about it.</span></p>
+<p data-say><span class="s">People leave companies, people talk, and people get hacked.</span> <span class="s">One example might be, imagine some contractor working on your project upgraded their hardware and reissued their laptop to another contractor, not on your project.</span> <span class="s">There's a risk now that the new contractor will have access to the browser history on that laptop and see the back door.</span> <span class="s">You can't assume this new contractor won't snoop or care.</span> <span class="s">You can't assume the contracting firm will wipe their laptop disks when reassigning them.</span> <span class="s">You need to consider the worst scenario.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Law 3</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<h3 class="sub" data-say data-unit>Always assume if your application is breached, that you will lose everything.</h3>
+<p data-say><span class="s">Seemingly innocent oversights have brought down entire companies before.</span> <span class="s">Even if there was a breach and no data was compromised, the breach still needs to be disclosed to customers.</span> <span class="s">That could result in millions of dollars lost simply because customers lose trust and decide to put their money elsewhere.</span></p>
+</section>
+<section data-speak class="sec" id="s4">
+<div class="sec-head"><h2 data-say data-unit>Live By These Laws</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">So I want to reassure you of something now.</span> <span class="s">Not only do we not need to be security experts to be able to secure our project, but we should stay somewhat ignorant or remain humble as we learn and improve.</span> <span class="s">There are entire companies specializing in security, and it's their job to keep up with all the latest exploits.</span> <span class="s">It's almost impossible to keep up with every security precaution and best practice if we're full-time developers.</span></p>
+<p data-say><span class="s">So while we don't have to know about all the exploits personally, we do have to do everything in our power to ensure our system can be audited over and over for security leaks, and we do need to have security on our mind, front-and-center, throughout the entirety of building and running our project.</span> <span class="s">If a breach happens, we need to show that we covered all our bases and followed all the recommended guidelines and best practices as directed by SecOps and any external security firms doing the audits.</span> <span class="s">We do not want to reassure the executives that all our security precautions were enough and that their system is secure unless we are on the SecOps team and our job is literally securing the application and the network.</span> <span class="s">Even still, why own that risk?</span> <span class="s">Obtain a security consulting firm to run audits and let them make the claim.</span></p>
+<p data-say><span class="s">We as software professionals should be humble and untrusting of any security precautions in our system.</span> <span class="s">We want that executive all-clear to come from a multi-million dollar security firm, so if the project gets breached, the blame stays high at the executive level.</span> <span class="s">Ironically, having said all that, I've been on several projects where the SecOps team really didn't know what they were doing, and the pen testers weren't really penetrating anything exposed to the public.</span></p>
+<p data-say><span class="s">For example, one complained about a plaintext password in my spec files.</span> <span class="s">The culprit was nothing more than a literal string to create a temporary test user that was immediately deleted when the subsequent spec ran.</span> <span class="s">I'll cover this example deeper later in the book.</span></p>
+<p data-say><span class="s">Not all security analysis software is intelligent, and often you'll feel more competent than the security auditor.</span> <span class="s">Still, it's not the ones and zeros that matter here.</span> <span class="s">It's corporate and customer data, intellectual property, and system credentials.</span> <span class="s">Losing control of any of it simply can not happen.</span></p>
+<p data-say><span class="s">So, while I recommend avoiding confidence in the security space, I still want you to have competence.</span> <span class="s">So, what are some precautions we know we always need to take?</span></p>
+<ul>
+<li data-say><span class="s">Short-lived tokens: Tokens get passed around, and the longer they remain valid, the more they risk being intercepted and used by someone posing as you.</span></li>
+<li data-say><span class="s">One-way hashes: I highly recommend using one-way hashes that need to be recreated for validity confirmation instead of encrypted tokens that can be decrypted with a key.</span> <span class="s">If anybody gets the key, our whole system is at risk.</span> <span class="s">One typical example of this is user passwords.</span> <span class="s">We should create and store a one-way hash for the password.</span> <span class="s">The user will then provide plaintext to log in, which is then hashed, and we compare the hashes.</span> <span class="s">If they match, the user is legit.</span> <span class="s">We should also salt our hashes with a relatively high exponent factor to slow this process down.</span> <span class="s">We want this step to be noticeably slow to help mitigate brute force attack risk.</span></li>
+<li data-say><span class="s">Multi-factor authentication: Stored one-way hash passwords are great but brute force attacks previously mentioned are extremely common.</span> <span class="s">If the hacker can guess a password simply by trying hundreds of millions of strings, then how secure is our system really?</span> <span class="s">Even if the speed of our hashes is curbed by salting, we can take additional steps to enhance security even further.</span> <span class="s">MFA means that even if a hacker guesses a password, the owner of the password still needs to confirm both the login intent and a one-time short-lived token from a separate physical device.</span></li>
+<li data-say><span class="s">Long-complicated passwords: Make sure the app demands long, complex passwords from users.</span> <span class="s">An 8-character password can be easily cracked, no matter if it contains special characters and uppercase letters.</span> <span class="s">A 60-character password suggests there might not be enough time in the universe to crack it.</span> <span class="s">Last year (2021) I learned that the Wells Fargo home page login treated all passwords as lowercase and restricted the password length.</span> <span class="s">Hence, my login was case-insensitive and easy for a hacker to guess eventually.</span> <span class="s">A colleague told me, and I didn't believe them.</span> <span class="s">Sure enough, I confirmed it with my own eyes.</span> <span class="s">They seem to have fixed this bug in recent weeks, but never forget that even the most prominent companies you think would be ultra-secure are terrible with security.</span> <span class="s">Be better.</span></li>
+<li data-say><span class="s">Principle of Least Privilege: In your system and your company, entities should only hold keys for locks that apply to them.</span> <span class="s">For example, if you have twenty microservices, but only one connects to Amazon S3, then that's the only one that should have access to Amazon S3.</span></li>
+</ul>
+<ol>
+<li data-say><span class="s">engineering, the UI team does not need the production database password.</span> <span class="s">Every entity that holds a key risks losing it, abusing it, or having it taken from them by an attacker.</span> <span class="s">When we're dealing with other people's information, we need to assume the worst-case scenario--only give people access to what they need to do their jobs.</span> <span class="s">Keep track of and reassess that access regularly, and only expose credentials and keys in environment variables to systems that require the keys to function correctly.</span></li>
+</ol>
+<p data-say><span class="s">I'd like to talk about authentication vs. authorization.</span> <span class="s">Authentication is essentially identity, and authorization is essentially permission.</span> <span class="s">While they both live under the security umbrella, I often hear developers conflating the two, even though they are very different.</span></p>
+<p data-say><span class="s">Setting your project up for authentication is essentially putting an identity gate between the user and the application.</span> <span class="s">The user or service provides some form of identifier and credentials for proof.</span> <span class="s">It could be a username and password combination or an SSH key.</span> <span class="s">There are several ways to verify identity.</span> <span class="s">Our system either looks up the agent based on the identifier and validates the proof or delegates that step to another identity provider using oAuth or a similar approach.</span></p>
+<p data-say><span class="s">Authentication is essentially going to a concert, showing your ticket to the bouncer, and in turn, they put a green wristband on you and let you in the door.</span></p>
+<p data-say><span class="s">Authorization is essentially whether or not your wristband lets you go anywhere in the venue or only in some places.</span> <span class="s">Maybe you try to get backstage with your green wristband, but a separate bouncer says, &quot;Sorry, you need a VIP badge,&quot; for example.</span></p>
+<p data-say><span class="s">So if an identity gate covers the basics for authentication, how do we handle authorization?</span> <span class="s">Can't the login gate handle both?</span> <span class="s">Yes, it can, but only if everybody using the application has the same permission.</span></p>
+<p data-say><span class="s">This is a common pattern when you compartmentalize apps through subdomains or routes where each app has its own login.</span> <span class="s">Maybe your website presents www.myapp.com to customers and an admin.myapp.com subdomain for employees.</span> <span class="s">If you're developing a mobile app, you might have one dedicated to customers and another entirely dedicated to internal staff.</span> <span class="s">Each of those apps can then only know about the APIs that apply to their respective users.</span></p>
+<p data-say><span class="s">This follows the separation of concerns principle and makes authorization handling quite simple because you essentially only have to do one security check at the front gate.</span></p>
+<p data-say><span class="s">If, on the other hand, you have an application that presents a common UI to users with varying permissions, then you need to adopt roles and permissions into your identity layer so you can check them at the permission layer.</span></p>
+<p data-say><span class="s">In our concert analogy, maybe some folks have a green wristband, some have a Media Pass to take photos on the main floor, some have a VIP badge to go backstage, and so on.</span> <span class="s">That venue can't just have one bouncer at the front door; it needs one at each designated area.</span> <span class="s">These bouncers on the inside only care about your badge, not your ticket.</span> <span class="s">Only the front-door bouncer cares about your ticket.</span></p>
+<p data-say><span class="s">If you had to carry your ticket around the venue and prove its validity to each bouncer, it would not only make security extremely slow but also increase the likelihood that you drop or lose your ticket or that someone else steals it from it you.</span> <span class="s">The principle of least privilege tells us only the authentication gate knows about the password, not the authorization gates.</span> <span class="s">In my projects, I typically use RBAC, which stands for role-based access control.</span> <span class="s">RBAC is divided into four main data points: roles, resources, role assignments, and permissions.</span></p>
+<p data-say><span class="s">Roles are essentially just a name for a typical position.</span> <span class="s">I recommend avoiding using &quot;admin&quot; because, in RBAC, different roles can get permission to various resources, and permissions can cross over each other, so admin becomes a very ambiguous term; admin of what, for example?</span></p>
+<p data-say><span class="s">I prefer using actual positions or a shared department role, like &quot;Tech Lead,&quot; &quot;Customer Support Manager,&quot; or &quot;SecOps,&quot; for example.</span> <span class="s">It makes it much easier to correlate who is most likely to need access to what based on their daily responsibilities.</span></p>
+<p data-say><span class="s">Resources are entities in your application that need to be gated.</span> <span class="s">Most of my project work is web development, so I consider a resource to be a combination of an HTTP request type and action.</span> <span class="s">For example, if we have a RESTful API endpoint for /user, I typically define four resources, one for each POST, PUT, GET, and DELETE.</span></p>
+<p data-say><span class="s">Identity and ownership can make RBAC challenging when used at the route level for APIs because they require additional middleware lookups.</span> <span class="s">Still, it beats the alternative of adding overhead by including database records as resources.</span> <span class="s">In other words, we may want to permit users to update their own profile but not everybody else's.</span> <span class="s">Or maybe we want to give a user permission to edit any user's profile.</span></p>
+<p data-say><span class="s">Defining the resource at the API route becomes slightly ambiguous unless we split the routes into well-defined administrative routes where it's clear that the route's intention is for the token holder to act on behalf of another user.</span> <span class="s">For example, a PUT request to /api/v1/user/id/:userId should only be allowed if the userId in the JWT matches the :userId URI param or if one of the roles in the JWT allows administrative permission.</span></p>
+<p data-say><span class="s">We can simplify this by having two routes:</span></p>
+<pre class="code" tabindex="0"><code>// 'user' role required, userId pulled from JWT. This means users can only ever update their own profile. 
+PUT /api/v1/user
+
+// 'customer-service' role required, userId pulled from URI param. This means customer service can update any user's profile.
+PUT /api/v1/user/id/:userId</code></pre>
+<p data-say><span class="s">Role assignments are essentially just mappings of roles to users.</span> <span class="s">This is many-to-many.</span> <span class="s">Many users can be assigned a role, and a user can be given many roles.</span> <span class="s">For example, maybe a user works in multiple departments, or perhaps numerous departments use the same endpoint in their workflow.</span></p>
+<p data-say><span class="s">Permissions are essentially mappings of roles to resources.</span> <span class="s">This is also many-to-many.</span> <span class="s">Many resources can be assigned a role, and a resource can be given many roles.</span></p>
+<p data-say><span class="s">I mentioned the need for middleware on some of the routes briefly.</span> <span class="s">This is just a pattern preference and is ultimately up to you.</span> <span class="s">For the concert venue analogy, this is a matter of deciding whether that backstage bouncer is outside at the back door checking tickets or inside the venue near the side of the stage checking wristbands.</span></p>
+<p data-say><span class="s">Most of my examples come from a bias toward web development, but behind the scenes, it's really all the same when we consider desktop applications, game dev, mobile dev, and so on.</span> <span class="s">Define and expose the entry point for users, validate them, and assign them a badge with some roles attached to it.</span> <span class="s">Then, various actions in your application that should only be exposed to those roles should do those role checks there.</span> <span class="s">Try not to reference specific roles throughout your application logic, or you will clutter your code with security checks.</span> <span class="s">This is why I use middleware.</span> <span class="s">If you are using object-oriented programming, you can use a superclass that does some security checks behind the scenes, for example.</span></p>
+<p data-say><span class="s">Ultimately, security starts with us, so lead by example.</span> <span class="s">Most of the time, computers are hacked not by some elaborate spyware but because people write their password on a post-it note next to their computer.</span> <span class="s">I personally use 1Password to store all my online credentials.</span> <span class="s">Most of my passwords are 50-60 characters of random gibberish, and it's fun watching my kids spend fifteen minutes entering the PSN password with a Playstation controller when they try to buy a game.</span></p>
+<p data-say><span class="s">I also use multi-factor auth for everything.</span> <span class="s">MFA is a no-brainer, folks.</span> <span class="s">It's the difference between a hacker stealing my identity from a website and a hacker telling the website to send me a notification telling me to change my password because it's been compromised.</span></p>
+<p data-say><span class="s">Junior devs on our team will notice when we put security first in our lives and our projects, and it's likely that our good habits will rub off on them.</span> <span class="s">Leading by example is a much better approach to most things than simply lecturing and nagging.</span></p>
+<p data-say><span class="s">To summarize this chapter, always be thinking twenty steps ahead when we code.</span> <span class="s">Assume every user is trying to break our application and steal what's behind the curtain.</span> <span class="s">If that happens, assume our entire career is finished, and we must apologize to everybody whose identity was stolen personally.</span> <span class="s">With that paranoia in our heads, we can be smart and defer responsibility to big security firms and the SecOps team.</span> <span class="s">Their job is literally to sign off on security.</span> <span class="s">Let them handle it so we can do everything we can to support them and go above and beyond their bare minimum requirements.</span> <span class="s">Remember, we still have to do the work, but they need to grade it before it goes live.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-20.html">← Chapter Seventeen - Comprehensive Analysis</a>
+    <a href="succeed-22.html">Chapter Nineteen - Privacy →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

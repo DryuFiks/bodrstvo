@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Nineteen - Privacy: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Nineteen - Privacy</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER NINETEEN</h3>
+<h3 class="sub" data-say data-unit>Privacy</h3>
+<p data-say><span class="s">While most customer privacy is at the mercy of the product and marketing teams (like whether or not to sell data or how much personal information we need to capture in forms), the engineering team can take extra precautions to protect privacy in the event of a data breach.</span> <span class="s">The two precautions I want to cover in this chapter are redaction and the principle of least privilege.</span></p>
+<p data-say><span class="s">We already briefly covered the principle of least privilege in the &quot;Security&quot; chapter, so how does it apply to privacy?</span> <span class="s">In the same way that we don't want to hand out database passwords to devs who don't ever need to run database queries, we also don't want to expose customer information to people internally who don't need the information.</span></p>
+<p data-say><span class="s">If our application logs user records as they are created, then the logs are potentially a data gold mine.</span> <span class="s">If anybody ever got their hands on the logs, they could scrape and collect thousands of email addresses, phone numbers, and whatever else is being logged.</span></p>
+<p data-say><span class="s">I don't want to imply that the people internal to your project would steal customer data, but if they have the customer data, they could lose it.</span> <span class="s">I've witnessed people working on the train have their laptops stolen from them in a flash robbery.</span> <span class="s">Someone grabbed a laptop and ran off the train as the doors closed.</span> <span class="s">If the victim was a software engineer and had a local production data dump or log dump on the laptop, just imagine how much customer information is instantly at risk.</span> <span class="s">I don't remember if the robber even closed the laptop, so the OS password was already bypassed.</span> <span class="s">You could have all the security in the world on your production app, but if it's taken from a dev, it's gone all the same.</span></p>
+<p data-say><span class="s">As senior engineers, we must actively keep data safe and secure at all times.</span> <span class="s">Simply put, if it's not our personal data, we're in no position to put it at risk.</span> <span class="s">We need to be voicing our concerns and protecting the data.</span> <span class="s">Junior devs don't understand the risks yet, and executives don't understand the technology.</span></p>
+<p data-say><span class="s">Sometimes, we have to log stuff or expose data publicly.</span> <span class="s">For example, personal profile information stored in a JSON web token (JWT) is not secure.</span> <span class="s">We have to assume it will get intercepted and logged by our ISP or DNS servers or at any point along the request's journey.</span> <span class="s">Even if we're on HTTPS, JWTs are often attached to query strings, so they're not in the encrypted payload.</span> <span class="s">They're encoded, not encrypted, and decoding them is no more complicated than pasting them on jwt.io and seeing the contents.</span></p>
+<p data-say><span class="s">Knowing this, we need to redact all the data not critical to identity.</span> <span class="s">It may be convenient to store a user's address and phone number in their JWT profile because that information may sit nicely next to their name and email address in the database.</span> <span class="s">But if the address and phone number are never checked in the auth gates, redact them--omit them entirely from the JWT.</span></p>
+<p data-say><span class="s">In most of my web applications, I use an MVC mindset, so I typically do the redaction at the controller level because I want the models to be raw behind the scenes.</span> <span class="s">I have a function called omitPrivateFields which I put as the last step of every controller because this is the response that will be sent back to my route.</span></p>
+<p data-say><span class="s">I don't do the redaction in the route itself because if my controller happens to be used for multiple routes, I don't want to burden each of them with the same responsibility.</span> <span class="s">If a new route is created and the dev forgets to redact, then we have a security hole.</span> <span class="s">One could argue a route could bypass a controller and leverage the model directly, but that's a major divergence from the established paradigm and we'd likely notice that in our code reviews and integration test reports.</span></p>
+<p data-say><span class="s">In my application's primary config file, I typically create a dictionary of all the private fields associated with the project overall, and then a dictionary for each model.</span> <span class="s">My omitPrivateFields function will concatenate these and augment model-specific private fields onto the default list at runtime.</span> <span class="s">Typical private fields for a user might be &quot;password,&quot; &quot;ssn,&quot; or &quot;token.&quot;</span> <span class="s">Standard private fields for an order might be &quot;card-number,&quot; where you might want to return the last four digits used but not the whole number.</span> <span class="s">You can see how this would scale.</span></p>
+<p data-say><span class="s">It's important to appreciate that these patterns shouldn't be limited to any stack or application.</span> <span class="s">Almost all applications have data and UI layers, even if the UI is a CLI.</span> <span class="s">Which data gets presented to which user can absolutely be controlled by you, regardless if you're building a website, a video game, or a promotional kiosk.</span></p>
+<p data-say><span class="s">Lastly, I'd be remiss not to emphasize once more that we never want to log plaintext passwords or store them in a token.</span> <span class="s">It's bad enough that I still see databases storing plaintext passwords, but exposing them in the logs or tokens is even worse.</span> <span class="s">You're just asking to get hacked.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-21.html">← Chapter Eighteen - Security</a>
+    <a href="succeed-23.html">Chapter Twenty - Stability →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Ten - When To Build It, When To Buy It: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter Ten - When To Build It, When To Buy It</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TEN</h3>
+<h3 class="sub" data-say data-unit>When To Build It, When To Buy It</h3>
+<p data-say><span class="s">Twenty years ago, SAAS wasn't nearly as popular as today.</span> <span class="s">There were a few obvious ones, like Salesforce, some payment gateways, merchant accounts, and whatnot, but software as a service didn't really have a place because APIs were terrible.</span> <span class="s">We needed to use SOAP and XML, and the languages and frameworks driving most server-side development had modules and plugins to handle a lot of the stuff, like sending emails.</span></p>
+<p data-say><span class="s">In PHP or Java, we'd just set up a monolith server that would run the web server, the email server, the database, and whatever else we needed.</span> <span class="s">Sometimes our servers would be running thirty websites to distribute hosting costs.</span></p>
+<p data-say><span class="s">When APIs got more popular, primarily thanks to JSON gaining traction, we started seeing more SAAS providers pop up; external image or video hosting, email, etc. Eventually, companies started offloading huge portions of their business to other companies, like Okta or Auth0, which handle user authentication, or Twilio, which addresses MFA or SMS.</span></p>
+<p data-say><span class="s">So when should we build it and when should we buy it?</span> <span class="s">At a very high level, I typically recommend that my clients build it if it's part of the core business offering and buy it if it's not.</span> <span class="s">If you are a video game company, code your games and offload user registration, payments, marketing, HR, Legal, etc.</span></p>
+<p data-say><span class="s">For example, my company Alien Creations, has an extremely simple website.</span> <span class="s">I build websites all day, so I'm confident I could build a payroll system to pay myself every two weeks, but why?</span> <span class="s">It's so much easier to make an account on Gusto and let them deal with it.</span></p>
+<p data-say><span class="s">I don't even need to integrate it into my website.</span> <span class="s">It's just a huge responsibility I don't have to deal with anymore, and I can rest assured they will get it right because payroll is only one tiny slice of my business, whereas payroll is their business.</span></p>
+<p data-say><span class="s">Another example, I built a website several years ago called Playlist.com.</span> <span class="s">We primarily only focused on writing code to handle the UI and track user preferences and saved playlists.</span> <span class="s">All the music recommendations and taste profiles came from The Echo Nest API, and all the MP3 files were streamed from a MediaNet CDN.</span></p>
+<p data-say><span class="s">We didn't have to do any work pulling in MP3 files and saving them in S3 or something.</span> <span class="s">We didn't have to try to reinvent song recommendations based on likes or listens because that was the core business offering from The Echo Nest, which Spotify later acquired.</span></p>
+<p data-say><span class="s">Using these third-party services saved us likely a few months of work and several thousand dollars in hosting and development costs.</span> <span class="s">Realistically, any solution we'd have created would have likely been sub-par to The Echo Nest and MediaNet because that's all they offer.</span> <span class="s">Their entire business effort is making that one thing extraordinary.</span></p>
+<p data-say><span class="s">Deciding whether to build it or buy it is ultimately up to the client since they not only would have to pay for the service but also pay you to implement it or code it from scratch.</span> <span class="s">That said, this is how I typically weigh my options when communicating my recommendations to the client:</span></p>
+<p data-say><span class="s">Use third-party when...</span></p>
+<ul>
+<li data-say><span class="s">It's cheap, easy, and you've done it before.</span></li>
+<li data-say><span class="s">It's something you can build later if you want to, but you want to get your product out the door quickly.</span></li>
+<li data-say><span class="s">It's something completely out of your league.</span></li>
+<li data-say><span class="s">There are other complimentary services already in play.</span> <span class="s">For example, if you're using Hashicorp for one or two things, use the rest of their stack when possible.</span> <span class="s">If you're using AWS for hosting, use S3 for static assets, Cloudwatch for logs, Elasticache, RDS, CloudSearch, and so on, so everything integrates nicely.</span></li>
+<li data-say><span class="s">It's not the core competency of the project owners--they will have to maintain whatever you deliver to them.</span> <span class="s">The less they have to maintain, the better.</span></li>
+</ul>
+<p data-say><span class="s">Roll your own when...</span></p>
+<ul>
+<li data-say><span class="s">The client wants something very custom, and you don't want to try to customize or override a third-party offering.</span></li>
+<li data-say><span class="s">You've already built a strategy for something on a previous project and can plug it in to save the client money.</span></li>
+<li data-say><span class="s">It's the client's core business offering.</span></li>
+</ul>
+<p data-say><span class="s">While this may seem obvious for prominent features like email, search, SMS, and so on, what about third-party libraries?</span> <span class="s">Should we make our own carousel or use a third-party component?</span> <span class="s">What about a file uploader?</span> <span class="s">Or form validation?</span> <span class="s">I typically recommend using a framework or component library whenever possible for this integration layer to get 80% of the feature for free and then to polyfill anything missing when you cross that bridge.</span> <span class="s">Ideally, pick a stable library that's widely used.</span> <span class="s">Don't choose something brand new because if the creators abandon the project, you'll be stuck with someone else's unmaintained side project as the underlying infrastructure for your code base.</span></p>
+<p data-say><span class="s">As I will likely repeat several more times in this book, the tools themselves are not important.</span> <span class="s">Just weigh the risks and rewards for the ideal candidates and decide which ones your team wants to adopt, and move on to use the tools to build your project.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-12.html">← Chapter Nine - Becoming The Fixer</a>
+    <a href="succeed-14.html">Chapter Eleven - Failing Successfully →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

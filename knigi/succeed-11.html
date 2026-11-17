@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Eight - Proactive Mindset: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter Eight - Proactive Mindset</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER EIGHT</h3>
+<h3 class="sub" data-say data-unit>Proactive Mindset</h3>
+<p data-say><span class="s">There's a difference between being proactive and having a proactive mindset when it comes to being a software professional; both are important in their respect.</span> <span class="s">For example, in my day-to-day, I have a lot of small maintenance tasks I need to do to help other people do their jobs.</span> <span class="s">I need to ensure my hours are entered every day, both in our project tracking system and itemized on each ticket in our issue tracking system.</span></p>
+<p data-say><span class="s">I need to ensure all my tickets are in the correct swim lanes and see if anybody has commented on them requiring action from me.</span> <span class="s">I also need to review and close out tickets from other devs if they assign me as a dev tester.</span> <span class="s">This is important because the product and project management teams are constantly looking at the kanban board to gauge the health of the current sprint, and if tickets are in the wrong place, they can't do their jobs.</span></p>
+<p data-say><span class="s">I also need to do code reviews on pull requests and approve or reject them accordingly.</span> <span class="s">Sometimes devs can work on other things while they wait to merge their code, but sometimes they're blocked until their PR is approved and will ask the team to do a quick review to unblock them.</span> <span class="s">When there is a sense of urgency and pressure on a code review, I find that devs will do blind approvals to keep their peers unblocked, but that introduces bugs, so I need to get in there and review code before that happens to make sure the code quality stays high.</span></p>
+<p data-say><span class="s">And, of course, the meetings--always with the meetings, right?</span></p>
+<p data-say><span class="s">So everything I just listed is merely a subset of responsibilities and none of what I just listed is writing code or architecting a system.</span> <span class="s">Being proactive with those responsibilities means I try to do them before someone pokes me with a reminder that they're waiting.</span></p>
+<p data-say><span class="s">This ultimately comes down to responsible scheduling, where I try to spend the first half of my day keeping people unblocked and the second half of my day getting into flow state writing code.</span> <span class="s">Not every day works out like this, but it's still a goal, and if I have too many meetings or foreseen interruptions in a day, I don't even bother trying to write code that day.</span></p>
+<p data-say><span class="s">Now, what's the worst thing that can happen if I choose to be reactive instead of proactive with these responsibilities and decide to prioritize my coding tickets?</span> <span class="s">Well, I'll likely be constantly interrupted with chat notifications asking for code reviews, moving my tickets, or checking in with another dev to see how they're doing, or that I'm late to a meeting, and so on.</span></p>
+<p data-say><span class="s">It's not the end of the world, but it's certainly annoying and distracting, even for the people waiting on me.</span> <span class="s">Being proactive with all this keeps me in control of my schedule so that when I do code, I can focus and write great code.</span></p>
+<p data-say><span class="s">What does it mean, then, to have a proactive mindset?</span> <span class="s">When we architect systems, regardless if we're at the network level building microservices or the UI level building components, we need to have a proactive mindset when implementing anything.</span></p>
+<p data-say><span class="s">Before writing any code, we need to stop and step back a bit and consider all the moving pieces.</span> <span class="s">Does our new code play nicely with the rest of the system, or is it a bolt-on solution that will require other areas of the codebase to know about it and accommodate it, so things don't break?</span></p>
+<p data-say><span class="s">For example, on a recent web project, we had a media platform microservice whose primary job was to save and retrieve media assets into the static asset store, which was Amazon S3.</span> <span class="s">On the UI, we had a file uploader; when the user selected a file to upload, React made an API call to the media platform, which provided a pre-signed S3 URL that React could then use to upload the file directly to S3.</span> <span class="s">This was a great solution because it played nicely with our auth tokens, and we didn't have to pipe binary through our microservice unnecessarily.</span></p>
+<p data-say><span class="s">The problem was that one of the customers had a firewall that blocked AWS URLs, so they couldn't upload the files.</span> <span class="s">DevOps implemented a solution to proxy the S3 host through Akamai so the customer's firewall would allow it since it had the same domain name as the rest of the app.</span></p>
+<p data-say><span class="s">The problem was that everywhere else in our microservice suite dealing with S3 went through Akamai, which is really expensive.</span> <span class="s">So I got a ticket that read, &quot;Use Akamai for customer-facing applications and bypass the proxy for internal-facing applications.&quot;</span></p>
+<p data-say><span class="s">Having a proactive mindset told me a few things:</span></p>
+<ul>
+<li data-say><span class="s">We needed a way to manage the list of internal and customer-facing applications efficiently.</span></li>
+<li data-say><span class="s">Our code needed a way to identify if a request matched one of the applications on the list.</span></li>
+<li data-say><span class="s">The code shouldn't care about S3 or Akamai because, again, the proactive mindset told me that my client may want to change from S3 to GCS or switch from Akamai to Cloudflare, for example.</span></li>
+</ul>
+<p data-say><span class="s">So I spent a couple of hours just thinking about all the moving pieces.</span> <span class="s">It would have been super easy to write some conditional logic in the media platform and be done with it, but then I'd have been coding us into a corner.</span> <span class="s">The code wouldn't scale because we'd have to return to the code when we wanted to change something.</span> <span class="s">So my first approach was to leverage the data, not the code.</span></p>
+<p data-say><span class="s">I made a dictionary of supported hostnames and mapped them to their respective pre-signed URL hostname.</span> <span class="s">This dictionary was a simple JSON object that was then stored in AWS ParamStore and could be fully automated and populated by the DevOps team.</span> <span class="s">It could differ on each deployment tier in the infrastructure, and my code wouldn't know or care.</span> <span class="s">My code interpolated the pre-signed URL hostname with the value assigned to the inbound origin hostname.</span> <span class="s">The code didn't care if the request came from a browser, another microservice, or a developer tool like Postman.</span></p>
+<pre class="code" tabindex="0"><code>{
+  &quot;localhost:3001&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;localhost:3002&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;localhost:3003&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;localhost:3004&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;localhost:3005&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;localhost:3006&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;localhost:3007&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;localhost:3008&quot;              : &quot;http://127.0.0.1:8001&quot;,
+  &quot;dev.mysite.com&quot;              : &quot;https://dev.mysite.com&quot;,
+  &quot;int.mysite.com&quot;              : &quot;https://int.mysite.com&quot;,
+  &quot;test.mysite.com&quot;             : &quot;https://test.mysite.com&quot;,
+  &quot;mysite.com&quot;                  : &quot;https://mysite.com&quot;,
+  &quot;intra.dev.mysite.com&quot;        : &quot;https://s3.amazonaws.com&quot;,
+  &quot;intra.int.mysite.com&quot;        : &quot;https://s3.amazonaws.com&quot;,
+  &quot;intra.test.mysite.com&quot;       : &quot;https://s3.amazonaws.com&quot;,
+  &quot;intra.mysite.com&quot;            : &quot;https://s3.amazonaws.com&quot;,
+  &quot;green.intra.dev.mysite.com&quot;  : &quot;https://s3.amazonaws.com&quot;,
+  &quot;green.intra.int.mysite.com&quot;  : &quot;https://s3.amazonaws.com&quot;,
+  &quot;green.intra.test.mysite.com&quot; : &quot;https://s3.amazonaws.com&quot;,
+  &quot;green.intra.mysite.com&quot;      : &quot;https://s3.amazonaws.com&quot;,
+  &quot;green.dev.mysite.com&quot;        : &quot;https://dev.mysite.com&quot;,
+  &quot;green.int.mysite.com&quot;        : &quot;https://int.mysite.com&quot;,
+  &quot;green.test.mysite.com&quot;       : &quot;https://test.mysite.com&quot;,
+  &quot;green.mysite.com&quot;            : &quot;https://mysite.com&quot;
+}</code></pre>
+<p data-say><span class="s">It was easy to test both with a unit test and an integration test.</span> <span class="s">As we built new internal and customer-facing applications, DevOps only needed to add their hostnames to the dictionary, and the proxy switch worked precisely the same.</span> <span class="s">The client can change from Akamai to Cloudflare, and the code will work the same, and the client can change from S3 to GCS, and the code will work the same.</span></p>
+<p data-say><span class="s">So while you can see that having a proactive mindset can save thousands of hours and dollars on projects, two aspects of this mindset can get you in trouble, so you need to be careful: pre-optimization and over-engineering.</span></p>
+<p data-say><span class="s">As great as it is to write future-proof and blazing-fast code, sometimes the project just isn't ready for it, and we need to get something out the door so that the project can earn money.</span> <span class="s">Suppose we have two options that solve the same problem, where one is a quick and dirty option, and the other is robust but will push the roadmap back.</span> <span class="s">In that case, it's often better to build the quick and dirty one and immediately create a technical debt ticket to refactor it to a more robust solution later.</span></p>
+<p data-say><span class="s">Our clients or employers need to make money from the code that we deliver.</span> <span class="s">We must be able to understand that and communicate a balanced stance to the product team that we want the project to succeed, but that ultimately it's their responsibility to include some technical debt tickets in every sprint.</span> <span class="s">They need to understand that every compromise puts future sprints at risk of screeching to a halt while we rebuild some infrastructure to support a new feature or put all hands on deck to fix a flaw in the system.</span></p>
+<p data-say><span class="s">Our ability to be proactive aligns with our ability to foresee and anticipate issues.</span> <span class="s">The best way to improve this is to step back from what we're currently working on and consider as many other factors as possible.</span></p>
+<p data-say><span class="s">If any of those external factors will be affected by our task or affect our task, then we must consider them when we work on it.</span> <span class="s">Deal with them or not, do them now or do them later, but track the work so the people around us can understand the moving pieces as well as we do.</span> <span class="s">The more you apply this principle, the better you will get, and it'll start to happen naturally.</span></p>
+<p data-say><span class="s">Catching and considering potential issues early on will certainly increase your value on the project.</span> <span class="s">You'll most likely be invited to more architectural meetings and feature-planning sessions.</span> <span class="s">The key stakeholders will turn to you as an authority to help them sign off the roadmap and help them avoid making unrealistic deadline promises to customers or corporate execs that would put the project at risk.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-10.html">← Chapter Seven - Diversify Your Portfolio</a>
+    <a href="succeed-12.html">Chapter Nine - Becoming The Fixer →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

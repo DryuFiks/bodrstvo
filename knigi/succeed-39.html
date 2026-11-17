@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Thirty-Six - Mentoring: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Three - Collaboration · Оригинал на английском</p>
+    <h1 lang="en">Chapter Thirty-Six - Mentoring</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Teach Them To Fish</a></li><li><a href="#s2" lang="en">Practice Consulting</a></li><li><a href="#s3" lang="en">Practice Patience</a></li><li><a href="#s4" lang="en">Practice Empowerment</a></li><li><a href="#s5" lang="en">Recognize and Appreciate</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER THIRTY-SIX</h3>
+<h3 class="sub" data-say data-unit>Mentoring</h3>
+<p data-say><span class="s">One of the most critical milestones in our career is when we start to notice we're no longer reaching out to others for guidance, and others are reaching out to us instead.</span> <span class="s">When it first starts happening, it's a strange feeling.</span> <span class="s">It's a feeling of validation that our hard work is paying off but also a feeling of responsibility and pressure.</span> <span class="s">It's one thing to screw up our own stuff and fix it before someone notices.</span> <span class="s">It's another thing entirely to screw up someone else's stuff, and then we look bad to the whole team.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Teach Them To Fish</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">There's an old saying, give someone a fish, and you feed them for a day.</span> <span class="s">Teach them how to fish, and you feed them for a lifetime.</span> <span class="s">This is the first and most fundamental aspect of being a mentor.</span> <span class="s">Our goal is to help junior devs help themselves.</span> <span class="s">If every time they come to us for help, we fix their bugs or solve their logic problems for them, we're not helping them in any meaningful way.</span></p>
+<p data-say><span class="s">Often if a dev comes to me and says, &quot;Hey Sean, can you help me with this?</span> <span class="s">I don't know why it's not working.&quot;</span> <span class="s">I first ask, &quot;What is it supposed to do, and what have you tried?&quot;</span> <span class="s">This is a practice I picked up on years ago on StackOverflow.com.</span> <span class="s">Instead of blurting out answers to vague questions, we comment to get more information from the asker.</span> <span class="s">9/10 times they can solve the bug independently but just forget to do a simple troubleshooting step.</span></p>
+<p data-say><span class="s">Imagine the bug is their promise chain isn't working; we look at the code and immediately notice that one of the functions in the chain doesn't return anything.</span> <span class="s">Of course, the subsequent function gets undefined as its param, and things can break.</span></p>
+<p data-say><span class="s">Instead of simply pointing out that obvious detail, we can start to ask process questions: &quot;Are your unit tests passing?&quot;</span> <span class="s">That question implies that they should be covering their code with tests.</span> <span class="s">Tests would undoubtedly reveal the issue here because if each function in the chain works fine in the tests, one only needs to compare the test code with the live code and see what is being reproduced.</span> <span class="s">The function should have a test that fails when its param is missing, so that assertion should present itself as an option of something to rule out when troubleshooting.</span></p>
+<p data-say><span class="s">Imagine our function has five assertions: one happy path and four sad paths.</span> <span class="s">The first thing we should do if our code isn't working is check off those four sad paths in our live code and see if we're causing a sad path.</span></p>
+<p data-say><span class="s">So the lesson here to the dev is to check the tests before asking Sean.</span> <span class="s">That's a much easier thing to remember than making sure your function returns something because the missing return was a typo mistake, not a misunderstanding of how functions work.</span> <span class="s">It would be like telling someone, &quot;Remember not to stub your toe in the middle of the night.&quot;</span> <span class="s">Of course, we know this, but sometimes it happens.</span></p>
+<p data-say><span class="s">The more we can teach a dev to fish, the more they will remember that we have our shit together, and they should come to us when they are really stuck on something.</span> <span class="s">In the past, I've taught brand new devs how to use StackOverflow and have told them, &quot;If the linter and the docs aren't helping, post the question there, and maybe someone has a quick pointer to unblock you.&quot;</span></p>
+<p data-say><span class="s">In practice, we can't possibly babysit junior devs all day on larger teams, teaching the basics of our language syntax.</span> <span class="s">That is their job, and they are getting paid for it, so they need to own responsibility and accountability for that skill set.</span> <span class="s">Where we as mentors can come into play is when the dev needs help adopting our team's way of doing something.</span> <span class="s">A design pattern may be new, or we're using a tool they've never used before.</span> <span class="s">We want to treat them as intelligent and capable people who happen to be new to an environment in which we're very comfortable.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Practice Consulting</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Providing options instead of answers is also critical to being a consultant.</span> <span class="s">As I've mentioned in earlier chapters, if a client asks us how we'd recommend doing something, we want to try to avoid telling them &quot;the way&quot; or &quot;the answer&quot; because, as consultants, remember we're not here to be right, we're here to get it right.</span> <span class="s">I recommend providing some options, and then we can steer them a bit if we have a preferred option.</span></p>
+<p data-say><span class="s">If we pretend that our junior devs are our clients, we can reframe these interactions a bit so that when they come to us for help with something, we use the opportunity to practice our consulting chops.</span> <span class="s">For example, if a dev is tasked with adding a date picker to the UI, and they've never done that before, we may have a quick exchange like this:</span></p>
+<ul>
+<li data-say><span class="s">Dev: &quot;Hey Sean, have you ever used a date picker?&quot;</span></li>
+<li data-say><span class="s">Me: &quot;Too many times; what's up?&quot;</span></li>
+<li data-say><span class="s">Dev: &quot;I need to add one to the UI on this page; I don't even know where to begin.&quot;</span></li>
+<li data-say><span class="s">Me: &quot;Well, typically, with components like that, if it's something that could be used on any one of our projects, we want to try to avoid building it.</span> <span class="s">Are we using a component library for anything else?&quot;</span></li>
+<li data-say><span class="s">Dev: &quot;Yes, but the date picker on the kitchen sink page doesn't look the same as the one in the comp.</span> <span class="s">Should I use it and try to re-style it to match?&quot;</span></li>
+<li data-say><span class="s">Me: &quot;Well, you have a few options.</span> <span class="s">If the functionality is all there, see how much work it takes to restyle.</span> <span class="s">Often, component libraries have themes, and we may get it very close very quickly by applying our app's theme to the date picker component.</span> <span class="s">If the styling gets tricky, you can also ask the designer if it's ok if we have some flexibility in the look and feel of the component or if we can release it initially with a default theme and then update it later to match our branding better.&quot;</span></li>
+<li data-say><span class="s">Dev: &quot;Perfect, thanks!&quot;</span></li>
+</ul>
+<p data-say><span class="s">So notice I didn't tell the dev what to do, and I didn't tell the dev what I would do because they didn't ask.</span> <span class="s">I presented some options and some counter options, and now the dev has a playbook of next steps to continue work and see what they can come up with.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Practice Patience</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Part of being a good mentor is remembering our early programming days when we struggled with things that may seem trivial today.</span> <span class="s">Even in scenarios where &quot;read the docs&quot; is an obvious solution, sometimes docs can be intimidating to new devs because navigating shitty docs is a huge pain if we don't know what we're looking for, right?</span></p>
+<p data-say><span class="s">So it's crucial that we practice and demonstrate patience with our junior devs.</span> <span class="s">Most of the time, we actually want them to slow down because juniors tend to go go go, and they're sprinting in the wrong direction and breaking stuff.</span> <span class="s">We need to slow them down, calm them down, and lay some groundwork for them.</span> <span class="s">They may come to us five times for the same bug and still can't solve it or understand why something isn't working.</span> <span class="s">We absolutely can not expect them to know what they don't know.</span> <span class="s">Nothing is obvious until it's obvious.</span></p>
+<p data-say><span class="s">If we feel that things should be evident and other devs are not seeing the answers we see, it says more about us than them.</span> <span class="s">We're likely excelling and developing our intuition and building that gut we discussed in an earlier chapter.</span> <span class="s">Answers become obvious, paths to success become apparent, and paths that stray from guaranteed success sound silly.</span> <span class="s">We can't assume others on our teams are at that same level.</span> <span class="s">Using empathy, as discussed in the &quot;Communication Mastery&quot; chapter, we need to believe that the situation is difficult for them, stand with them, and offer help and support because that's what good leaders do.</span></p>
+</section>
+<section data-speak class="sec" id="s4">
+<div class="sec-head"><h2 data-say data-unit>Practice Empowerment</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">To re-emphasize once more, the guidance we offer to our junior peers needs to plant seeds to get their minds working.</span> <span class="s">In one recent project, I worked with a client who had an existing product in Java/JSP with Oracle.</span> <span class="s">Part of our SoW was to train their engineering department in NodeJS with microservices and Amazon RDS using MySQL syntax, among other things.</span> <span class="s">The entire project was a mentorship project.</span> <span class="s">We had around fifteen devs from the client side who were all competent developers but brand new to the new stack.</span></p>
+<p data-say><span class="s">Working with these devs, the mentorship process was often about using analogies between the two stacks.</span> <span class="s">Still, fundamental differences were complex for even their design team to adopt.</span> <span class="s">For example, their old system was synchronous, and the new system was asynchronous.</span> <span class="s">So in the old system, when someone would upload a file, the user would see a spinner and have to wait upwards of several minutes while their system would scan for viruses, make multiple variants of the file, save each variant in Oracle as a blob, and write some records for order state.</span></p>
+<p data-say><span class="s">The new system would upload the file and do all that processing behind the scenes so we could unblock the user, and they could upload their next file.</span> <span class="s">Part of our job was to empower the client devs to understand the new system so well that they could work with their designers and help change mocks to reflect accurate flows.</span></p>
+<p data-say><span class="s">Simple things like &quot;We can't show a thumbnail on this screen anymore because we don't know if it's been created yet, but we also don't need to show a spinner anymore and can auto-close the modal&quot; was utterly foreign to the designers who've only known that previous way for several years.</span></p>
+<p data-say><span class="s">Empowering their devs to have those educational conversations meant that their engineering department could demonstrate value to the company.</span> <span class="s">We weren't coming in to save the day; we were coming in to empower and collaborate.</span></p>
+<p data-say><span class="s">The same mindset applies to junior devs who want your help.</span> <span class="s">Learn to help them help themselves, and they may sing your praises in their status reports.</span></p>
+</section>
+<section data-speak class="sec" id="s5">
+<div class="sec-head"><h2 data-say data-unit>Recognize and Appreciate</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Lastly, part of being a good mentor is recognizing and celebrating progress.</span> <span class="s">We all feel good when our hard work is noticed, especially when trying to impress someone we admire.</span> <span class="s">When we give our reports, we don't just want to say, &quot;I worked with so and so yesterday on the date picker&quot;; we want to say something like, &quot;I worked with so and so yesterday, and we aligned on some next steps for the date picker.</span> <span class="s">I'm really impressed how quickly they are ramping up, and I think we're in a great place for the next sprint.&quot;</span></p>
+<p data-say><span class="s">Notice we didn't claim any credit for their work; we just helped steer their thoughts a bit.</span> <span class="s">We gave credit where credit is due and planted a seed that they are doing a great job.</span> <span class="s">They now have that in mind when delivering future stuff, enhancing their character.</span> <span class="s">They will likely want to deliver their best work because other people have heard how great they're doing.</span></p>
+<p data-say><span class="s">Becoming a mentor is one of the most fulfilling milestones in our career.</span> <span class="s">After two decades of building software, I no longer care about making billionaires richer; it's just a numbing and unfulfilling experience.</span> <span class="s">However, I will stop whatever I'm doing in a heartbeat to unblock a fellow dev on my team because, at the end of the day, we all need to find purpose in our careers.</span> <span class="s">That's literally the reason I'm writing this book for devs just like you.</span> <span class="s">So please, as you grow and excel, remember to pay it forward and appreciate being given a chance to mentor someone who looks up to you.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-38.html">← Chapter Thirty-Five - Pair Programming</a>
+    <a href="succeed-40.html">Chapter Thirty-Seven - Conducting Interviews →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

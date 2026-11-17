@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acknowledgments: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Оригинал на английском</p>
+    <h1 lang="en">Acknowledgments</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<p data-say><span class="s">First and foremost, I want to express my deep gratitude to my wife, Abbey, for her unwavering support and encouragement throughout the writing process.</span> <span class="s">She has always been my rock, and her love has inspired me to be the best version of myself.</span></p>
+<p data-say><span class="s">I am also grateful to my children, Aiden and Maya, for reminding me of the importance of hard work and determination.</span> <span class="s">They are the driving force behind everything I do, and I am so proud to be their father.</span></p>
+<p data-say><span class="s">I would like to extend a special thank you to Eric Müller and Jason Monberg from Presence for their support and guidance in my technical journey.</span> <span class="s">I am so fortunate to have had the opportunity to work with such a fantastic and welcoming agency.</span></p>
+<p data-say><span class="s">I am also grateful to Brent Clark, Omar Abdelwahed, Jonatan Juárez, Jordan Baucke, Marco Scarlata, and Edward Philip for taking the time to proofread my book and provide valuable feedback and reviews.</span> <span class="s">Your insights and suggestions have been invaluable.</span></p>
+<p data-say><span class="s">I also want to thank Jack Firth for introducing me to Ramda and Eric Jordan for his ongoing inspiration in the web development realm.</span> <span class="s">Their influence has been invaluable to my growth as a developer.</span></p>
+<p data-say><span class="s">Finally, I want to express my heartfelt thanks to everyone who has supported me along the way.</span> <span class="s">Your encouragement and belief in me have meant the world.</span> <span class="s">Thank you.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <span></span>
+    <a href="succeed-02.html">Foreword →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

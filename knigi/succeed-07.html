@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Four - Extrinsic Values: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter Four - Extrinsic Values</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Reliability</a></li><li><a href="#s2" lang="en">Trustworthiness</a></li><li><a href="#s3" lang="en">Altruism</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER FOUR</h3>
+<h3 class="sub" data-say data-unit>Extrinsic Values</h3>
+<p data-say><span class="s">Extrinsic values are the projected forms of our intrinsic values.</span> <span class="s">They are perceived by our peers differently than how we perceive them.</span> <span class="s">For example, integrity can be projected as honesty or trustworthiness.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Reliability</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The first extrinsic value I want to cover is reliability because it encompasses all four of the intrinsic values we covered.</span> <span class="s">Clients and employers rely on us to build their systems for them.</span> <span class="s">They depend on us to do what is asked of us and not implement breaking changes.</span> <span class="s">It doesn't matter if we're feeling lazy or prefer some other library that doesn't work well with the existing code base; if the client requires us to keep their business running while we work on stuff, then that's what we need to do.</span> <span class="s">As someone who manages dev teams, reliable devs are much more valuable than rockstar devs.</span> <span class="s">If you are a dev who can consistently deliver tickets on time that work as expected, the product team and engineering managers will want to put you in charge of other devs and give you promotions.</span></p>
+<p data-say><span class="s">Let me be crystal clear: devs care about the quality of the code; clients care about features and profits.</span> <span class="s">If the code isn't perfect, but the feature works, deliver it and then create a ticket to track any technical debt so the code can be cleaned up later.</span> <span class="s">The code, of course, still has to work and not introduce any side effects or regressions.</span> <span class="s">Still, if we need to meet a tight deadline, we need to implement shims like returning some static JSON in an API response instead of third-party service integration.</span></p>
+<p data-say><span class="s">There are ways to improve reliability as a dev.</span> <span class="s">Probably the most obvious way is to keep sprint commitments as light as possible, meaning don't say yes to owning a ticket if you're not 100% certain you can deliver it, or you risk both burning out and pissing off the product team.</span></p>
+<p data-say><span class="s">Another way to improve reliability is to leverage iterative development versus waterfall development.</span> <span class="s">Try to code every feature with a minimum viable product mindset so you can deliver the user experience before the final infrastructure.</span> <span class="s">Eventually, as you get better, you can deliver your best code the first time, which won't introduce any technical debt because you'll learn to spot patterns early on in the grooming process.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Trustworthiness</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Trustworthiness is more of an interpersonal relationship trait, but more often than not, we'll be exposed to things that one colleague doesn't want another colleague to know.</span> <span class="s">Maybe a colleague tells us that they're looking for another job.</span> <span class="s">We need to keep that information to ourselves because it's not our place to share it with anybody else.</span></p>
+<p data-say><span class="s">The same goes for any corporate gossip where people share opinions of other team members and maybe their overall feelings about the project.</span> <span class="s">Sometimes people need to vent, and why not?</span> <span class="s">We all get stressed from time to time.</span> <span class="s">We don't need to participate in the gossip to be good listeners, and our colleagues will genuinely appreciate someone they can confide in who won't go behind their backs with anything they tell us.</span></p>
+<p data-say><span class="s">Trustworthiness also carries over to secure access, credentials, passwords, customer information, and other sensitive data in the system.</span> <span class="s">We touched on this in the &quot;Intrinsic Values&quot; chapter when we talked about ethics, which is where this ties in.</span></p>
+<p data-say><span class="s">That said, you can be the most ethical developer in the world, but if you're forgetful, careless, or clumsy, then SecOps is not going to trust you with production database access, for example.</span> <span class="s">They're essentially extending their accountability to you and need to know that you're not going to set them up for failure by causing a data leak.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Altruism</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Altruism is another way to say, &quot;Put the well-being of your team before your own.&quot;</span> <span class="s">I realize that might sound contradictory since you're reading a book on how to surpass your colleagues on the career ladder, but hear me out.</span></p>
+<p data-say><span class="s">When we are on a team, we can't succeed unless our team does.</span> <span class="s">We need to identify the weakest links on the team and help them succeed if we also want to.</span> <span class="s">This becomes especially important when we are responsible for our team, for example, when we get placed into a leadership position like Principal Dev or Tech Lead.</span></p>
+<p data-say><span class="s">When you are constantly helping your fellow devs solve problems and deliver code, you will become the dev everybody comes to for help.</span> <span class="s">Your name will be mentioned repeatedly in meetings and reports, and you will gain a reputation for being an irreplaceable asset in the organization.</span></p>
+<p data-say><span class="s">For example, on my daily scrum calls, it's extremely common for three to five devs to say, &quot;Yesterday, I paired with Sean on ... whatever.&quot;</span> <span class="s">If I can help get these devs over a hurdle or help unblock them so they can deliver their tickets, then not only do I feel good for helping a fellow dev, but the dev feels good for no longer being stuck.</span> <span class="s">As a side-effect, my name is then mentioned more than anybody else's on the scrum call.</span></p>
+<p data-say><span class="s">When it comes time for an executive to ask a product manager, &quot;Who should we pull in from engineering to handle this?&quot; there's an excellent chance they will pick me even if we've never met simply because they hear my name mentioned all the time.</span></p>
+<p data-say><span class="s">You can immediately apply this strategy to your career.</span> <span class="s">Don't practice altruism just to become popular, or it's not true altruism, and people will see your hidden motives.</span> <span class="s">Help your fellow devs because that's what being a great member of the team does.</span> <span class="s">Enjoy the perks later, but do it because it's the right thing to do.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-06.html">← Chapter Three - Intrinsic Values</a>
+    <a href="succeed-08.html">Chapter Five - Jack of All Trades, Master of Some →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

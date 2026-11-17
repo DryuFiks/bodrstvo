@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Twelve - Build A Gut And Learn To Trust It: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter Twelve - Build A Gut And Learn To Trust It</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TWELVE</h3>
+<h3 class="sub" data-say data-unit>Build A Gut And Learn To Trust It</h3>
+<p data-say><span class="s">One of the coolest things that come from experience is being presented with a problem and having an almost supernatural feeling about it, like knowing the answer before even hearing the full context.</span> <span class="s">One example I used earlier is when we get CORS errors.</span> <span class="s">Often a bug ticket will mention a CORS error on a page, and the action item will be updating the CORS rule, but most of the time, my gut tells me that the error has nothing to do with CORS.</span></p>
+<p data-say><span class="s">To give you some context, if you're not a web developer, CORS stands for Cross-Origin Resource Sharing.</span> <span class="s">It's essentially a ruleset that you set up on your server when exposing an API that basically says, &quot;I only want my API to work for domains that match XYZ,&quot; or &quot;I only want my API to accept these headers,&quot; and so on.</span> <span class="s">These rules are sent to the browser in pre-flight requests called OPTIONS calls.</span></p>
+<p data-say><span class="s">An OPTIONS request precedes each API call from the front-end to fetch the initial headers.</span> <span class="s">One of the headers is called Access-Control-Allow-Origin.</span> <span class="s">If the client origin doesn't match the value in the header, the browser throws a CORS error, preventing the website from making the subsequent API call.</span> <span class="s">That error is triggered either by an Access-Control-Allow-Origin header mismatch or if the header is missing entirely.</span> <span class="s">If the pre-flight request never makes it to the API endpoint, it'll never receive the header, and the browser will think we're simply blocking it with a CORS rule.</span></p>
+<p data-say><span class="s">Most of the time, this is not intentional; it's a typo in the route, Nginx is misconfigured, or something equally unrelated to CORS configuration.</span> <span class="s">My gut tells me it has nothing to do with CORS because we hardly ever do anything with cors.</span> <span class="s">The people who create the bug tickets don't know that.</span> <span class="s">They see the error, log it in the ticket, and assume the remedy is to fix the CORS rule, which, 99% of the time, is an incorrect assumption.</span></p>
+<p data-say><span class="s">The more you grow and learn from your experiences and mistakes, the deeper the experience imprints on you.</span> <span class="s">The faster you'll be able to recall your experience and leverage your subconscious mind to search through it all in real-time as problems are being described to you.</span> <span class="s">The nice thing about being able to develop a gut instinct is that you don't have to make grand claims and hope you're right.</span> <span class="s">You simply need to bring up your gut feeling as something you'd like to rule out before diving deep into the problem.</span></p>
+<p data-say><span class="s">These days I'll do this a lot with bug tickets where we need to fix it fast, and it takes some experience and a senior mindset to find and identify the bug.</span> <span class="s">The actual work can most likely be assigned to any of the devs on the team--I don't need to fix the bug to receive credit for finding the bug.</span></p>
+<p data-say><span class="s">I often use my gut when doing comparative analysis for tools and services that the client is considering.</span> <span class="s">Reading a few snippets on a library's main page and gauging whether it feels like a dependable library or a waste of time is usually all that's needed.</span></p>
+<p data-say><span class="s">I'll also use my gut instinct with new-hire candidates.</span> <span class="s">A quick look at a GitHub profile and a few snippets can tell me all I need to know to decide if a dev will solve or create problems.</span> <span class="s">Building a gut takes time, and learning to trust it takes even more time, so I recommend starting today.</span></p>
+<p data-say><span class="s">Lastly, never go against your gut instinct.</span> <span class="s">Your gut instinct is your subconscious mind trying to tell your superconscious mind something important.</span> <span class="s">The information just isn't loaded into your conscience yet.</span> <span class="s">Always bet on yourself.</span> <span class="s">If you're not comfortable putting your gut feeling out there, you're welcome to keep it to yourself, but remember, your initial gut instinct isn't something you have to commit to; it's just the first thing you want to rule out.</span> <span class="s">If you're right, you look outstanding, and if you're wrong, who cares?</span> <span class="s">It's part of the troubleshooting effort.</span></p>
+<p data-say><span class="s">Your homework for this chapter: before starting any work on a bug, quickly write down what you think is the possible cause.</span> <span class="s">Write down two or three possibilities if the bug is vague.</span> <span class="s">The more you do this, the more you're going to start guessing correctly before doing any investigation.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-14.html">← Chapter Eleven - Failing Successfully</a>
+    <a href="succeed-16.html">Chapter Thirteen - Stop Multitasking →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

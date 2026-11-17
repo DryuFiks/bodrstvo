@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter One - What Makes A Senior Dev?: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter One - What Makes A Senior Dev?</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER ONE</h3>
+<h3 class="sub" data-say data-unit>What Makes A Senior Dev?</h3>
+<p data-say><span class="s">I want to rule out two common misconceptions right off the bat.</span> <span class="s">The senior developer title has nothing to do with age, and it has nothing to do with skill.</span> <span class="s">I've worked with developers twenty years older than me who decided to change careers late in life and start over.</span> <span class="s">I've worked with developers twenty years younger than me that could pick up and apply new syntax remarkably fast and were always talking about bleeding-edge stuff none of us on the team had heard of yet.</span> <span class="s">If a dev in either of these groups inquired about a promotion to a Senior Developer position, I would expect the engineering management to be looking for a much more specific set of qualities.</span></p>
+<p data-say><span class="s">At a high level, a senior developer has to be ready to own accountability for the team and lean on experience to guide the team through architectural decisions and challenges quickly.</span> <span class="s">The senior devs are the front line between product and engineering.</span> <span class="s">We need to set realistic roadmap expectations and translate requirements from product and design into technical implementation tasks that the other developers on the team can easily understand, test, and objectively deliver.</span></p>
+<p data-say><span class="s">In other words, the senior devs protect the junior devs from volatile product and design demands, and we protect the codebase from junior devs.</span> <span class="s">As you will learn throughout this book, the skills required to reach the highest levels in the engineering vertical are much broader than simply being able to code well or being a stack expert.</span></p>
+<p data-say><span class="s">Imagine for a moment that you are a sushi chef.</span> <span class="s">How you learned the skill is irrelevant because you're pretty darn good at making sushi.</span> <span class="s">You take orders from the waiter and make the sushi; rinse and repeat.</span> <span class="s">You want to make more money and advance your career, but the problem is that you're stuck.</span> <span class="s">There's no room to grow at your restaurant, and you can't buy the restaurant from the owner because you don't know anything about running a restaurant.</span></p>
+<p data-say><span class="s">You can't easily get a job at a fancier restaurant because sushi is one of twenty items on their menu, and you're a specialist--sushi is all you know.</span> <span class="s">So all you can do if you get tired of your job is move to another sushi restaurant, make sushi over there, and hope you're getting paid more.</span> <span class="s">If your goal is to advance your career, more sushi is not the answer.</span></p>
+<p data-say><span class="s">Now imagine that you put sushi aside for a minute.</span> <span class="s">What else is on that fancy restaurant's menu?</span> <span class="s">Pasta items like fettuccine, spaghetti, ravioli, linguini, barbecue ribs, steak, fondue, soups, pastries, and baked goods.</span> <span class="s">These are all fantastic dishes and are making me hungry talking about them.</span> <span class="s">Still, none of these allow you to leverage your sushi skills, so it may seem overwhelming even to consider applying for a position at that restaurant.</span></p>
+<p data-say><span class="s">But what if you learned just enough to understand the underlying fundamentals?</span> <span class="s">Fettuccine, spaghetti, ravioli, and linguini are all pasta; they're all essentially the same thing, prepared slightly differently, but they're the same at their core.</span> <span class="s">You boil noodles and add some sauce; simple.</span> <span class="s">So, instead of learning those four dishes as individual dishes, learn about pasta and keep your research at a very high level, like learning about the difference between the grill and the oven--frying versus baking versus boiling and which types of dishes need which kind of heat.</span></p>
+<p data-say><span class="s">Now when you want to work at another restaurant, the items on the menu aren't nearly as important to you because you understand the fundamentals.</span> <span class="s">Even better, you bring value to the restaurant in that they can rotate their menu more frequently because you can adapt.</span> <span class="s">As you gain more experience in this, you can hone your skills and become a master chef and come up with your own signature dishes to make a name for yourself.</span> <span class="s">Once you understand what the people who receive your services consider valuable, it will open your eyes to growth opportunities all around you.</span></p>
+<p data-say><span class="s">Let's bring this analogy back to software, so pasta becomes ECMAScript.</span> <span class="s">Fettuccine, spaghetti, ravioli, and linguini become ES5, ES6, ActionScript and TypeScript.</span> <span class="s">You can see how it doesn't make sense to try to master every language that adheres to the ECMAScript specification, regardless if the language is a deprecated syntax like ActionScript or a popular syntax like TypeScript.</span> <span class="s">You don't have to know the ins and outs of each of these derivatives.</span></p>
+<p data-say><span class="s">What is important is that you can quickly find your bearings in any of them and fill in the gaps of what you don't know by leveraging what you do know.</span> <span class="s">Recognize the similarities in the syntax and when you lose your place, search the docs and get back to the code as quickly as possible.</span></p>
+<p data-say><span class="s">Don't worry about understanding everything I mentioned at this point since we're just getting started in this book, but do understand that the overarching theme of this book will be portability, scalability, and predictability.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-03.html">← Preface</a>
+    <a href="succeed-05.html">Chapter Two - Experience →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

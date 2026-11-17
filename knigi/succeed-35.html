@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Thirty-Two - Technical Debt: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Thirty-Two - Technical Debt</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER THIRTY-TWO</h3>
+<h3 class="sub" data-say data-unit>Technical Debt</h3>
+<p data-say><span class="s">Developing software is an ongoing song and dance.</span> <span class="s">It's a constant balance between product goals vs. engineering reality and engineering goals vs. product reality.</span> <span class="s">The product teams work with execs to bring corporate visions to life.</span> <span class="s">It could be an innovation initiative, or maybe it's a rebranding effort.</span> <span class="s">Most of the time, these goals have deadlines that are established without any clear understanding of anything in the engineering space, so by the time engineering is brought into the conversation, the foundational requirements may already be laid down.</span></p>
+<p data-say><span class="s">I've worked on a project where the client had plans to roll out technologically impossible features to deliver because mobile phones didn't support the capabilities they wanted.</span> <span class="s">Trying to communicate to execs is frustrating that if they want their vision realized, we need to consider establishing a partnership with smartphone manufacturers like Apple and Samsung and firmware vendors like HTC and LG.</span> <span class="s">The execs are like, &quot;Can't we just build it?&quot; which is painfully frustrating because they're so detached from reality and, ironically, quite flattering since they see us as people who can solve all the problems for them.</span></p>
+<p data-say><span class="s">Often in these types of situations, we need to find a compromise.</span> <span class="s">We need to build something that can realize some of that vision, or we may need to adjust how we build something to get a feature in front of customers immediately.</span> <span class="s">Then, based on customer feedback, we can decide if it's something we want to maintain or throw away.</span></p>
+<p data-say><span class="s">Diverging from established processes, patterns, and paradigms to deliver something quickly is called technical debt.</span> <span class="s">It makes the product team happy, and it makes the engineering team sad.</span> <span class="s">Consequently, when it comes time to refactor the ugly code to align it with our conventions, the product team can see that as &quot;the devs are rebuilding something that already works,&quot; which makes the product team sad and the engineering team happy.</span></p>
+<p data-say><span class="s">So how can we solve this in a way where we keep the sadness to a minimum and the happiness to a maximum?</span> <span class="s">Unfortunately, like many other scenarios in this industry, no magic bullet will yield the same success rate on every team and project.</span> <span class="s">There are, however, some initial approaches and high-level concepts we can consider that work well most of the time, so it doesn't hurt to start there and either run with them or adjust as necessary.</span></p>
+<p data-say><span class="s">In the &quot;Communication Mastery&quot; chapter, I will cover a brief scenario where a PM doesn't want to pull technical debt tickets into the sprint (we have to work with them to help them better understand why this is an important step in the development lifecycle.)</span> <span class="s">I want to get a head start with that here because it's the foundational element of how we align on things.</span> <span class="s">We need the product team and PMs to see the same value that we see in paying off technical debt.</span> <span class="s">We need to communicate that in a way that conveys a couple of things:</span></p>
+<ul>
+<li data-say><span class="s">We as engineers need some sanity and consistency in our projects, so our brains don't have to work so hard all day, keeping track of loose ends and pattern divergences.</span></li>
+<li data-say><span class="s">Consistent and predictable code is reliable code.</span> <span class="s">We will be able to deliver their features with fewer bugs and be able to reuse portions of our application to get new features and capabilities for free.</span></li>
+</ul>
+<p data-say><span class="s">For example, if the feature is a new table for a new type of data set in the application, the product team may ask for subtle capabilities, like &quot;We need to be able to sort by x, y, or z, and we need pagination.&quot;</span> <span class="s">If we can say, &quot;All of our tables do that because we built those features into the generic table component,&quot; that's a massive win for them.</span> <span class="s">A 5-point ticket becomes a 2-point ticket, and we can add more work to the sprint.</span></p>
+<p data-say><span class="s">That example may seem silly and insignificant, but it still amazes me how often I'll see devs cut corners on things like that.</span> <span class="s">The next thing we know, three tables in the application all behave differently, and each has its own logic handlers simply because the PMs rushed the devs to get each table out the door as quickly as possible.</span> <span class="s">If we know that our app will have multiple tables (and for whatever reason, we decide we're not going to use a component library and roll our own), then the first table that's tasked to be built is at risk of having all the common logic built into it.</span> <span class="s">Come time to add the next table; if the next table can't share any of the features because they live inside the first table, then we have a speed bump.</span></p>
+<p data-say><span class="s">So, imagine we tell the PM, &quot;Instead of building this table here inside this first page, I want to build a generic table component that can be pulled into any page that needs a table.</span> <span class="s">It'll take a bit longer, but it'll make future tables much faster to implement, and they'll be consistent.&quot;</span> <span class="s">If the PM says, &quot;No, we don't have time,&quot; then we need to communicate to them immediately the repercussions of their decision.</span></p>
+<p data-say><span class="s">We can tell them, &quot;That's fine, but we don't want to repeat this one-off process.</span> <span class="s">We'll need to build the generic table component before working on the next table, and the ticket will take even longer because we'll have to refactor the previous table so it can leverage the generic component.</span> <span class="s">In other words, we can get this first table out the door faster, but it will push back delivery of the next table.&quot;</span></p>
+<p data-say><span class="s">Now, it's on the PM to make a decision.</span> <span class="s">We're not laying down the law; we're simply giving them some sprint planning options so they can plan the sprint better.</span> <span class="s">That's fundamentally their job on the project.</span> <span class="s">Suppose they still say, &quot;No, the second table also needs to be a one-off; just copy/paste the first table and make in-line edits where needed.&quot;</span> <span class="s">In that case, we need to communicate that this is only making the debt worse, as the third table will require refactoring the first two when we introduce the generic table component.</span></p>
+<p data-say><span class="s">Ultimately, the PM is providing implementation details to the engineer, and we need to have an established separation of authority between product and engineering.</span> <span class="s">We, as engineers have a stake in things just like the PMs do.</span> <span class="s">We want a portfolio we can be proud of for future employment opportunities just like theirs.</span> <span class="s">If the PM is setting us up for failure so they can get a quick win on a shortsighted promise, then we need to intervene a bit.</span> <span class="s">We do that by insisting that we include some tech debt tickets every sprint so we can pay it off quickly, responsibly, and consistently.</span></p>
+<p data-say><span class="s">It's a bit like taking out a loan to buy something.</span> <span class="s">Paying off the debt means we pay off the loan.</span> <span class="s">If we ignore the loan and take out new loans to buy new things, we're getting deeper and deeper into debt, and eventually, our finances will become unmanageable.</span> <span class="s">This reality unquestionably presents itself in our code.</span> <span class="s">The more one-off features we build that don't support reuse or follow conventions, the harder it becomes to build new features because new code breaks existing code.</span></p>
+<p data-say><span class="s">Of course, as an aside, if we take out another loan to pay off the first loan, then we don't catch up on our debt at all; we just move it around.</span> <span class="s">That manifests in our code as replacing one shim with another shim.</span> <span class="s">If the new loan has a better interest rate, it might be a good idea to go that route.</span> <span class="s">Similarly, if we replace a terrible shim with a better shim that's easier to swap out, it's not our ideal scenario, but it's in the right direction.</span></p>
+<p data-say><span class="s">Accruing a significant amount of technical debt also makes it harder for us to train new devs because they might be exposed to twenty different ways of solving the same problem.</span> <span class="s">If they have no guidance or frame of reference when adding new code, they'll be relying on more veteran devs to provide that reference while they're working, which can be distracting and time-consuming.</span></p>
+<p data-say><span class="s">The typical result is team velocity grinding to a halt and developer morale dropping to the point that several individuals don't want to work on the project anymore.</span> <span class="s">The aftermath is our team having to focus on accommodating multiple staff transitions instead of focusing on building product features on a codebase that enables rapid development.</span></p>
+<p data-say><span class="s">By now, we understand the importance of paying off technical debt.</span> <span class="s">PMs who've experienced the catastrophe I just mentioned will likely be more inclined to support tech debt payoff efforts in every sprint too.</span> <span class="s">Some PMs are incredible to work with and are legit ambassadors for the engineering department when they communicate with the product team.</span> <span class="s">That ambassadorship usually stems from the PM having previously been a dev and has since transitioned into the new role, or else the PM has been on a project and seen firsthand what unmanaged technical debt can do to the project's velocity.</span></p>
+<p data-say><span class="s">I typically recommend paying it off as quickly as possible, like the following sprint.</span> <span class="s">Some devs love doing that kind of work, so it might be a simple matter of asking the engineering team who's up for it and dedicating one or two devs to deliver the tech debt tickets.</span> <span class="s">Tracking technical debt is just a matter of tagging the tickets appropriately in the issue tracking system and subsequently tracking the debt dependencies so the debt can be paid off in order if needed.</span></p>
+<p data-say><span class="s">One thing to consider that's entirely within our control is that we can be courteous and forward-thinking if we need to implement a temporary solution that we know will be refactored through a technical debt ticket.</span> <span class="s">We can code it in a way that helps make the tech debt refactor easier.</span> <span class="s">Maybe we need an abstraction layer but don't have time to abstract it to a remote service.</span> <span class="s">We can add a seemingly useless abstraction right in the code above the thing we're building.</span></p>
+<p data-say><span class="s">Then, when we want to pay off the debt, the abstraction part is already taken care of, so we only need to move some things around instead of unwinding some stuff to apply the abstraction as a concept after the fact.</span> <span class="s">Even something as simple as documenting a plan of action for the next steps and putting the thought effort into the debt ticket can go a long way and prevent the need for future grooming work if another dev happens to receive that ticket.</span></p>
+<p data-say><span class="s">If we can accept that technical debt is just part of the process and that getting customer engagement sooner through our temporary code can earn extra money, then we can start to see how the technical debt can pay for itself and then some.</span> <span class="s">Now we're getting a loan to invest, and the money we earn on the investment can pay off the loan and continue earning for the long term.</span></p>
+<p data-say><span class="s">Ultimately, technical debt as a concept rarely causes friction across teams.</span> <span class="s">The underlying issue is that both the product and engineering teams are often on the hook for specific deliverables.</span> <span class="s">When one team demands a process that prevents the other team from delivering at a velocity representing their character, that team can feel like their character is being compromised.</span> <span class="s">If we can find the right balance between give and take and agree that we all want the product to succeed, then it essentially just comes down to communication, the number one most valuable skill on our toolbelt.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-34.html">← Chapter Thirty-One - Architecture</a>
+    <a href="succeed-36.html">Chapter Thirty-Three - About The Collaboration Section →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

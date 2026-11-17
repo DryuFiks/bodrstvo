@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Nine - Becoming The Fixer: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter Nine - Becoming The Fixer</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Local-First Development</a></li><li><a href="#s2" lang="en">Build Rapport</a></li><li><a href="#s3" lang="en">Learn The Logs</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER NINE</h3>
+<h3 class="sub" data-say data-unit>Becoming The Fixer</h3>
+<p data-say><span class="s">Generally, when people come to you to help solve their problems, that's a good thing.</span> <span class="s">It's not really the same thing as getting assigned a bug ticket; it's more like when someone else is assigned the bug ticket, and they struggle for a while, come to you, and you're able to help solve the problem quickly.</span> <span class="s">They remember that, and that reputation will follow you.</span></p>
+<p data-say><span class="s">What typically ends up happening is we start spending more time helping other people than working on our own stuff.</span> <span class="s">Initially, this may seem overwhelming, and you may feel like you're getting distracted all the time, but the payoff comes rather quickly.</span></p>
+<p data-say><span class="s">For example, if you're on an agile project and have a daily scrum, you should start noticing that when everybody gives their reports of what they worked on yesterday, more and more of the team will start mentioning your name in their report.</span></p>
+<p data-say><span class="s">The management teams absolutely recognize this, and you'll likely start to be pulled into meetings above your pay grade.</span> <span class="s">The managers see you helping everybody else, so maybe you can help them as well.</span> <span class="s">You become known as the problem solver, and that's absolutely the title you want.</span></p>
+<p data-say><span class="s">Of course, this is in direct contrast with the title you want to avoid, which is the problem creator.</span> <span class="s">So how do you get to a point where you can solve problems faster than everybody else?</span> <span class="s">Well, there are a few ways we're going to cover, and none of them entail being psychic or being that dev who created the problems in the first place, so you know exactly what is breaking the system.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Local-First Development</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">It's a good practice to develop with an offline-first approach so we can catch and reproduce issues locally without having to deploy and wait for CI builds.</span> <span class="s">Developing offline forces us to compartmentalize our services, which aligns perfectly with test-driven development, something we will go into much deeper in a later chapter.</span></p>
+<p data-say><span class="s">The first thing we want to do is define the interaction points between our code and the services.</span> <span class="s">For example, we can't run MailChimp on our laptops.</span> <span class="s">MailChimp is a cloud-based email service.</span> <span class="s">If our code is using the MailChimp API, we can only use it locally if we're making those API calls directly to the MailChimp servers from our computer.</span></p>
+<p data-say><span class="s">This is typically a bad practice, as we want SecOps to have the ability to control and track API traffic.</span> <span class="s">If we make API calls to MailChimp from our personal computers, we're essentially bypassing our project's network.</span></p>
+<p data-say><span class="s">Even if we're on a VPN, this is a bad idea because our localhost server isn't part of a controlled subnet or API gateway.</span> <span class="s">Even a tool like ngrok can introduce security concerns, so if you're currently jumping through all those hoops, I'd recommend making a complete 180-degree turn and simplifying your entire infrastructure.</span></p>
+<p data-say><span class="s">Imagine on our local machine, instead of making API calls to MailChimp, we spin up a simple SMTP server on a Docker container and make API calls to that instead.</span> <span class="s">The one I use regularly is MailDev, which can be found with a quick search on Docker Hub.</span> <span class="s">As with any tool I mention throughout this book, it's just a tool that can be replaced with one of a hundred others.</span></p>
+<p data-say><span class="s">If it's not Docker, maybe it's Vagrant or a port forwarded locally-run server on our computer.</span> <span class="s">Ultimately, abstraction and compartmentalization are essential here, not how we achieve them.</span> <span class="s">I like Docker because it's easy and well-adopted, but please populate your own tool belt with the tools you prefer using.</span></p>
+<p data-say><span class="s">So, let's use a design pattern.</span> <span class="s">My favorite for situations like this is called Strategy, which is a pattern that allows us to choose an algorithm at runtime.</span> <span class="s">Instead of forcing our application code to know about MailChimp, we create a general Mail service with two strategies: mailchimp and maildev.</span> <span class="s">Imagine our Mail service is very simple and only exports a single function called send.</span></p>
+<p data-say><span class="s">When we import our Mail service into the file that needs to send an email, we will give it a strategy (most likely from an environment variable) so it knows which functions to expose.</span> <span class="s">Then we would invoke Mail.send instead of MailChimp.send.</span></p>
+<p data-say><span class="s">The signature of the send function would be identical in both strategies...</span></p>
+<p data-say><span class="s">...but the guts of the functions would do slightly different things based on what the underlying tools care about in the payload.</span></p>
+<p data-say><span class="s">We may need to rename some properties or transform some data a bit so that our mailchimp strategy can directly call the MailChimp send API, and our maildev strategy can call the MailDev send API on our Docker container.</span> <span class="s">For the strategy identifiers, our local dev environment would expose the environment variable &quot;maildev,&quot; and DevOps can expose an environment variable &quot;mailchimp&quot; on the appropriate deployment tier.</span> <span class="s">You can see how the separation of concerns and the leveraging of the strategy pattern can make life really easy for you and allow the product team to try out new vendors quickly.</span></p>
+<p data-say><span class="s">What if they want to switch to Sendgrid?</span> <span class="s">Simply copy and paste the mailchimp strategy, rename it to sendgrid, and change the guts of the new strategy methods to play nicely with the Sendgrid API.</span> <span class="s">Now, if we have a blue/green deployment setup, we can send blue emails through MailChimp and green through Sendgrid.</span></p>
+<p data-say><span class="s">The underlying point is that we don't want our application code to know or care about vendor code.</span> <span class="s">We need to separate application logic from utility logic.</span> <span class="s">Our unit tests will cover our service and all the strategies.</span> <span class="s">Thanks to the strategy pattern syntax, we can mock out each of those third-party libraries or API calls quite easily to get 100% test coverage in our project.</span></p>
+<p data-say><span class="s">This was one really deep example, but the key here is that we want to repeat this with all the interaction points and compartmentalize services that are out of our control so that our application is entirely in our control.</span> <span class="s">That way, when we need to work on a bug, we can first try to reproduce it locally and either rule in or rule out huge portions of the app instantly.</span></p>
+<p data-say><span class="s">If we use this email example, imagine the bug ticket is titled, &quot;Customers are not receiving thank you emails.&quot;</span> <span class="s">Well, suppose we try to reproduce this locally, and the MailDev Docker container sends an email just fine.</span> <span class="s">In that case, we know that it likely has nothing to do with our application code unless there's some conditional logic surrounding that send call, in which case we'd need to ensure the conditions are met in the same way locally and remotely.</span></p>
+<p data-say><span class="s">We know then to run our unit tests, and if the mailchimp tests pass, then it's really only one of three things:</span></p>
+<ul>
+<li data-say><span class="s">Our mailchimp test has a logical assertion bug.</span></li>
+<li data-say><span class="s">The issue is at the account level; maybe someone forgot to pay the MailChimp bill or the template names changed.</span> <span class="s">Perhaps we've reached our send limit for the month.</span> <span class="s">There are lots of things to rule out in this space, but logging into the vendor tool will likely display some messaging as to what's up with the account.</span></li>
+<li data-say><span class="s">The issue is in a DevOps context; maybe the environment variable is wrong, and the production app isn't pointing to the correct strategy.</span> <span class="s">Perhaps it's using the wrong API key and sending emails to the sandbox account.</span></li>
+</ul>
+<p data-say><span class="s">Regardless of the actual bug or solution, I want you to understand that how we structure our code can make a huge difference in how quickly we can troubleshoot issues and rule out possible causes.</span> <span class="s">Instead of blindly playing guess-and-check, we can systematically narrow down the culprits and present solid options to whoever asks us for help.</span></p>
+<p data-say><span class="s">I realize this might sound both super specific and super vague at the same time, but trust me when I say it gets creepy how quickly you'll start to develop hunches of what could be the cause of any given bug at any given moment literally because you can bubble sort your way down to a few interaction points in a matter of seconds.</span></p>
+<p data-say><span class="s">I will close this point by saying that if you're working on a project with a ton of bugs, no unit tests, no local dev, and regular hotfix deployments, you may want to get out of that environment altogether.</span> <span class="s">Find another job or move to another team.</span> <span class="s">I'll cover this topic a bit deeper in the &quot;Growth Strategies&quot; section of this book.</span></p>
+<p data-say><span class="s">So, if we can't reproduce the bug locally and suspect it's an issue with the remote environment, how can we still be the hero here?</span> <span class="s">It may seem enticing to kick the ticket over to DevOps or another team, but that's not going to help us grow our career, and there's always a risk that our hunch was wrong; the bug gets kicked back to us, and the other team resents the wasted time.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Build Rapport</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Early in every project, I request as much access to as many systems as possible to offer as much value as I can to the team.</span> <span class="s">Not all teams want to hand out access to just anybody, so work with them and compromise where it makes sense, like getting a read-only account.</span></p>
+<p data-say><span class="s">There is considerable value in being able to SSH into a remote AWS EC2 instance to see what's going on or remotely connect to a staging database to run some queries in the CLI and verify if some data exists or is missing.</span></p>
+<p data-say><span class="s">If administrative access to pre-production systems isn't allowed, try to get permission to deploy a branch to a pre-production tier so you can rule out third-party integration issues.</span> <span class="s">Suppose you depend on other team members to do these things for you.</span> <span class="s">In that case, I highly recommend setting up a pair-programming session with them on your video conferencing app to solve the problem together.</span></p>
+<p data-say><span class="s">It's not necessarily about who gets credit for the fix; rather, it's extremely valuable to projects when multiple contributors from multiple teams share knowledge of system intricacies and nuances.</span> <span class="s">If you are the one driving this effort, you will look really good to the executives who typically want cross-team collaboration more than anybody on the project.</span> <span class="s">I'll cover this more in a later chapter.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Learn The Logs</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Lastly, learn the logs: learn where they exist, learn how they're grouped, learn how often they're updated, and learn which systems are logging and which systems are muted.</span> <span class="s">For example, on one of my recent projects in AWS, I was troubleshooting an API issue.</span> <span class="s">I discovered that none of our Lambdas had permission to log to Cloudwatch, which explained why certain data was missing from the log stream and confused the dev team.</span></p>
+<p data-say><span class="s">Another issue I ran into was when Splunk grouped a bunch of log events that shouldn't have been.</span> <span class="s">As it turned out, AWS was sending over Cloudwatch logs in chunks, and Splunk thought they were all related.</span> <span class="s">This caused a lot of confusion when trying to follow a round trip with a request header because the log grouping contained multiple users that happened to be using the system in the same timeframe.</span></p>
+<p data-say><span class="s">Try to learn the log systems as well as you can, as early as you can, because, with remote systems, you'll start to come up with theories and then use the logs to go one by one and prove or disprove them.</span> <span class="s">The faster you can do this, the better you'll look and the happier the rest of your team will be.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-11.html">← Chapter Eight - Proactive Mindset</a>
+    <a href="succeed-13.html">Chapter Ten - When To Build It, When To Buy It →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

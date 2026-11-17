@@ -194,3 +194,39 @@
   .book .sum .sum-h { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 14px; }
   .book .sum ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: 15px; }
   .book .links { display: flex; flex-wrap: wrap; gap: 0 16px; }
+
+  /* читалка книг */
+  .reader { --hl: #C9EBDF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .reader { --hl: #24574A; } }
+  :root[data-theme="dark"] .reader { --hl: #24574A; }
+  .reader .text { display: flex; flex-direction: column; gap: 24px; }
+  .reader .text section.sec { display: flex; flex-direction: column; gap: 14px; }
+  .reader .text p, .reader .text li { font-size: 18px; line-height: 1.7; max-width: 68ch; color: var(--ink); }
+  .reader .text ul, .reader .text ol { margin: 0; padding-left: 24px; display: flex; flex-direction: column; gap: 8px; max-width: 68ch; }
+  .reader .text p.q { border-left: 4px solid var(--line); padding-left: 14px; color: var(--muted); }
+  .reader .text h2, .reader .text h3, .reader .text h4 { font-family: var(--font-display); text-wrap: balance; }
+  .reader .sec-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+  .reader .sec-head h2 { font-size: 26px; flex: 1 1 240px; min-width: 0; }
+  .reader .sub { font-size: 20px; margin-top: 8px; }
+  .reader h4.sub { font-size: 17px; }
+  .reader pre.code { overflow-x: auto; background: var(--fig); border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 14px; line-height: 1.5; margin: 0; }
+  .reader .s, .reader [data-unit] { cursor: pointer; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; scroll-margin-top: 110px; scroll-margin-bottom: 70px; }
+  .reader .s:hover, .reader [data-unit]:hover { background: color-mix(in srgb, var(--hl) 45%, transparent); }
+  .reader .speaking { outline: none; }
+  .reader .s.speaking, .reader [data-unit].speaking { background: var(--hl); }
+  .toc { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .toc h2 { font-size: 17px; margin-bottom: 6px; }
+  .toc ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 4px; }
+  .toc a, .chap-list a, .shelf-s a, .credit a, .shelf .meta a { color: var(--accent); text-decoration: none; }
+  .toc a:hover, .chap-list a:hover, .shelf-s a:hover, .credit a:hover { text-decoration: underline; }
+  .pager { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .pager a { color: var(--accent); text-decoration: none; font-weight: 500; max-width: 48%; }
+  .pager a:hover { text-decoration: underline; }
+  .credit { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; max-width: 68ch; }
+  .shelf { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; scroll-margin-top: 16px; }
+  .shelf h2 { font-size: 22px; font-weight: 600; }
+  .shelf .meta { font-size: 14px; color: var(--muted); }
+  .shelf-d { color: var(--muted); font-size: 15px; }
+  .chap-list { margin: 0; padding-left: 28px; columns: 2 280px; column-gap: 28px; font-size: 15px; }
+  .chap-list li { break-inside: avoid; margin-bottom: 4px; }
+  @media (max-width: 620px) { .reader .text p, .reader .text li { font-size: 17px; } .pager a { max-width: 100%; } }

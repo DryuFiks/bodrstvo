@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foreword: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Оригинал на английском</p>
+    <h1 lang="en">Foreword</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<p data-say><span class="s">I met Sean on a gray summer day in the SoMA District of San Francisco roughly a decade ago.</span> <span class="s">I had moved to San Francisco without first landing a job, based on an adolescent over-confident attitude that my sheer will to succeed in software would overcome any obstacles.</span></p>
+<p data-say><span class="s">At this point in San Francisco, the newly minted Unicorn class of software start-ups was riding high on the &quot;Mobile First&quot; explosion of software start-ups birthed by the introduction of the iPhone.</span> <span class="s">Facebook's public debut, the seemingly overnight explosive growth of Uber, WeWork, or Airbnb, rapidly disrupted old-economy services with the new &quot;Gig Economy.&quot;</span> <span class="s">Oh, and &quot;Bitcoin&quot; was a thing, too - but it was just Bitcoin, not crypto, mentioned &quot;Blockchain&quot; outside of meet-up groups; the crowd was just as evangelical about the &quot;wonders of the crypto religion&quot; as they are today.</span></p>
+<p data-say><span class="s">For me, San Francisco was what Hollywood is to aspiring actors.</span> <span class="s">As soon as I moved to town, I figured I would audition for a role at a hot start-up company, and the glory and recognition would be all mine.</span> <span class="s">Who cared if I wasn't practicing many of the valuable techniques Sean recommends in this book?</span> <span class="s">Thinking back on myself at this point in my life and career, I felt I had all the answers when I had surprisingly few.</span> <span class="s">Furthermore, I developed an unhealthy disdain for companies and individuals I saw as &quot;corporate.&quot;</span> <span class="s">I fancied myself an outsider and believed that successful software companies were full of virtue-signaling leaders whose successes were on the back of hard-working developers.</span></p>
+<p data-say><span class="s">When I met Sean, I worked as a sub-contractor for Presence Product Group in San Francisco at our hip SoMa office, and it was replete with all the stereotypically &quot;software start-up amenities&quot; of the day: a ping-pong table, expresso bar, semi-regularly catered lunches, and micro-brew stocked fridge.</span> <span class="s">Presence reminded me of some &quot;Developer Commune&quot; (very San Francisco) where folks came and went as they pleased, and all seemed to be working on a random menagerie of coding projects.</span> <span class="s">At some point during the day, an announcement was made, and a loose smattering of folks present shuffled into a small conference room to hear a presentation.</span></p>
+<p data-say><span class="s">Sean was going to talk about a JavaScript library called &quot;Ramda&quot; (By the end of this book, you won't be surprised by that!)</span> <span class="s">I don't remember much of what Sean said about Ramda, but I came away from the talk immediately impressed not only by Sean's passion for this technology but even more so by his passion for teaching about it.</span> <span class="s">His enthusiasm for how this particular JavaScript library told me something about Sean (even though I couldn't describe it at the time).</span></p>
+<p data-say><span class="s">Remember I came to San Francisco like an actor going to Hollywood to &quot;make it&quot;?</span> <span class="s">Well, for me making it meant becoming a &quot;rock-star developer.&quot;</span> <span class="s">I naively assumed I just put in 12-15 hours a day coding, all day, every day, and I'd eventually find my way to the &quot;rocket-ship&quot; start-up on its way to becoming the next Zynga or Instagram!</span> <span class="s">I didn't need to learn to interview for a job at Google or Facebook.</span> <span class="s">What could they teach me I couldn't figure out for myself?</span> <span class="s">I'd be respected and revered once I was part of an &quot;acquisition&quot; or &quot;hot start-up.&quot;</span></p>
+<p data-say><span class="s">As time went on and when one recognized my &quot;natural coding talent&quot; and &quot;inhuman work ethic&quot; (there's no such thing), I became like the actor who keeps going to auditions and never getting the part!</span> <span class="s">Should I take classes?</span> <span class="s">Get a coach or ready books to study my craft intensely?</span> <span class="s">No. I decided: &quot;Well, everyone doesn't understand me; I'm a one-man machine: I need to create my own company where I can just code my way to success- bend the world to my will!&quot;</span></p>
+<p data-say><span class="s">Instead of bending the world to my will, being the &quot;Technical Co-Founder&quot; of a venture-backed software start-up (as a first-time entrepreneur) almost broke me.</span> <span class="s">Worked 100 hours this week?</span> <span class="s">No one cares.</span> <span class="s">Your code doesn't work, and you have a demo for a significant investor or client in an hour?</span> <span class="s">No one cares.</span> <span class="s">Do Your developers not understand the stories you wrote?</span> <span class="s">No one cares.</span> <span class="s">Or does your partner not agree about a feature?</span> <span class="s">No one cares.</span></p>
+<p data-say><span class="s">So what happens to the &quot;Rock-star&quot; who tours all the time?</span> <span class="s">They get burned out.</span> <span class="s">I did.</span> <span class="s">I was physically and mentally exhausted; I was overweight and emotionally drained.</span> <span class="s">I had no close friends and no romantic prospects.</span> <span class="s">I felt like I'd spent 4-years of my career coding my butt off for nothing.</span></p>
+<p data-say><span class="s">I was so exhausted and vulnerable that I broke down and poured my heart out to an EQ and Mindfulness coach at our startup incubator like an alcoholic admitting recognizing they had hit rock bottom.</span> <span class="s">I said: &quot;I just don't know what I'm doing, but I'm in a bad place and need help.&quot;</span></p>
+<p data-say><span class="s">Miraculously, she took me on as a client; she encouraged me to give up the things that were meaningful to me and leave behind the things I didn't need, to embrace my passions and lean into the things that I found most challenging and successful would follow.</span> <span class="s">These weren't technical challenges either - they were emotional challenges.</span> <span class="s">I needed to confront the stereotypes I had developed about what success in my career in software was all about.</span> <span class="s">In a word, she set me down the path of &quot;Mindfulness.&quot;</span></p>
+<p data-say><span class="s">With time and self-reflection, I realized I had internalized a common emotion for many new developers: &quot;imposter syndrome.&quot;</span> <span class="s">And I hadn't just internalized it in my day job; I had internalized it in my entire life!</span> <span class="s">And you know what else?</span> <span class="s">I realized the only time I didn't feel like an imposter was when teaching and mentoring others.</span></p>
+<p data-say><span class="s">I started to reflect on where I had learned this negative attitude.</span> <span class="s">Did the &quot;Fake it till you make it!&quot;, &quot;Are you the rock-star, ninja, hacker-coder who can build an entire Uber for X app in a weekend&quot; attitude come out of thin air?</span> <span class="s">No. It's a &quot;simple shortcut&quot; that we all take when we see success: we believe that it was innate talent, extraordinary ability, workaholism, exploiting others, or luck.</span> <span class="s">I slowly realized there was no logical basis for assuming others were born with exceptional ability!</span> <span class="s">Have you ever seen someone start coding for the first time purely by intuition?</span> <span class="s">Have you met someone that aced every interview or coding test they've ever had without experience?</span> <span class="s">I've come to recognize that when I see or hear these sorts of anecdotes, the first thing I should be skeptical about is my belief system that wants to assume the &quot;Simple Shortcut.&quot;</span></p>
+<p data-say><span class="s">So what did all those &quot;corporate&quot; developers and entrepreneurs have that was so different?</span> <span class="s">What helped these senior engineers, architects, and hackathon legends achieve success?</span> <span class="s">In my opinion, it was simply experience and passionate mentors.</span> <span class="s">And by mentors, I'm not just talking about a single individual or a teacher.</span> <span class="s">These people all had colleagues, peers, websites, communities, books or papers, talks at conferences they heard or watched on YouTube that made them say to themselves: &quot;Look at this person's success!&quot;</span> <span class="s">&quot;Look at how trusted and knowledgeable they are!&quot;.</span> <span class="s">I'd invite you to look deeper; chances are the most passionate ones will be the most authentic.</span> <span class="s">Trust your intuition.</span></p>
+<p data-say><span class="s">That brings me back to that talk about Ramda, way back before &quot;We should teach Blockchain to pre-schoolers&quot; and &quot;WeWork is planning a moon base we'll be able to commute to an on-demand electric self-driving SpaceX rocket in 18 months&quot;.</span> <span class="s">I realize now it's easy to feel like an imposter when you don't have a mentor or to be jealous of others' success when you haven't examined your belief system.</span></p>
+<p data-say><span class="s">With Sean's talk, I knew there was &quot;something there,&quot; even if I didn't recognize it then or wasn't ready to listen.</span> <span class="s">Looking back, I have a better grasp on my intuition from then: Sean is a passionate mentor.</span> <span class="s">I considered him a mentor, and I didn't even realize it!</span> <span class="s">His passion (even more so than software development is suspect) is passing on his knowledge and experience.</span></p>
+<p data-say><span class="s">Even if you don't have any mentors today, that's ok; you are reading this book.</span> <span class="s">Even if half (or all) of the technical material goes right over your head the first time you read this book, that's ok.</span> <span class="s">Please use the attitude and philosophy in these pages to build on that intuition to seek out the people, communities, books, and materials in your life who are passionate mentors.</span> <span class="s">I'm confident you'll succeed.</span></p>
+<p data-say><span class="s">Jordan Baucke</span></p>
+<p data-say><span class="s">Christmas Eve, 2022</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-01.html">← Acknowledgments</a>
+    <a href="succeed-03.html">Preface →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

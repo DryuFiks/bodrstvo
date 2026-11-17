@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Fifteen - The Zen Road: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter Fifteen - The Zen Road</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Iteration</a></li><li><a href="#s2" lang="en">Delegation</a></li><li><a href="#s3" lang="en">Deferral</a></li><li><a href="#s4" lang="en">Compromise</a></li><li><a href="#s5" lang="en">Balance</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER FIFTEEN</h3>
+<h3 class="sub" data-say data-unit>The Zen Road</h3>
+<p data-say><span class="s">In this chapter, we'll discuss how to achieve zen in our workday using these five principles: iteration, delegation, deferral, compromise, and balance.</span> <span class="s">Our goal is to get as much fulfillment from our careers as possible.</span> <span class="s">We want to avoid burnout and be in control of our day, so we enjoy doing what we do.</span> <span class="s">As we grow in our careers, we'll likely be moving further and further away from the things that drew us to this field in the first place.</span></p>
+<p data-say><span class="s">Maybe you love tinkering with new code to &quot;figure stuff out,&quot; or you love building applications from start to finish to showcase them to the world like works of art.</span> <span class="s">You'll likely have less ownership of low-level code implementation as you get promoted.</span> <span class="s">You'll probably be part of larger teams and won't be building anything by yourself, let alone anything you personally envisioned.</span> <span class="s">This reality can be a wake-up call for some of us; one day, we're sitting at our desks overworked and feeling miserable.</span></p>
+<p data-say><span class="s">So let's talk about ways we can bring order to the chaos of our day-to-day so we'll be happier and have energy left over at the end of the day to work on our own projects that bring us personal joy.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Iteration</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Iterative development is relatively new but has proven invaluable in an agile environment.</span> <span class="s">The idea with iterative development is to do the bare minimum necessary to deliver base functionality and move on.</span> <span class="s">By doing this, we're developing horizontally instead of vertically and can get a minimum viable product out the door and into customers' hands much faster.</span></p>
+<p data-say><span class="s">From there, customer feedback can drive the next iteration of development.</span> <span class="s">Do they want more features, or do they want one of the features to be enhanced?</span> <span class="s">Iterative development puts our customers in charge of product direction, so all our work meets a specific customer demand.</span></p>
+<p data-say><span class="s">The contrast of iterative development is waterfall development, where we finish building one thing before moving on to the next.</span> <span class="s">It implies the product team already knows exactly what customers want, which is rarely the case.</span> <span class="s">Most of the time, the product teams have ideas they think are great, but ultimately they're created in a biased sandbox, and they won't know if the ideas are good until the product is released to customers.</span></p>
+<p data-say><span class="s">Let's use a real-world example.</span> <span class="s">Imagine we need to implement authentication into a new product.</span> <span class="s">We have so many options--custom registration, Social login, SAML, OIDC, etc. The iterative development mindset would tell us that we should implement the most basic registration possible to get customers into the system.</span> <span class="s">We can add a &quot;Login with Facebook&quot; button and have users in a database table in a couple of hours tops, and then we should move on.</span></p>
+<p data-say><span class="s">I realize not everyone has a Facebook account.</span> <span class="s">However, we can plan an initial marketing campaign to use Facebook ads so our prospects will not only have Facebook accounts, but they'll be on Facebook when they click our ad and can register with our product quite seamlessly.</span></p>
+<p data-say><span class="s">Our login doesn't need to support signing in with Google or LinkedIn or a custom email and password combo because no users have asked for it, and we can add those on the next iteration.</span> <span class="s">Instead of spending an entire sprint loading up support for the ultimate login page, we spent two hours and moved on.</span> <span class="s">Imagine how much we can cover in a sprint with this approach.</span></p>
+<p data-say><span class="s">Of course, the code we commit should be thoroughly tested and up to our highest standards.</span> <span class="s">We want it to scale, so we should leverage the strategy pattern and compartmentalize our services so that future iterations have an obvious plug-and-play feel.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Delegation</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">I used to think that the way to get noticed and promoted was to be the rock star on my team.</span> <span class="s">I thought if I said no when someone asked me to do a task, someone else would say yes, and they would get the promotion.</span> <span class="s">What always ended up happening was I was always working, and the managers were always leaving early and enjoying their evenings and weekends.</span></p>
+<p data-say><span class="s">I remember one director on a former project leaving at 5 pm one day while another dev and I stayed literally all night until 8 AM the next morning.</span> <span class="s">We were stuck working with an offshore IT department that was refusing to deploy our work in the middle of the night because they never got the approval to deploy it from the director, who left.</span></p>
+<p data-say><span class="s">The director came in the following day at 8 AM.</span> <span class="s">He asked us why we were still there and explained that since we missed the deadline for deploying our work the night before, we should plan to deploy it the following month instead.</span> <span class="s">He made us work all night for him and set us up for failure by forgetting to tell the offshore IT team that we'd be needing them.</span> <span class="s">Not only did he never apologize or give us any credit or compliments for pulling an all-nighter, but he also blamed us for pushing the deadline back, and was promoted to Senior Director that same month.</span></p>
+<p data-say><span class="s">That was the moment in my career when I realized that working more than everybody else in the room does not get you promoted.</span> <span class="s">It just makes us look overwhelmed and incompetent.</span></p>
+<p data-say><span class="s">The reality is that most tasks don't need to get completed when we think they do.</span> <span class="s">Product likes to put a false sense of urgency on tasks, but that's typically only because they made promises to people above them, and they don't want to be put in a situation of explaining why they missed some promised dates.</span></p>
+<p data-say><span class="s">Usually, though, the product team promises an entire roadmap made up of smaller promises.</span> <span class="s">During the sprint planning phase, telling the product team that we're at our limit for how much work we can accept that sprint is perfectly ok.</span> <span class="s">They typically don't care if we can do more.</span> <span class="s">They're often more focused on trying to be accurate with the sprint velocity so their promises won't be broken.</span></p>
+<p data-say><span class="s">It's up to us to underpromise and over-deliver so that they can underpromise and over-deliver, meaning we should accept less work during sprint planning.</span> <span class="s">We want to complete all our tasks and have time left to help the other devs and pull some tickets in from the backlog if we run out of work.</span> <span class="s">We will look so much better to everybody around us when we have a light &quot;To do&quot; list by being proactive with our time vs. having a full &quot;To do&quot; list and making people worry and wonder if we'll be able to finish all the work.</span></p>
+<p data-say><span class="s">The more tasks we own, the less we can help and collaborate.</span> <span class="s">When this happens, we need to take action immediately and ask other devs if they can help by taking some of our tickets.</span> <span class="s">Asking another dev to help us is a great way to build rapport with that dev--much deeper than when we help them.</span> <span class="s">It feels like reverse psychology, but that's how our brains are wired.</span></p>
+<p data-say><span class="s">To summarize, we should delegate our work when we feel overwhelmed and learn to say no to people when they want us to stretch ourselves too thin.</span> <span class="s">We don't need to downplay our skills or abilities when refusing additional work.</span> <span class="s">Instead of saying, &quot;I can't; I'm already overwhelmed,&quot; we can say, &quot;I'm at sprint capacity, but I'm happy to do it next sprint.&quot;</span></p>
+<p data-say><span class="s">Keep it brief and professional, and we'll come across as having our shit together.</span> <span class="s">Being reliable and consistent with our sprint velocity is typically much more appreciated by the product team than being able to take on extra tasks to help cover for someone who didn't plan their roadmap well.</span> <span class="s">Remember, doing that favor for them will only affect how we see them, not how they see us.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Deferral</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">We covered deferral a bit in the delegation principle but let's zoom in on this one.</span> <span class="s">Deferral is basically delegation to your future self.</span> <span class="s">During sprint planning meetings, I'm very conscious about keeping my sprint light, so I punt low-priority tickets to future sprints but keep ownership of them.</span></p>
+<p data-say><span class="s">This does a few things.</span> <span class="s">It keeps me on the client's radar for several weeks or months when they're looking at the roadmap, so when the execs are renewing the SoW, there is no question that I'm a valuable asset to the project.</span></p>
+<p data-say><span class="s">If I locked myself in my office and worked nights and weekends to complete all the tasks assigned to me in the backlog, I'd have no more work, and they'd roll me off the project.</span> <span class="s">Part of being a good consultant is maintaining a presence on the project to help steer the ship in the right direction when it starts to shift off course.</span></p>
+<p data-say><span class="s">On the surface, it might appear that my value to the project is calculated in Jira story points, but any dev can write code and move those tickets through the swim lanes.</span> <span class="s">I need the clients to see that my value to the project (what makes me irreplaceable) is all the other stuff you're learning in this book: how to see the forest from the trees, how to communicate across teams, and translate product subjective to technical objective, how to help junior devs become senior devs, and so on.</span></p>
+<p data-say><span class="s">You must believe you are that person before anybody else will treat you like that person.</span> <span class="s">This is all part of taking charge of your software career.</span> <span class="s">You start deciding how many tickets you accept in a sprint instead of letting the product owner or dev manager decide.</span></p>
+<p data-say><span class="s">As long as your tickets are done, and you're working on something to help move the team and project forward and upward, you will be perceived as valuable.</span> <span class="s">Nobody should give you a hard time for having no tickets in your queue if you're pairing with other devs, helping them grow and deliver their tickets.</span> <span class="s">If anybody does, it's their problem, not yours, and is a direct reflection of their own insecurities.</span> <span class="s">Don't change for them--you're leading by example.</span> <span class="s">Some people fear change regardless if it's a positive change.</span></p>
+<p data-say><span class="s">One of the most common things I'll defer is big under-scoped features.</span> <span class="s">The product teams on any number of projects I've worked on over the years love to pitch huge features that don't fit with the existing infrastructure.</span> <span class="s">They'll often add the tickets to the sprint planning out of nowhere, and we need to catch them and kick them back to grooming.</span></p>
+<p data-say><span class="s">I talked earlier about developing a gut.</span> <span class="s">This is when my gut almost always tells me to stop the feature in its tracks.</span> <span class="s">I'll say, &quot;This feels like a much bigger feature than what's being presented in the ticket.</span> <span class="s">It doesn't feel like it was groomed properly.</span> <span class="s">I recommend kicking this out a couple of sprints and adding a spike to the next sprint instead.</span> <span class="s">We can assess all the integration points and see how much extra work will be needed to support the ticket.&quot;</span></p>
+<p data-say><span class="s">Fifteen or even ten years ago, I'd have just dived right in on a new feature ticket and worried about the integration points after building the feature.</span> <span class="s">Of course, I learned that this is a messy approach.</span> <span class="s">When you don't have integration contracts at least identified, let alone specced out, you're just asking for a bolt-on solution that will regularly break as the system evolves around it.</span></p>
+</section>
+<section data-speak class="sec" id="s4">
+<div class="sec-head"><h2 data-say data-unit>Compromise</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Early in my career, I used to be extremely passionate about my way of programming.</span> <span class="s">I would resist lateral change because I had convinced myself that my velocity would tank if I switched.</span> <span class="s">When I say lateral change, I mean switching from a two-space indent to a four-space indent, or from underscore to camelCase, or being told to use charting library &quot;B&quot; when I'd been using charting library &quot;A&quot; on the past three projects.</span> <span class="s">None of these changes are better or worse; they're just changes, so I resisted.</span></p>
+<p data-say><span class="s">The problem, of course, is that while I was extremely comfortable with underscores, another dev on the project was highly comfortable with camelCase.</span> <span class="s">To this dev, I came off as a stubborn asshole.</span> <span class="s">The manager at the time sided with the other dev, and we went with camelCase.</span> <span class="s">It didn't take me long to get used to it, and I've stuck with it ever since.</span></p>
+<p data-say><span class="s">I've used all of these lateral comparables throughout my career.</span> <span class="s">Having been forced to switch countless times, I can assure you that none of these preferences are worth standing your ground.</span></p>
+<p data-say><span class="s">You can vote for them if you're starting a new project, but I highly recommend you save your battles for things that matter, like object-oriented vs. functional patterns, for example.</span> <span class="s">That's a big deal because you don't want to deal with mutation if you don't need to.</span> <span class="s">For example, where OOP may work well for a video game, it introduces unnecessary complexity and overhead on a web app.</span></p>
+<p data-say><span class="s">By showing your team that you're willing to let go of your preferences to them, they'll most likely reciprocate that when you insist on something you're passionate about.</span></p>
+<p data-say><span class="s">One strategy I've used in the past on a team is when we had a meeting to redefine our coding standards.</span> <span class="s">We had roughly twenty items on the agenda, similar to the few I mentioned above.</span> <span class="s">Each dev in the forum got twenty &quot;votes.&quot;</span> <span class="s">They could vote on any item with as many votes as they had in their hand.</span> <span class="s">If an item they voted for wins, they lose those votes for future items.</span> <span class="s">It made it really fair and democratic.</span></p>
+<p data-say><span class="s">For example, if I participated in this approach in the future, I'd save all my votes for the JavaScript library Ramda.</span> <span class="s">It's helped to improve my JavaScript projects so drastically that I can't even comprehend working on a project without it or some alternative functional programming library like Sanctuary.</span></p>
+<p data-say><span class="s">Let go of little biases and allow the linter to do its thing.</span> <span class="s">Set up your IDE so that when you hit the tab key, it adds however many indentation spaces the team decides on, and your workflow really doesn't change all that much.</span> <span class="s">It allows you to expand and grow every time you don't get your way, so take it with a grain of salt and compromise whenever possible.</span></p>
+<p data-say><span class="s">People will like working with you much more when you make it clear to them that their opinions matter and that your working relationship with them is more important to you than some syntax that helps you type faster.</span></p>
+</section>
+<section data-speak class="sec" id="s5">
+<div class="sec-head"><h2 data-say data-unit>Balance</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The last principle I want to cover to help you achieve zen in your work day is learning to appreciate work/life balance.</span></p>
+<p data-say><span class="s">We've already covered delegation and deferral to help free up your workload, but taking this a step further, you need to be able to clock out at the end of your work day.</span> <span class="s">If you're passionate about coding and software development, this doesn't mean you need to unplug.</span> <span class="s">It would be best if you unplugged at some point every day, but I'm talking about setting a hard boundary of when you stop helping your employer live their life and start living your own.</span></p>
+<p data-say><span class="s">Your work day is your employer's dream.</span> <span class="s">They dreamed of getting to the point of owning a business and hiring staff to build stuff for them.</span> <span class="s">You realize that dream for them from 8-5, Monday through Friday, week after week, or whatever your current schedule is.</span> <span class="s">If you already work for yourself and have paying clients, set your workday boundaries in your SoW when you sign your paperwork.</span></p>
+<p data-say><span class="s">To be able to give your 100% on any project, you need to be able to recharge and spend time away from the project.</span> <span class="s">I wake up every morning around 5:30-6:30 AM and take 60-90 minutes to work on whatever side project I've assigned myself, like this book.</span> <span class="s">At 7:45 AM, I'll let my dogs out, have a quick breakfast, and work from 8-5, taking a lunch break from noon to one to hang out with my wife and kids.</span></p>
+<p data-say><span class="s">I relax for a half hour after work and then work out by going to jiu-jitsu for 2 hours or exercising in my garage and running around the neighborhood.</span> <span class="s">I'll have dinner around 8 PM and hang out with my family again, watching TV or whatever they want to do.</span> <span class="s">On the weekends, I have more jiu-jitsu, and then I rarely touch my computer unless my family has their own plans, and then I'll tinker with some Arduinos or something fun, maybe play some video games or read.</span> <span class="s">Come Monday, I've had two full days to recharge, and I'm ready to give my 100% again.</span> <span class="s">Imagine, had I been working on my full-time project all weekend, how much I would dread Monday.</span> <span class="s">I'd feel like I never get a break like I'm overworked or burning out.</span></p>
+<p data-say><span class="s">Burnout is a very real thing--you need your breaks.</span> <span class="s">Again, you don't need a break from your passion; you need a break from your employer's passion.</span> <span class="s">If you're a full-time dev building your own stuff and doing client work, and you love what you do, by all means, keep doing your thing, friend!</span> <span class="s">Just don't neglect the other people in your life, or you will likely lose what you love the most.</span></p>
+<p data-say><span class="s">When my first son was born, my instincts kicked in to be a provider.</span> <span class="s">I was young, and the only way I knew how to provide was to earn money writing software.</span> <span class="s">I'd work and work and work.</span> <span class="s">I was in my office for 12 to 14 hours every day, just coding my life away, trying to earn as much money as possible so my wife wouldn't have to work.</span></p>
+<p data-say><span class="s">My wife started resenting me for working all the time, and I started resenting her for not appreciating how hard I worked for her and our son.</span> <span class="s">We weren't seeing eye to eye at all.</span> <span class="s">Thankfully, she was able to help me understand that I was missing out on precious early moments with my son, and she was feeling alone and overwhelmed having to take care of him all day by herself.</span> <span class="s">We ultimately decided on a work schedule that made us both feel happier, our stress levels went way down, and our relationship has been stronger ever since.</span></p>
+<p data-say><span class="s">It was at that moment when I realized the importance of work/life balance.</span> <span class="s">I promised myself that if I ever had to work an all-nighter again, I would take the next two days off to make up for it.</span> <span class="s">Balance is everything, my friends.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-17.html">← Chapter Fourteen - Flow</a>
+    <a href="succeed-19.html">Chapter Sixteen - Cancerous Traits To Avoid →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

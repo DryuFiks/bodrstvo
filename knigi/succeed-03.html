@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preface: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Оригинал на английском</p>
+    <h1 lang="en">Preface</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<p data-say><span class="s">Hello reader!</span></p>
+<p data-say><span class="s">My name is Sean Cannon.</span> <span class="s">First and foremost, I'd like to thank you for putting your trust in me as a mentor and congratulate you on what I feel is the best investment you will make in your software career.</span></p>
+<p data-say><span class="s">This book assumes you are either a junior or mid-level developer looking to jump 10-15 years ahead of your peers or are a senior dev who wants to start polishing your brand to shine above the rest and earn the income you deserve.</span></p>
+<p data-say><span class="s">I spent the last two decades learning things the hard way through trial and error, luck, guidance, and mentorship.</span> <span class="s">As I've grown and been given new opportunities, I've constantly been extending my hand behind me to help my fellow developers grow as well, so none of us are left behind.</span></p>
+<p data-say><span class="s">Throughout this book, I reference some libraries, frameworks, and buzzwords which are mostly part of the JavaScript family.</span> <span class="s">Please don't think that this book isn't for you if you code another language besides JavaScript.</span> <span class="s">I absolutely work on projects that leverage other languages like Java, Python, Swift, PHP, Haskell, .NET... the list goes on.</span></p>
+<p data-say><span class="s">In our line of work, we're often commissioned to add functionality to an existing codebase, and we don't get to choose the language.</span> <span class="s">I decided to use JavaScript as the primary language for my examples and analogies because even if JS isn't your primary software language, you're probably familiar with it in some regard.</span></p>
+<p data-say><span class="s">If you are brand new to JavaScript, you'll benefit in another way: I make a consistent point to mention that your career should not be your syntax.</span> <span class="s">A programming language is just a tool on your belt, and you should be fluid and agnostic, using whichever tool is best for the project or the team.</span></p>
+<p data-say><span class="s">So please understand that the concepts and principles I will cover in this book apply to multiple languages on multiple platforms.</span> <span class="s">Most of my career and most of my commissioned work involves building software online for websites and cloud applications, so most of my examples and analogies will refer to that technology space, but please understand that I've also built mobile apps, kiosk applications, automotive center console experiences, and desktop applications.</span> <span class="s">I assure you the principles work across all of the verticals.</span> <span class="s">I'll do my best to mention some variances, like if something applies to statically or loosely-typed language only or a pattern that applies to functional programming and doesn't apply to object-oriented or procedural languages as much.</span></p>
+<p data-say><span class="s">If you ever feel like a chapter should accommodate your situation better, please send me a message and let me know.</span> <span class="s">I'll either try to help you personally or update the book in the next release to include additional content that covers your scenario if I think it can help multiple readers.</span> <span class="s">You can also post in our Succeed In Software Facebook group.</span></p>
+<p data-say><span class="s">Lastly, there is an accompanying instructional course for this book with several hours of video, which can be found at SucceedInSoftware.com if you prefer watching and listening versus reading.</span> <span class="s">It also includes interviews and additional content that will be added regularly.</span></p>
+<p data-say><span class="s">With that, once again, thank you, and welcome!</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-02.html">← Foreword</a>
+    <a href="succeed-04.html">Chapter One - What Makes A Senior Dev? →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

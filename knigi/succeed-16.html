@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Thirteen - Stop Multitasking: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part One - Traits · Оригинал на английском</p>
+    <h1 lang="en">Chapter Thirteen - Stop Multitasking</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER THIRTEEN</h3>
+<h3 class="sub" data-say data-unit>Stop Multitasking</h3>
+<p data-say><span class="s">What do you do when you're working on a file, and your calendar reminds you that you must attend a weekly meeting?</span> <span class="s">If you're in the office, do you bring your laptop and continue working during the meeting?</span> <span class="s">If you're working remotely, do you just put the meeting on the conferencing software in the background and listen in while you continue to code?</span></p>
+<p data-say><span class="s">What you're essentially doing is splitting your focus between two things at the same time.</span> <span class="s">What if the meeting entails a slide show or screen share?</span> <span class="s">Do you attempt to code and listen to people in the meeting and look at the visual reference being discussed?</span></p>
+<p data-say><span class="s">We all work with people who work through meetings, and if you ask most of them about something covered in the meeting several days later, they won't be able to recall it.</span> <span class="s">If they were engaged in the meeting, it would have taken them just as long to finish the code had they just waited until after the meeting to focus on it, and the odds of introducing bugs in their commit are much higher because of the distractions.</span></p>
+<p data-say><span class="s">Almost every state in the US has already made it illegal to text while driving, and some won't even let you wear headphones while driving.</span> <span class="s">These laws are based on the fact that accidents are more likely to happen if your focus is divided.</span></p>
+<p data-say><span class="s">Recent studies have also shown that valuable time is lost when people are forced to change gears in the middle of a task.</span> <span class="s">The more complex the task, the more time is lost.</span> <span class="s">The lost time is the time that's usually spent by the frontal lobe of your brain making decisions and establishing priorities.</span></p>
+<p data-say><span class="s">In our line of work, these typically come as scheduled distractions like meetings or team events, where we're not expected to interact necessarily, but we're expected to consume the knowledge and understand the decisions that were made in the meeting, so we have appropriate direction moving forward on our projects.</span></p>
+<p data-say><span class="s">If our focus is on our laptop, we're not receiving the information, and our code quality is at risk if our focus is on the meeting.</span> <span class="s">These situations demand our time and presence but not necessarily our focus, which is why it's tempting to want to continue to work through them.</span></p>
+<p data-say><span class="s">If it's not a meeting, maybe you're starting another ticket while waiting for a build to finish.</span> <span class="s">If the build fails, you're now fifteen minutes into a new file and have to return to the old one.</span> <span class="s">For these situations, I typically recommend taking the opportunity to do the busy work like checking emails or doing code reviews.</span> <span class="s">Something that you can drop on a dime regardless if the build passes or fails.</span></p>
+<p data-say><span class="s">Situations that demand our focus make it nearly impossible to multitask; for example, if we're working on a file and another dev pings us in chat asking for help solving a bug, or if we're asked to jump on a call and explain something or approve something in a small group.</span> <span class="s">We can't continue working on other items during those situations because we must focus on and engage with the new task.</span></p>
+<p data-say><span class="s">Most often, when we're put in those situations, our ability to problem solve and participate is very high because we're giving all our focus to the other dev and their issue.</span> <span class="s">We can't do anything else because they depend on us in real time.</span> <span class="s">It likely wouldn't even occur to us to check our emails or catch up on Facebook.</span> <span class="s">This is called single-handling.</span> <span class="s">It's the opposite of multitasking, and it's how we're going to learn how to finish an 8-hour day in 3 hours instead of dragging out 3 hours of work over 8 hours.</span> <span class="s">We want to address the two problems we have with the previously mentioned situations.</span></p>
+<p data-say><span class="s">The first problem is that others treat our work as a second-class deliverable.</span> <span class="s">The meeting or pairing session feels more important because there is urgency attached, but us getting our work done is likely just as essential as our peers getting their work done.</span> <span class="s">The more of a mentor and manager you become, the fewer technical tasks will be asked of you, and you'll have much more time to assist your team.</span> <span class="s">If this doesn't happen, your role and responsibilities will be misaligned, and you should consider moving onward and upward to a new employer.</span> <span class="s">We'll cover this later on in another chapter.</span></p>
+<p data-say><span class="s">The second problem is that when we come back to our work after being distracted by another task, we have to get back into flow and pick up where we left off.</span> <span class="s">That takes both time and mental energy.</span> <span class="s">We want to avoid starting and stopping as much as possible.</span> <span class="s">Pretend we're trying to get the best gas mileage possible from our brain, and we want highway miles, not city miles.</span> <span class="s">Planned stops vs. rush hour traffic.</span></p>
+<p data-say><span class="s">Several years ago, Steven Covey wrote a famous book called &quot;The 7 Habits of Highly Effective People.&quot;</span> <span class="s">We were forced to read the book and write reports on it in high school.</span> <span class="s">One thing that stuck with me from that book was the four quadrants of any task.</span> <span class="s">The task is either not important and not urgent, not important but urgent, important but not urgent, or important and urgent.</span></p>
+<p data-say><span class="s">The goal, of course, is to try to do important and urgent things before doing unimportant and not urgent things.</span> <span class="s">The other two can be prioritized based on our time blocks and agenda for the day.</span> <span class="s">For example, if we have twenty unread emails, we don't have to read all twenty.</span></p>
+<p data-say><span class="s">We can spend 5-10 seconds on each email and decide if it's trash or something that needs to be dealt with later.</span> <span class="s">If it is important and urgent, we deal with it immediately, and if it's urgent but not important, then we weigh how long it will take.</span> <span class="s">If we think it will take more than five minutes to complete, we do it later; otherwise, we do it immediately.</span> <span class="s">Find a system that works for you, but the principle is the same for all tasks like this.</span></p>
+<p data-say><span class="s">A system like this can drastically help us reduce our daily distraction potential.</span> <span class="s">Most distractions come from other people thinking their task is more important than ours, and we need to decide whose career is more important, ours or theirs.</span> <span class="s">I'm not suggesting we don't help our peers.</span> <span class="s">I'm saying schedule our availability.</span> <span class="s">Please understand that people who distract us are, for the most part, not trying to be inconsiderate of our time.</span></p>
+<p data-say><span class="s">My kids will randomly come into my office and say hi, and as much as I want to tell them that I need to focus on a ticket, I put my family above my work, so it's a welcomed distraction.</span> <span class="s">I do have signals that I use to let the people around me know when I really need to focus.</span> <span class="s">At home, I'll close my office door, telling my family that I'm either on a work call or that I need to focus for a while, and then in exchange, I'll take an extended break and hang out with them.</span></p>
+<p data-say><span class="s">In my work environment, when I start work on a ticket, I will set my chat status to &quot;Do Not Disturb&quot; so that my colleagues know that I fully intend to ignore them.</span> <span class="s">They're welcome to leave me messages, but I have no intention of reading them until my status is set back to &quot;Available&quot;.</span> <span class="s">The trick is to communicate up front with your supervisors and peers so they don't see you as an isolate just working in a cave.</span> <span class="s">As I've said in previous chapters, I firmly believe communication and collaboration are massive in this field.</span> <span class="s">Find your balance, and instead of just shutting out your team when you need to focus, communicate to them that you're shutting them out so you can concentrate.</span> <span class="s">It may sound silly, but it's essential.</span></p>
+<p data-say><span class="s">Lastly, when you feel the urge to multitask, and you're in the middle of a file, I recommend doing what I do.</span> <span class="s">I write a TODO comment that reads &quot;LEFT OFF HERE,&quot; with a quick one-liner stating what I was doing and planned to do next.</span> <span class="s">It's all I need to restore my focus after an undetermined period of doing another task.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-15.html">← Chapter Twelve - Build A Gut And Learn To Trust It</a>
+    <a href="succeed-17.html">Chapter Fourteen - Flow →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

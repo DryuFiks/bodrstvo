@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Thirty-Seven - Conducting Interviews: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Three - Collaboration · Оригинал на английском</p>
+    <h1 lang="en">Chapter Thirty-Seven - Conducting Interviews</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Ditch The Whiteboard</a></li><li><a href="#s2" lang="en">Stop Holding The Keys</a></li><li><a href="#s3" lang="en">The Interview</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER THIRTY-SEVEN</h3>
+<h3 class="sub" data-say data-unit>Conducting Interviews</h3>
+<p data-say><span class="s">Of all the tasks I'm responsible for during a given workday, interviewing candidates is near the bottom of my list of things I look forward to.</span> <span class="s">I've interviewed hundreds of candidates in my career and developed a system that gives me what I need without all the nonsense that comes with typical tech interviews.</span></p>
+<p data-say><span class="s">Let's start with a few unpopular ideas:</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Ditch The Whiteboard</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Let's rip the bandaid off this one.</span> <span class="s">Whiteboards are not for code.</span> <span class="s">Whiteboards are for capturing ideas for quick iteration in a collaborative setting.</span> <span class="s">I can't count how many times I've seen devs struggle to write code on a whiteboard; devs with masters degrees in computer science struggling to execute simple tasks like &quot;Imagine our language didn't have JSON parse and stringify support; create those two functions for me.&quot;</span></p>
+<p data-say><span class="s">Super simple stuff; loop over an object or array, purge values of type function, ensure keys are double-quoted, and so on.</span> <span class="s">Accomplishing this task in your everyday IDE or editor would be pretty trivial.</span> <span class="s">We get code completion, and we can see the entirety of the function body in a few hundred pixels of screen real estate.</span> <span class="s">It's just a natural and low-pressure task like creating any other utility function.</span></p>
+<p data-say><span class="s">Trying to do that on a whiteboard, we don't know where to put closing curly braces; the literal size of the function is now measured in inches or feet vs. Pixels, so it would require us to keep walking back to see everything at once, and the whole process implies that we know precisely what the function is going to look like before we start writing.</span></p>
+<p data-say><span class="s">Any career dev knows that we often iterate when writing a new function for the first time.</span> <span class="s">We type, erase, rename, format, leverage code completion to give hints for native functions we may rarely use, and so on.</span></p>
+<p data-say><span class="s">A clumsy whiteboard demonstration merely proves that the dev struggles to whiteboard, not that the dev struggles to code or comprehend the deliverable.</span> <span class="s">It's an unfair practice, adds unnecessary pressure, and skews the candidate's capabilities.</span> <span class="s">We might as well ask the candidate to sing the function to us and decide whether to hire them based on how well they stayed in tune.</span> <span class="s">I stopped asking my candidates to do anything on the whiteboard years ago.</span> <span class="s">In my own interviews for jobs, if I were asked to whiteboard, I would reply, &quot;Actually, I'd prefer to type it in a REPL or an editor or talk you through how I would build the function.</span> <span class="s">I brought my laptop to use for this part of the interview.&quot;</span> <span class="s">I'll cover this more in the &quot;Interview Mastery&quot; chapter.</span></p>
+<p data-say><span class="s">If I don't get the job because I refuse to whiteboard, great, it's not a job I would want anyway.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Stop Holding The Keys</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Taking my approach a step further, it also doesn't make sense to ask a dev to solve a tricky problem while we're watching the dev and already know the solution.</span> <span class="s">Several years ago, I migrated away from this process when I noticed how devs were reacting to pressure.</span> <span class="s">It wasn't the pressure of needing to deliver something quickly; it was the pressure of not wanting to make a typo, not wanting to try things, not wanting to look up patterns or examples, etc. This is silly because that's precisely how we code in our workday.</span> <span class="s">We use references, we Google, and we iterate.</span></p>
+<p data-say><span class="s">I would rather have a resourceful dev on my team who can quickly recognize a good resource and discard a bad one.</span> <span class="s">I want a dev who can hop on Google, and within a few seconds, they already know what they're looking for, and they can scroll past all the garbage and narrow in on a good idea in a minute or less.</span> <span class="s">I realized that I don't care if the dev has the syntax memorized or not--it ultimately doesn't matter, and I think the skills of being able to sift through BS to find hidden gems and &quot;Aha!&quot; moments are essential to have on our team.</span></p>
+<p data-say><span class="s">We always have spike tickets like &quot;Research this new tool&quot; or &quot;Research some options to solve this problem.&quot;</span> <span class="s">I don't want a dev to come back five days later with pages of options because that puts that burden of sifting through the BS back on me.</span> <span class="s">This becomes especially true on client projects where we work with legacy systems and deprecated code languages and libraries.</span> <span class="s">We're not expected to be experts in 20-year-old pre-.NET ASP projects, but we should be able to Google that stack, get snippets in front of us, and gather our trust bearings nearly instantly.</span></p>
+<p data-say><span class="s">So applying this to my interview process, I assign these &quot;solve&quot; tasks as take-home tasks.</span> <span class="s">I tell them to email me their answer in the next day or two, to take their time, get it right, make it clean, and pretend it's something they'd be proud to merge into the master branch of a project.</span> <span class="s">Then, I evaluate different things.</span> <span class="s">Given they had extra time, no pressure, and access to infinite resources online, the quality should be that much better.</span> <span class="s">It shouldn't be a chicken-scratch solution written hastily to appease the interview, even if the solution works.</span> <span class="s">If it's sloppy or has typos, or the formatting is all over the place, or if they're using nested loops to parse an array instead of cleanly mapping over it, then I know they're going to likely create more work for us than they'll deliver for us, and I'll pass on the candidate.</span></p>
+<p data-say><span class="s">I have a coding challenge that I use for every candidate, which I'll reference below.</span> <span class="s">See if you can solve it yourself.</span> <span class="s">For context, the best answers have been one line of code, and the worst have been upwards of 50 lines of code:</span></p>
+<pre class="code" tabindex="0"><code>const data = {
+  a : 'foo',
+  b : 'bar',
+  c : null,
+  d : undefined,
+  e : 0,
+  f : {
+    a : 'fuz',
+    b : null,
+    c : {
+      a : 'biz',
+      b : 'buz',
+      c : '123',
+      d : [
+        {
+          a : 'foo',
+          b : 'bar',
+          c : null,
+          d : undefined,
+          e : 0,
+          f : false,
+          g : 12,
+          h : '13',
+          i : {},
+          j : [],
+          k : [[]]
+        },
+        {
+          a : 'foo',
+          b : 'bar',
+          c : null,
+          d : undefined,
+          e : 0
+        },
+        {
+          a : 'foo',
+          b : 'bar',
+          c : null,
+          d : undefined,
+          e : 0,
+          f : '-7',
+          g : '3.14159265358979323'
+        }
+      ]
+    }
+  },
+  g : 123,
+  h : '456',
+  i : false,
+  j : {},
+  k : [],
+  l : [[]],
+  m : '3.14159265358979323'
+};
+
+// **Challenge, refactor this cleanse function so it accomplishes** 
+**// the following criteria**
+//   **- data is not mutated**
+**//   - all `null` and `undefined` values are omitted from the returned data tree**
+//   **- all stringified numbers are converted to numbers.** 
+//       **Example, '123' becomes 123.**
+
+const cleanse = o =&gt; o;
+
+cleanse(data);</code></pre>
+<p data-say><span class="s">For context, here is the desired output:</span></p>
+<pre class="code" tabindex="0"><code>{
+  a : 'foo',
+  b : 'bar',
+  e : 0,
+  f : {
+    a : 'fuz',
+    c : {
+      a : 'biz',
+      b : 'buz',
+      c : 123,
+      d : [
+        {
+          a : 'foo',
+          b : 'bar',
+          e : 0,
+          f : false,
+          g : 12,
+          h : 13,
+          i : {},
+          j : [],
+          k : [[]]
+        },
+        {
+          a : 'foo',
+          b : 'bar',
+          e : 0
+        },
+        {
+          a : 'foo',
+          b : 'bar',
+          e : 0,
+          f : -7,
+          g : 3.141592653589793
+        }
+      ]
+    }
+  },
+  g : 123,
+  h : 456,
+  i : false,
+  j : {},
+  k : [],
+  l : [[]],
+  m : 3.141592653589793
+}</code></pre>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>The Interview</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">What does the actual interview entail if the code challenge is take-home and there's no real-time whiteboard demo?</span> <span class="s">I ask typical status questions like &quot;What projects have you been working on recently?&quot; and &quot;What's driving your incentive to move on from your current position?&quot;</span> <span class="s">I want to understand how seamless the onboarding effort will be or if the candidate will require additional training.</span> <span class="s">For the transition incentive, I'm looking for answers like &quot;There's no opportunity for growth at my current employer.&quot;</span> <span class="s">A candidate who's outgrown their employer is not the same as a candidate who's grown tired of their employer.</span> <span class="s">I also ask about any memorable wins or pitfalls with any particular tool that has made the candidate a better developer.</span> <span class="s">I touched on this briefly in the &quot;Experience&quot; chapter.</span></p>
+<p data-say><span class="s">After I finish my intro questions, I typically explain, &quot;So there are two technical challenges, one I'll send with you, and you can do it on your own time and send me the solution, and the other we're going to do together.&quot;</span> <span class="s">I'll ask the candidate to pull up StackOverflow.com, and we'll browse some questions that coincide with the stack of the respective project we have in mind for the candidate, and then we pair up on solving the question.</span></p>
+<p data-say><span class="s">The candidate drives, I navigate, and it's a typical collaborative experience.</span> <span class="s">I can gauge the candidate's ability to pair program and communicate and how well they take suggestions or corrective feedback.</span> <span class="s">Once we solve the challenge (I've never had an interview where we couldn't at least offer next steps for the asker), I explain the take-home challenge and then ask if the candidate has any questions for me.</span> <span class="s">I answer what they want to know, and we wrap up.</span></p>
+<p data-say><span class="s">The entire interview rarely lasts even 30 minutes.</span> <span class="s">I want the candidate to act and feel as natural as any day they would come into work so I know what we'd be getting.</span> <span class="s">I want to know if we're a good fit because disruption is the last thing we need--a non-team player or dev that has one foot out the door on day one, for example.</span> <span class="s">Our investments into the dev's growth are wasted when they suddenly leave for something that aligns better with what they wanted in the first place.</span></p>
+<p data-say><span class="s">When I'm interviewing candidates on behalf of a client, I redirect all salary and logistical questions to key stakeholders inside the org.</span> <span class="s">That conversation is none of my business, and I don't want to know about those negotiations--candidates for my own projects, I pay for time and materials only.</span> <span class="s">I want devs to feel they are paid for every minute they commit to my project, no wasted time, no hurried time.</span> <span class="s">Just build it the right way from day one; things take as long as they take, and everybody is happy.</span></p>
+<p data-say><span class="s">I recommend adopting my interviewing approaches for a much better success rate with new hires.</span> <span class="s">The trick, however you approach it, is to get the candidate to understand they'll be working with you, not for you, so keep the interview process collaborative and engaging, and you'll have a better idea of who it is you're considering hiring.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-39.html">← Chapter Thirty-Six - Mentoring</a>
+    <a href="succeed-41.html">Chapter Thirty-Eight - Cross-Team Relationships →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

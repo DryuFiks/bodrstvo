@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Thirty-Five - Pair Programming: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Three - Collaboration · Оригинал на английском</p>
+    <h1 lang="en">Chapter Thirty-Five - Pair Programming</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER THIRTY-FIVE</h3>
+<h3 class="sub" data-say data-unit>Pair Programming</h3>
+<p data-say><span class="s">Pair programming is one of those practices where most devs either love it or hate it.</span> <span class="s">I remember for years hating it.</span> <span class="s">I just wanted to focus and build software.</span> <span class="s">I didn't need help, and it didn't feel the same as teaching another dev or learning something from another dev.</span> <span class="s">It felt clumsy and condescending as if the management didn't trust that we could build the feature ourselves.</span></p>
+<p data-say><span class="s">Around 2014 I took a position as Principal Engineer on a team at a company I won't mention by name.</span> <span class="s">It had been around for a long time, but its primary product was a desktop application.</span> <span class="s">Shortly before I joined the company, it acquired another company that had built a mediocre and bug-littered web application.</span></p>
+<p data-say><span class="s">My employer formed a new team to essentially build a better, cleaner version of their online tool to replace that one.</span> <span class="s">The CTO's philosophy was, &quot;We'll hire a collection of junior devs fresh out of a coding boot camp and then hire two veteran senior engineers to show them the ropes and keep things in order.&quot;</span> <span class="s">My position was to take a group of ten hungry amateur coders and channel their ambition and motivation into work streams that wouldn't escape our product roadmap and technical standards adherence.</span></p>
+<p data-say><span class="s">The other senior engineer was a veteran software professional.</span> <span class="s">We ultimately divided our duties up such that he would oversee logistics and processes, and I would oversee technical consistency and quality.</span> <span class="s">His first rule was we become a full-time pairing shop.</span> <span class="s">Devs paired up in twos; if we had an odd number of devs on any particular day, I would be that dev's pair.</span></p>
+<p data-say><span class="s">I didn't initially see the value in forcing the devs to pair up eight hours a day every day, but that was his call, so I supported him.</span> <span class="s">Immediately I noticed a difference in his approach.</span> <span class="s">We had five pairing stations, each consisting of a single Mac Mini, two displays, and two keyboards/touchpads.</span> <span class="s">Both screens mirrored the same image, and both keyboards could work simultaneously.</span> <span class="s">First of all, this was a brilliant setup.</span> <span class="s">It wasn't one dev looking over the shoulder of another dev.</span> <span class="s">It wasn't one dev coding while the other sat on their phone bored.</span> <span class="s">Both devs were engaged.</span></p>
+<p data-say><span class="s">Another adjustment was that a story ticket lived with the pairing station, not with a developer.</span> <span class="s">The general rule was no dev is coding for more than fifteen minutes straight without handing off keyboard control to the pair.</span> <span class="s">Often we would trade off one function at a time.</span> <span class="s">Every day, pairs rotated.</span> <span class="s">One day the right side of the pairs would rotate clockwise to the next pairing station.</span> <span class="s">The next day the left side of the pairs would rotate counterclockwise to the previous pairing station.</span></p>
+<p data-say><span class="s">The result of this system was that any dev would never spend more than two days on any ticket, and they were constantly starting their day in the middle of unfinished work on an unfamiliar ticket and had to ramp up on it.</span> <span class="s">My job was to enforce coding standards, consistency, patterns, etc.</span></p>
+<p data-say><span class="s">So after a few weeks of getting comfortable with our process, we could hop on any pairing station, and the code would look like &quot;our team's code.&quot;</span> <span class="s">There was no individuality in the code.</span> <span class="s">It was so consistent and predictable that as devs would transition to new tickets, the only thing they needed to ramp up on was business requirements for the day.</span></p>
+<p data-say><span class="s">On the other side of the office was the acquired company's staff.</span> <span class="s">They had an existing engineering department maintaining their existing product, and our team of ten junior devs ran circles around their team.</span> <span class="s">We were extraordinarily agile and could pivot and fork efforts because that's what we practiced daily.</span></p>
+<p data-say><span class="s">You could ask any dev on our team about any feature in our codebase, and we all had the same understanding of all the moving parts because we all would work on all the code all the time.</span> <span class="s">No one dev owned any one feature.</span> <span class="s">If any dev left, that insider knowledge didn't leave with that dev.</span> <span class="s">Our engineering team was essentially a RAID setup, so when a dev transitioned off, and we brought in a replacement, there was virtually no onboarding required.</span> <span class="s">We just had them pair up as usual, and the knowledge naturally transferred, the patterns were naturally consistent, and the new dev had no issue integrating with the team.</span></p>
+<p data-say><span class="s">Because all the devs worked on all the code, there was a shared sense of ownership and pride in our project.</span> <span class="s">We built it together, and all wanted it to work and shine above anything the acquired company could build.</span> <span class="s">The acquired company was spending all its time fixing bugs, and we were spending all our time building features.</span> <span class="s">We also lived by functional programming and test-driven development, so the modularity and robustness of our code were top-tier.</span></p>
+<p data-say><span class="s">Ironically, our CTO was fired, and the head of the acquired company's engineering department was promoted and took over our team.</span> <span class="s">She did not understand anything we were doing.</span> <span class="s">Her team was understandably bitter that we outperformed them substantially, so she held a meeting with us and said, &quot;No more pairing, no more unit tests, no more functional programming.&quot;</span> <span class="s">She wanted us to start working like them and refused to work like us even though we had objective results that proved our process was successful.</span></p>
+<p data-say><span class="s">So we all quit--all twelve of us.</span> <span class="s">Ten junior devs and two engineering leads all left in the same week.</span> <span class="s">You don't get that kind of bond casually working solo on tickets.</span> <span class="s">You don't get that kind of knowledge transfer and deep understanding of the process and what agile can do until you fully invest in pair programming.</span></p>
+<p data-say><span class="s">Pair programming has a couple of variations I want to mention because I approach them differently and reserve them for different scenarios: remote pairing and mob programming.</span></p>
+<p data-say><span class="s">Remote pairing is pairing virtually, like you and your pair are both working from home and collaborating online.</span> <span class="s">It doesn't work nearly as well as an in-person pairing, so I limit remote sessions to two hours tops these days.</span> <span class="s">The online real-time code collaboration tools are clunky.</span> <span class="s">They don't offer the synergy that coding right next to your pair does.</span> <span class="s">It's not always possible or realistic to commute to the office, depending on your situation, but you should know what you're getting into ahead of time.</span> <span class="s">If you're considering an employer that requires pairing and you plan to work remotely, you're adding a layer of difficulty and stress that you may not have if you chose another employer or worked in the office.</span></p>
+<p data-say><span class="s">Mob programming is where several devs work together at once instead of just two.</span> <span class="s">At our company, we needed to implement a graph API refactor.</span> <span class="s">The effort was rather significant, as we needed to update all our models to ensure their queries worked and, of course, update our tests and so on.</span> <span class="s">We couldn't assign this to one pair because the massive overhaul affected all the pairs.</span></p>
+<p data-say><span class="s">So we got all ten devs in the conference room, put our code up on the presentation screen, and had one keyboard front and center on a table.</span> <span class="s">One dev would code for fifteen minutes, and then we'd rotate.</span> <span class="s">We all knew what we needed to do, and watching it unfold in real time where all the devs got to touch the code and see the changes, and we applied a single-handling approach with it, it didn't take very long at all.</span> <span class="s">We were in the conference room for a few days, and it was done and working.</span></p>
+<p data-say><span class="s">Remember, it's not about developer capability.</span> <span class="s">It's about department reliability.</span> <span class="s">That mob session resulted in all the devs knowing how that migration happened, how the new queries changed things, which files we touched, how we tested it, and so on.</span></p>
+<p data-say><span class="s">Imagine, in contrast, a team setup like we had, ten juniors and two seniors.</span> <span class="s">Assigning the easy grunt work to the juniors and the architecture and high-value tickets to the seniors would be tempting.</span> <span class="s">But then what?</span> <span class="s">Hopefully, you can see now how common this is and why this type of task assignment doesn't work.</span> <span class="s">This is why we are so frustrated with our projects when one person owns something.</span> <span class="s">Anytime we need to work on it, change it, or use it, we have to ask this person.</span> <span class="s">What if they're busy?</span> <span class="s">What if they don't want to help?</span> <span class="s">What if they quit?</span></p>
+<p data-say><span class="s">If you don't currently pair at your job, propose that your department start pairing.</span> <span class="s">If you currently pair and aren't feeling the value, try the pairing station setup and rotation process we used and see if it works for you too.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-37.html">← Chapter Thirty-Four - Communication Mastery</a>
+    <a href="succeed-39.html">Chapter Thirty-Six - Mentoring →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

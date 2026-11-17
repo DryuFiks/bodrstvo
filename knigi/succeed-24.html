@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Twenty-One - Scalability: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Twenty-One - Scalability</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Records</a></li><li><a href="#s2" lang="en">Network Load</a></li><li><a href="#s3" lang="en">System Load</a></li><li><a href="#s4" lang="en">Features</a></li><li><a href="#s5" lang="en">Assets</a></li><li><a href="#s6" lang="en">Engineering</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TWENTY-ONE</h3>
+<h3 class="sub" data-say data-unit>Scalability</h3>
+<p data-say><span class="s">First off, what is scalability?</span> <span class="s">Well, it's essentially how well our application can accommodate growth.</span> <span class="s">There are several areas of growth to consider as we are architecting and engineering our projects.</span> <span class="s">It's important to understand our market cap and load potential early on, so we don't waste hours unnecessarily over-engineering or over-architecting.</span></p>
+<p data-say><span class="s">So what are some examples of growth?</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Records</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Imagine you are building an internal application for companies that will deploy your app instance inside their own data center.</span> <span class="s">You can infer that the user cap will likely be the number of employees in the company--past, future, and present potentially.</span></p>
+<p data-say><span class="s">Walmart is on record for having the most employees worldwide, at 2,200,000 as of this book writing, which is technically not that bad.</span> <span class="s">Any mid-tier database like MySQL or PostgreSQL can handle a few million rows in a table with no problem, so your bottleneck will be the data transfer and display.</span></p>
+<p data-say><span class="s">We wouldn't want to select all 2 million users at once, and we certainly wouldn't want to display all 2 million users at once on the web UI because we'd crash the browser.</span></p>
+<p data-say><span class="s">If we knew from day one that we were building our project to support 2 million users, we'd most likely accommodate all this from day one.</span> <span class="s">Simply adding pagination and ensuring the users table has the appropriate indexes solves this problem.</span> <span class="s">We could even use the database for fuzzy text search and get near real-time autocomplete on 2 million rows with MySQL.</span></p>
+<p data-say><span class="s">Let's imagine for a minute that we had built our app for local businesses with 50 to 100 employees and didn't need to add any pagination on the user management screen.</span> <span class="s">The app works fine for months, and we start growing our business and securing larger clients, such as a health club chain with 30,000 employees.</span> <span class="s">Our user management screen freezes up now and offers a terrible user experience, so we have to rebuild that page to support things we discussed, like pagination and indexing.</span></p>
+<p data-say><span class="s">This is a very common scenario--if it's not users, it's orders or a ledger.</span> <span class="s">Any time we collect data over time and display a list of data, our app is growing, and it should accommodate this growth by defining the UI and API capacity early on.</span> <span class="s">If those capacities exceed our projected stored data capacity, we shouldn't need to adjust for growth.</span></p>
+<p data-say><span class="s">In our list scenario, pretend we're making a music library application.</span> <span class="s">A safe growth assumption might be that our users could eventually have millions of songs in their library but only a handful of playlists.</span> <span class="s">We could decide if we want to keep the playlist feature simple or if we want to leverage patterns and consistency and enable pagination for even small data sets.</span></p>
+<p data-say><span class="s">Neither is a better approach, though I'd recommend being consistent because redundant consistency rarely hurts the app.</span> <span class="s">Typically, the product team will own these decisions on the UI and UX level, but we need to think ahead at the API and database levels.</span></p>
+<p data-say><span class="s">Let's shift our perspective now and imagine that this application isn't deployed to corporate data centers but is a multi-tenancy application, so it needs to accommodate all company employees in the same database.</span> <span class="s">Our growth potential just skyrocketed.</span></p>
+<p data-say><span class="s">We don't need to look any further than LinkedIn, which has over 750,000,000 users at the time of this book writing.</span> <span class="s">The game changes dramatically when we start getting close to or exceeding billions of records.</span> <span class="s">If our application grew from even 2,200,000 users to 750,000,000 users, our scaling decisions aren't narrowed down to things like pagination.</span> <span class="s">We must start considering data migration to an enterprise database or another database engine.</span></p>
+<p data-say><span class="s">Migrating from PostgreSQL to Oracle isn't the end of the world, and I wouldn't ever recommend Oracle on smaller systems anyhow.</span> <span class="s">Still, we need to have it in the back of our heads whether or not the migration is inevitable so that we can make decisions early on to support this migration.</span></p>
+<p data-say><span class="s">For example, if we are using an ORM that doesn't offer Oracle support, we'll need to refactor a large portion of our code when we migrate, which adds considerable risk to the stability of our project.</span> <span class="s">If we are using raw SQL for our queries, we'll most likely need to refactor those queries to change a few keywords and syntax patterns to be Oracle-compliant.</span></p>
+<p data-say><span class="s">It's often ok and best to punt these decisions; rest assured, we won't be alone in the room making them.</span> <span class="s">Migrations and refactors like this take months and involve multiple teams.</span> <span class="s">Just make sure that the multi-team, several-month migration effort isn't required because of something we missed.</span></p>
+<p data-say><span class="s">If we went down some rabbit hole with our code and architected the project into a corner to support a record cap of 15% of the project's growth potential, then our product and executive teams would not be happy with us.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Network Load</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The next area of growth we need to account for in our projects is network load.</span> <span class="s">I don't mean load at our ISP or in DNS, but once the packet lands on our server, does it need to wait in line, or can it be processed immediately?</span></p>
+<p data-say><span class="s">Ultimately we're talking about user concurrency--how many users can engage with our application at the same time?</span> <span class="s">This is a typical challenge for websites and online games, and the simplest way to support this is load balancing.</span></p>
+<p data-say><span class="s">It's funny how long it took websites to catch on to this concept because even vintage games in the late 1990s, like Ultima Online and EverQuest, had multiple servers.</span> <span class="s">Each server had a player limit.</span> <span class="s">Once a server started reaching that limit, the game companies would deploy a new server with a new name and encourage players to either migrate their characters over to the new server or encourage new players to sign up on the new server.</span></p>
+<p data-say><span class="s">In the web world, it's much simpler for the end-user because the load balancing happens behind the scenes.</span> <span class="s">Most of you reading this book likely work for a company with a product deployed somewhere in the cloud.</span> <span class="s">AWS, Heroku, DigitalOcean, Azure, GCP, etc. Even with these services, it's possible to bottleneck your application, so it's important to understand best practices and the challenges you're trying to solve.</span></p>
+<p data-say><span class="s">You could spin up a DigitalOcean droplet or an AWS EC2 instance and run your entire website on it, and for smaller projects or static corporate landing pages, this is often all you need.</span> <span class="s">If you have a SAAS application, you must assume that too many requests will overload one instance.</span> <span class="s">Even servers like Nginx will bottleneck with too many requests, and often your database will bottleneck with too many connections.</span></p>
+<p data-say><span class="s">It's important to define early on how many concurrent requests are allowed and how we will accommodate several times that.</span> <span class="s">AWS offers a service called ELB, which stands for &quot;elastic load balancer.&quot;</span> <span class="s">We can create an auto-scaling group so that as our website receives more traffic throughout the day, AWS will automatically spin up more instances of our app, and as traffic decreases, it'll tear them down to save us money.</span> <span class="s">This mindset is fantastic; all we need to do on our end is write our code so that it can be part of a cluster.</span></p>
+<p data-say><span class="s">For example, a monolith website on a single server can use sessions in memory and have an internal pub-sub mechanism because everything is tightly coupled.</span> <span class="s">When we spread our code across multiple servers, we can no longer have state persistence on any one instance.</span> <span class="s">A typical user making two requests might hit two instances of the API, and instance two won't know that the previous request hit instance one.</span></p>
+<p data-say><span class="s">This is important to consider when handling authentication, authorization, and state.</span> <span class="s">I typically solve this by putting state outside of the cluster, for example, in Elasticache or on a separate Redis instance for smaller projects.</span> <span class="s">Even working locally, I always assume my code can't own the state and might need to be deployed as part of a cluster behind a load balancer.</span> <span class="s">Deferring ownership of the state allows me to scale my application and my state mechanism independently.</span></p>
+<p data-say><span class="s">If this all sounds complicated or overwhelming, I recommend reaching out to someone on your DevOps team and chatting with them.</span> <span class="s">Ask them how you could make their lives easier with your code, or frame it another way and ask them how the application is currently making their job difficult, and there's an excellent chance they will list off some things in line with what we're discussing now.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>System Load</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The next area of growth is system load.</span> <span class="s">A lot of this will be solved by the load balancing approach from the previous topic, but it's common for data computation to slow down over time as data accumulates and your server is doing more things.</span> <span class="s">Generally speaking, it's better to scale horizontally than vertically, spreading the load out among more processors instead of making one faster.</span></p>
+<p data-say><span class="s">It's not always reasonable to keep spinning up EC2 or ECS instances when you max out your CPU.</span> <span class="s">Sometimes we want to identify our CPU bottlenecks and see if we can extract the processing for this one thing entirely out of our server, for example, in a Lambda.</span> <span class="s">Suppose we can defer this particular step to a third-party service completely; even better.</span></p>
+<p data-say><span class="s">A typical example of this could be a virus scan.</span> <span class="s">If every time people upload files, we need to scan them for viruses before we store them, that can create a bottleneck.</span> <span class="s">We want this step to be separate from the uploader, typically as part of a pipeline.</span> <span class="s">If your project's core competency is not virus scanning, find some service that can pipe the file through an OPSWAT instance.</span> <span class="s">Whichever way we abstract this computational load, we want to use a non-blocking flow.</span> <span class="s">Instead of forcing the user to sit there watching a spinner, we return some messaging to the user immediately, letting them know the process is happening, and we will notify them when we're done.</span></p>
+</section>
+<section data-speak class="sec" id="s4">
+<div class="sec-head"><h2 data-say data-unit>Features</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">As projects grow, the product team will start wanting to add new features, and it might be up to you to decide where to put them in the code.</span> <span class="s">If we use our previous example, imagine you had created an &quot;image uploader&quot; feature, and then the product team tells you they want it to support video upload as well.</span></p>
+<p data-say><span class="s">Suppose the uploader was coded very specifically to images.</span> <span class="s">In that case, you'll need to have a bunch of redundant code also for videos, or you'll need to refactor the image uploader to be a general media uploader where the type and properties are passed to it based on the file being selected for upload.</span></p>
+<p data-say><span class="s">Maybe once it's uploaded, some code generates a thumbnail.</span> <span class="s">Well, that code won't work the same on a video.</span> <span class="s">You probably need to first find a frame in the video or allow the user to choose a frame, then your code will extract it and potentially resize it the same way you resize image thumbnails.</span></p>
+<p data-say><span class="s">There will be a utility logic fork at this step.</span> <span class="s">You can see how adding a second media type caused a lot of change requirements.</span> <span class="s">Imagine two months from now, the product also wants to support uploading PDF files.</span> <span class="s">How will your code accommodate the new capability?</span></p>
+<p data-say><span class="s">If you keep having to refactor this code, then it's not scalable.</span> <span class="s">In OOP, you should make an interface and create separate classes for each type of file that needs to be uniquely handled.</span> <span class="s">In FP, you'd want to leverage the strategy design pattern (refer to the &quot;Becoming The Fixer&quot; chapter).</span></p>
+</section>
+<section data-speak class="sec" id="s5">
+<div class="sec-head"><h2 data-say data-unit>Assets</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Static assets are files that exist on the system regardless if anybody requests them and are delivered the same every time.</span> <span class="s">Because they don't require any code or processing when fetched, they don't need to live alongside your codebase, and we can use this to our advantage.</span></p>
+<p data-say><span class="s">The most common static assets are typically the images that make up your user interface, be it a website, a game, a mobile app, etc. Some other examples are javascript files to be run on the browser, a background music sound file, an intro video, legal documents, or a pdf of your press kit.</span></p>
+<p data-say><span class="s">For remotely-fetched static assets, like images on a website, we want to consider a couple of things when deciding where they should reside and how they should be delivered.</span> <span class="s">Ideally, we want the assets to live off the application server so the server can focus all of its power on processing code and handling network traffic to internal subsystems like a database, a message bus, various microservices, or a cache.</span> <span class="s">We also want to keep the overall size of our application servers as trim and tidy as possible so that managing deploys and containers is faster and simpler.</span> <span class="s">For example, we may need fifteen instances of our application server to handle high traffic at some point, but we likely don't need fifteen copies of our logo.</span></p>
+<p data-say><span class="s">A common approach is to put all the assets in a CDN.</span> <span class="s">Use a storage service like Amazon S3 and then put some access rules in front of it through something like Cloudfront.</span> <span class="s">Alternatives like Cloudflare also offer static uploads for images and video, which can be accessed through an API.</span> <span class="s">Wherever we put the assets, we want to leverage a highly trusted domain that doesn't send cookies along with the binary.</span> <span class="s">In our system, then, we simply store a reference to the remote asset.</span></p>
+<p data-say><span class="s">I highly recommend you keep proprietary terminology out of the references.</span> <span class="s">Store just the file name instead of the fully qualified URL to its location in Amazon S3, for example, so that the files can be uploaded anywhere with the same name, and we can infer its location through config or environment variables and strategies.</span> <span class="s">For assets, try to land where if you change your mind and want to move your assets, it won't require you to change thousands of records in a database or thousands of lines of code.</span></p>
+</section>
+<section data-speak class="sec" id="s6">
+<div class="sec-head"><h2 data-say data-unit>Engineering</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">As projects grow in features and complexity, so typically does the need to expand the dev team to accommodate all the new work.</span> <span class="s">I've seen teams grow from three devs to fifteen devs in a matter of a month, and it was basically up to those three devs to wrangle in the other twelve to make sure it didn't turn into the wild west.</span> <span class="s">As senior devs, we need to make sure the codebase is set up in such a way that it tells us exactly how it wants to look and behave.</span> <span class="s">We must set a crystal clear expectation with new devs that the ultimate goal for the project should be that we can open up any random file and have no idea who authored it.</span> <span class="s">If you find yourself saying, &quot;This looks like Dale's code; he's the only one using for loops,&quot; then Dale is hurting the project.</span></p>
+<p data-say><span class="s">Let me give you a loaded example.</span> <span class="s">Imagine you're pulled into a project as a new dev.</span> <span class="s">You notice two files.</span> <span class="s">One is get_users.js, and the other is getOrders.js.</span></p>
+<p data-say><span class="s">Imagine get_users.js uses a promise chain for its asynchronous data retrieval, which happens to be a SQL query to a PostgreSQL database.</span> <span class="s">The promise chain includes a catch handler and returns a system-specified static record-not-found error referenced from a constant.</span></p>
+<p data-say><span class="s">The other file, getOrders.js, uses async/await instead of a promise chain and uses an ORM called Sequelize to fetch data from the PostgreSQL database.</span> <span class="s">There is no try/catch block, so any error returned is the Sequelize error.</span></p>
+<p data-say><span class="s">You're given a ticket that reads, &quot;Make an API to get products from Postgres.&quot;</span> <span class="s">Well, what do you do?</span> <span class="s">Do you copy the style of get_users.js or getOrders.js?</span> <span class="s">Do you ignore both and make your own, which could be some hybrid of the two or entirely original?</span> <span class="s">Do you embrace the chaos and name your file get-products.js?</span></p>
+<p data-say><span class="s">My point here is that the convention hasn't been established, so there is no clear direction for the implementation details.</span> <span class="s">Tools like linters and static analysis can take care of a significant portion of your coding conventions, so if you don't want to carry the burden of enforcing the rules, try to automate as much as possible as early as possible.</span> <span class="s">Establish the rules, patterns, and standards before building any application logic.</span> <span class="s">The project will be able to scale, grow, pivot, and typically out-pace the product roadmap, thereby boosting dev morale and reducing dev stress.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-23.html">← Chapter Twenty - Stability</a>
+    <a href="succeed-25.html">Chapter Twenty-Two - Testing →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Twenty - Stability: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Twenty - Stability</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TWENTY</h3>
+<h3 class="sub" data-say data-unit>Stability</h3>
+<p data-say><span class="s">Facebook's former mantra, &quot;Move fast and break things,&quot; is easily some of the most selfish and irresponsible advice I've heard in this industry, but it does have a place where we can apply it to our benefit; it's an effective way to learn a new language or technology.</span> <span class="s">I do it all the time with new languages and frameworks.</span> <span class="s">I'll intentionally veer from the happy path so I get comfortable with error states and failures and then try to fix them from memory, reversing the steps I took to break them.</span></p>
+<p data-say><span class="s">The moment I use that technology on a project with people besides myself, I'm no longer in a position to learn through intentional failure.</span> <span class="s">It puts the entire project at risk, causes frustration and confusion, and wastes the time of colleagues and customers.</span> <span class="s">Stability in our application equates to predictability in our application.</span> <span class="s">Being able to predict how the app is supposed to work makes it easier to recognize when the application is not working as intended.</span> <span class="s">Suppose sometimes the application throws an error, and other times it works fine.</span> <span class="s">In that case, it becomes a quirk in the system--people don't know how to reproduce it, so they can't fix it.</span> <span class="s">Entire days can be lost trying to recreate a scenario when someone experiences a quirk.</span></p>
+<p data-say><span class="s">Stability comes from a variety of factors, including, but not limited to:</span></p>
+<ul>
+<li data-say><span class="s">Unit test coverage.</span></li>
+<li data-say><span class="s">Developer discipline, meaning using best practices and not cutting corners with hacks and patches.</span></li>
+<li data-say><span class="s">Thoughtful implementation, such as leveraging strategy-based development versus condition-based development.</span></li>
+</ul>
+<p data-say><span class="s">Predictability in our projects allows us to refactor large portions of our codebase because we should have unit test coverage to tell us if we broke something.</span> <span class="s">It also makes it easier to A/B test.</span> <span class="s">Stability in our project can also be less literal and more meta, like our APIs, for example.</span> <span class="s">Versioning and documenting our APIs allows us to create payload contracts, which, in turn, support integration testing efforts and cross-team collaboration.</span> <span class="s">Any time we break our APIs, we want it to be intended, documented, and ideally scheduled for a few versions after a deprecation notice has been added to the docs.</span></p>
+<p data-say><span class="s">The opposite of stability is volatility, which creates uncertainty.</span> <span class="s">Nobody enjoys using a volatile application.</span> <span class="s">One that crashes all the time or throws errors occasionally during typical use.</span> <span class="s">Nobody enjoys working with an API that changes its payload or response schemas on a whim.</span> <span class="s">All of this causes disruption, which causes frustration.</span> <span class="s">Our objective as senior developers is to help alleviate frustration on our projects.</span> <span class="s">We're supposed to be dependable and help deliver clean, consistent code so that our clients or employers can spend more time focusing on their business growth and less time on their business maintenance.</span></p>
+<p data-say><span class="s">Keep this in mind when you are working with a legacy system.</span> <span class="s">Clients and employers depend on legacy systems to run exactly as they are, and if you fix some bugs, you'll be a hero.</span> <span class="s">The moment you change or break one thing, though, it'll feel like everybody on the team will notice.</span> <span class="s">If you are tasked with replacing a legacy system with a new one, prioritize stability over velocity.</span></p>
+<p data-say><span class="s">Often, these clients do not rush to switch to the new system.</span> <span class="s">If the new system has any bugs or quirks that the old system doesn't have, you will feel immediate pushback on the new system.</span> <span class="s">Suppose you break the old system while building the new one, even worse.</span> <span class="s">Trust me, stability, stability, stability.</span></p>
+<p data-say><span class="s">Often, the product team overloads the dev team and insists that deadlines are met without tests and QA.</span> <span class="s">If you have to cut corners to deliver something on time, make a technical debt ticket to refactor or add test coverage at the earliest opportunity.</span> <span class="s">If you are on a team that never pulls tech debt tickets into the sprint and regularly forces devs to cut corners to deliver, I recommend looking in the mirror and asking yourself if this is the team you want to be on.</span> <span class="s">Ask yourself, &quot;If I lead this engineering team, will I have any authority over the product team to handle technical debt or reduce sprint load to improve the engineering process?&quot;</span> <span class="s">If the answers are no, I recommend you move on to another project where the engineering team is more appreciated and respected.</span></p>
+<p data-say><span class="s">Depending on your project, you may be using third-party dependencies.</span> <span class="s">Often on websites, 80-90% or more of the application's code is third-party source code.</span> <span class="s">Given this, even if we have 100% unit test coverage on our own code, if it ultimately only makes up 10% of the code that is being executed at runtime, then we need to do some serious due diligence when selecting and maintaining our dependencies.</span></p>
+<p data-say><span class="s">I almost always pick the LTS release of whatever library or framework I'm considering.</span> <span class="s">For example, odd versions of NodeJS are volatile, and even versions are stable.</span> <span class="s">So when I was running Node 10 in my app, not only did I wait for Node 12 to upgrade, but I went so far as to wait until Node released its deprecation notice of 10, so by then, Node 12 was like 12.15.</span></p>
+<p data-say><span class="s">Most of the time, the latest and greatest features in a dependency are nice-to-have and won't offer any real value to your application.</span> <span class="s">This can easily be proven by rebuilding a simple app in multiple languages and frameworks.</span> <span class="s">I'm confident that I can rebuild my current project in PHP 5 with patterns I used 15 years ago.</span></p>
+<p data-say><span class="s">The back-end developers usually understand the risks better and are more in line with the slow-and-steady approach to development.</span> <span class="s">In contrast, front-end devs often want to use the latest bells and whistles to keep up with browser updates or mobile UI updates.</span> <span class="s">This is an extremely risky mindset because not only are we essentially using our customers as guinea pigs to try out new libraries, but the view layer on most applications is most often the most variable.</span> <span class="s">While we can control the version and state of our backend layer, different users have different versions of browsers and operating systems installed.</span> <span class="s">Different screen sizes, varying devices being used to view our application, and so on.</span></p>
+<p data-say><span class="s">When we roll out new code, we need to assess whether backward compatibility needs to be considered.</span> <span class="s">We must have conversations with the product teams before leveraging technology that will only be supported by a fragment of our user pool.</span> <span class="s">Always remember that we don't have to make all these decisions - it's often best to present all the options, consult the pros and cons of each, and let the key stakeholders on the projects make the decisions.</span></p>
+<p data-say><span class="s">Each team has its purpose, and engineering's goal should be to implement the product team's vision as accurately as possible, where the highest majority of work is on features, not bugs.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-22.html">← Chapter Nineteen - Privacy</a>
+    <a href="succeed-24.html">Chapter Twenty-One - Scalability →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

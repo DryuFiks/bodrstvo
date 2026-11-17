@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Twenty-Five - Clean Code: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Twenty-Five - Clean Code</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Style Guides</a></li><li><a href="#s2" lang="en">Linter</a></li><li><a href="#s3" lang="en">Static Analysis</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TWENTY-FIVE</h3>
+<h3 class="sub" data-say data-unit>Clean Code</h3>
+<p data-say><span class="s">Clean code is so important.</span> <span class="s">In this chapter, we'll discuss ways to ensure the codebase remains clean and consistent and why we want to hold ourselves accountable to these rules.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Style Guides</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The first and most common concept most devs are familiar with is the idea of a style guide or coding standards for a project.</span> <span class="s">Before we get too deep on this topic, please understand that I have no intention of listing any of my coding standards or preferred style guides used on my projects for various programming languages.</span> <span class="s">The fact is, they don't matter.</span></p>
+<p data-say><span class="s">I've mentioned in earlier chapters that these preferences in syntax are merely my preferences, and they typically don't change the output of the code or the deliverable.</span> <span class="s">And while I use them extensively on my own projects, I've observed that dev teams tend to produce at a higher quality and velocity when the morale is high, regardless of the coding standards.</span> <span class="s">So while I love my standards, I'll never sacrifice team morale to get my way.</span></p>
+<p data-say><span class="s">What does matter is consistency.</span> <span class="s">The ultimate goal should be that if we open up any file in our project, we can't tell which dev authored it.</span> <span class="s">Suppose we open a couple of files, and it's immediately apparent that Bob coded this one and Sarah coded that one because Bob likes camelCase and Sarah likes underscores.</span> <span class="s">In that case, we're creating an atmosphere of confusion and just asking for a slew of problems.</span> <span class="s">If a bug is found in Bob's file and Sarah is assigned the bug ticket, does she need to adhere to Bob's style in that file, or does she ignore his style and use hers (leaving a file with two styles which is essentially the absence of a standard)?</span> <span class="s">Or do we assign the bug ticket to Bob because it's Bob's file?</span></p>
+<p data-say><span class="s">At the end of the day, if we have a team of devs on a project, we should have a coding standard for the project by which every team member abides.</span> <span class="s">End of discussion.</span> <span class="s">We can have our preferences for personal projects, but on a shared project, the first step in collaboration is alignment on tools and syntax.</span> <span class="s">Getting alignment here means we set aside our preferences, voice our opinion if it's asked of us, be happy for the ease of work when we get your way, and be comfortable expanding our skill set and comfort zone when we don't.</span></p>
+<p data-say><span class="s">Some languages like Python, Haskell, and Bash don't offer a whole lot of flexibility with the syntax, so we don't have much of a debate at all here.</span> <span class="s">Languages like PHP or JavaScript provide an extreme amount of freedom of expression.</span> <span class="s">We can get our project off to a bad start if we don't set expectations and guidelines immediately.</span> <span class="s">Ideally, don't invent anything here.</span> <span class="s">Adopt an existing style guide, and either decide and mandate from a technical leadership position or offer a democratic vote to the devs where the majority can choose.</span></p>
+<p data-say><span class="s">I mentioned in an earlier chapter that I used to believe that my ways of coding were the best.</span> <span class="s">Of course, over time, I learned that my value doesn't come from whether or not my expression has a semicolon or whether I put curly braces around conditionals.</span> <span class="s">I have my beliefs on what standards help me code better.</span> <span class="s">Still, once I understood that these standards are subjective and that other devs code better with whichever standards they're used to, I took myself out of the debate entirely.</span> <span class="s">I forced myself to believe that I could be the best dev on the team, no matter what language or syntax rules were thrown at me.</span> <span class="s">That's the senior mindset.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Linter</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">So once the team adopts a coding standard, how do we enforce it?</span> <span class="s">We certainly don't want to spend our code reviews suggesting syntax style changes or pointing out divergences from the coding standard.</span> <span class="s">Never in our code reviews should we find ourselves saying, &quot;This expression should have curly braces&quot; or &quot;This variable should be camelCase.&quot;</span> <span class="s">We shouldn't have to look at a new function and say, &quot;I see you defined this variable, but I don't see you using or returning it.</span> <span class="s">Do we need it?&quot;</span></p>
+<p data-say><span class="s">Enter the linter.</span> <span class="s">Linting is seriously one of the best process additions since unit tests.</span> <span class="s">Tools like ESLint, Checkstyle, or Flake8 can act like a pair programming dev looking over your shoulder, pointing out typos and code smells as you write your logic.</span> <span class="s">Additionally, many of these tools have an &quot;auto-fix&quot; option which manually applies semantically safe refactors to adhere to the coding standard.</span></p>
+<p data-say><span class="s">We can hook these into our development pipeline at multiple steps to enforce some redundancy in our quality control:</span></p>
+<ul>
+<li data-say><span class="s">Locally in real time as we type or save our files.</span></li>
+<li data-say><span class="s">Locally, when we build binaries or packages or as a pre-commit hook to our VCS.</span></li>
+<li data-say><span class="s">Remotely inside VCS as a pre-review audit.</span> <span class="s">For example, in GitHub, we can create an action that runs the linter; if it fails, it won't allow the branch to be merged.</span></li>
+</ul>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Static Analysis</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">While some linters extend their capability and analysis outside of stylistic auditing, I prefer to configure my linters to do just that and reserve logical analysis for tools that specialize in this realm, like SonarQube.</span> <span class="s">That's just me trying to avoid giving any one tool or service too much authority.</span> <span class="s">I like to diversify my capability and assurance layers so we can swap out chunks of our projects without such a drastic ripple effect.</span></p>
+<p data-say><span class="s">So, where a linter may yell at us for getting lazy on formatting or stylistic decisions, a static analysis tool like SonarQube or Embold.io can analyze the performance and optimization of our codebase.</span> <span class="s">Is it efficient or not?</span> <span class="s">Is it redundant or DRY?</span> <span class="s">Are there opportunities for consolidation or abstraction?</span> <span class="s">We can set rules to prevent nested conditionals or to detect potential infinite loops and help us not only author cleaner code that's easier to reason about but also help ensure we're getting sufficient unit test coverage for edge cases we may not have thought of.</span></p>
+<p data-say><span class="s">So, given all these rules and guidelines for clean code allow for a codebase that's easy to refactor, audit, and maintain, what's the real win here for us as senior devs?</span> <span class="s">Certainly, codebases like this are more enjoyable, but is there something here that can help our career?</span> <span class="s">Absolutely.</span> <span class="s">When we can offload all the trivial quality assurance to automated tools, we can focus our mentoring energy on other things like collaboration, helping junior devs recognize the importance of specific patterns, and helping the product team and project managers plan out the roadmap with architectural and infrastructure considerations.</span> <span class="s">We can manage our time better and make ourselves much more available as a leader on the project.</span></p>
+<p data-say><span class="s">Instead of us doing code reviews on potential garbage code and kicking back pull requests with syntax changes all day, we can reserve our eyes for working code that adheres to our guidelines.</span> <span class="s">Our code review eyes can gloss over syntax and look for logical issues: sync vs. async execution, naming conventions to help convey intent, ensuring code is abstracted to scalable, and so on.</span> <span class="s">Questions like &quot;Do we need a semicolon here?&quot; become &quot;Does this AWS SDK call here need to be abstracted into a cloud-agnostic service in case we want to deploy to another vendor in the future?&quot;</span></p>
+<p data-say><span class="s">As senior engineers and architects, our value must extend far beyond an automated tool's capabilities.</span> <span class="s">If all we're doing all day is work that can be automated, we become replaceable, and it's only a matter of time before we're phased out.</span> <span class="s">We need to stay ahead of this curve, align ourselves with our client or employer's definition of value, and use all the time we get back from automation to go above and beyond.</span> <span class="s">We must exceed expectations and prove our contributions to be invaluable.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-27.html">← Chapter Twenty-Four - Numeronyms</a>
+    <a href="succeed-29.html">Chapter Twenty-Six - Pure Programming →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

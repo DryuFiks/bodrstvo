@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Thirty - Code Reviews: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Thirty - Code Reviews</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Understand Expectations</a></li><li><a href="#s2" lang="en">Automate The Clean Up</a></li><li><a href="#s3" lang="en">Consistency Is Key</a></li><li><a href="#s4" lang="en">Suggest Refactors</a></li><li><a href="#s5" lang="en">Rule Enforcement</a></li><li><a href="#s6" lang="en">Change It Up</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER THIRTY</h3>
+<h3 class="sub" data-say data-unit>Code Reviews</h3>
+<p data-say><span class="s">In this chapter, we'll cover the process of reviewing another developer's code--what to look for and how to provide feedback that will result in positive collaboration and a quick turnaround for any change suggestions.</span></p>
+<p data-say><span class="s">Code reviews aren't the most fun part of our job, regardless of which side of the review we're on.</span> <span class="s">If we're tagged to review a peer's code, it can feel like a distraction, and if we're in a hurry and are waiting for our peers to review our code, it can feel like our velocity is at risk.</span></p>
+<p data-say><span class="s">Ultimately, the trick is to set expectations for the team, mark our availability for reviews, and figure out a process that works for the team on how to notify the devs when a PR is waiting for them.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Understand Expectations</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Before doing a code review, we first want to understand our role in the situation.</span> <span class="s">Are we being asked to look for quirks or red flags?</span> <span class="s">Are we expected to be aware of other dependencies or related efforts and consider them when looking at the pull request?</span> <span class="s">Are we expected to pull down the feature branch, run it, and test the code to verify it all works?</span></p>
+<p data-say><span class="s">We must understand our involvement because once we sign off on a pull request, we're putting our name on the code.</span> <span class="s">This will follow us no matter if the code succeeds or breaks later.</span> <span class="s">We can think of it as if we had paired with the author and are now inheriting shared blame if it breaks the system or needs refactoring.</span> <span class="s">If we assume responsibility for the new code, we want to ensure it's of the same quality had we authored it ourselves.</span> <span class="s">We want our name to be associated with positive improvements to our project, not bugs.</span> <span class="s">We want to be known for building and fixing things, not breaking things.</span></p>
+<p data-say><span class="s">With this in mind, we want to automate as much of the verification process as possible so we won't need to worry about it so much that our personal involvement is reduced substantially by the time we get our eyes on it.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Automate The Clean Up</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">We discussed linters and static analysis tools like SonarQube earlier in this book, and this is where their value presents itself.</span> <span class="s">We can configure rules in our CI pipeline to run them against branches when a pull request is opened, and with GitHub, we can even prevent reviewers from accepting a pull request if the jobs didn't pass.</span></p>
+<p data-say><span class="s">If we open a pull request for code review and see that our linter and static analysis tools passed with flying colors, our role changes a bit.</span> <span class="s">We're no longer being tasked to review the syntax formatting or the function expression logic complexity because the automated tools did that for us.</span> <span class="s">Our role becomes much broader, like offering pattern cohesion suggestions or recommending replacing some in-line logic with a reference pointer to a shared utility.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Consistency Is Key</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The most important thing to look for in code reviews is consistency.</span> <span class="s">We want a codebase in which we can open any file or review any pull request without being able to infer who authored the code.</span> <span class="s">We want every dev to follow proper conventions and every file to reflect consistent patterns and paradigms.</span></p>
+<p data-say><span class="s">If we open a PR and can tell that Dale is the author because Dale always codes how Dale wants to code, and none of his files match the rest of the codebase, then we have a real problem.</span> <span class="s">I often reject pull requests the moment I see a deviation from project patterns.</span> <span class="s">There's no point in reviewing 500 lines of code if the first ten lines ignore conventions.</span></p>
+<p data-say><span class="s">If I'm leading the team, I'll often leave a comment like &quot;Please follow project conventions for XYZ.</span> <span class="s">Here is an example to copy: [link].&quot;</span> <span class="s">If I'm on a team and playing the role of a peer, I would likely change that from an instruction to an inquiry, like &quot;This doesn't seem to follow the conventions I'm seeing on other files like this one [link].</span> <span class="s">Do we want this to match?&quot;.</span> <span class="s">This tone is essential when working with client devs because we're technically consultants, and they can do whatever they want regardless of what we recommend.</span> <span class="s">The sooner we know our role, the easier it will be to stay friendly and offer guidance instead of direction.</span></p>
+<p data-say><span class="s">Keep it brief and professional, and give the author the benefit of the doubt when possible.</span> <span class="s">Sometimes product teams divvy up the engineering team to build features in silos, resulting in different devs getting conflicting or no direction.</span> <span class="s">The author may not even realize that the project has conventions, so the last thing we want to do is start a conflict and create a hostile situation by implying the dev is incompetent or &quot;wrong&quot; somehow.</span></p>
+<p data-say><span class="s">Always imply the process is the problem, not the person.</span> <span class="s">Suppose I'm leading the engineering team and notice that conventions aren't being followed in general.</span> <span class="s">In that case, I'll enforce cross-feature code reviews so the devs can police themselves and share that knowledge among the team.</span> <span class="s">If it's just one dev struggling to align with the team's direction, then I'll likely prohibit that dev from working on solo tickets, and the dev will need to pair up with other devs moving forward to avoid derailing the project.</span></p>
+<p data-say><span class="s">The most effortless and painless code reviews often reside on teams where we do a lot of pair programming and shuffle the pairs.</span> <span class="s">The pull requests are pleasantly consistent, and we typically fly through reviews and rarely reject anything.</span> <span class="s">The opposite is true, of course, on projects where each dev gets their own ticket in a silo from the PM; maybe they're working on their own feature and never think to look at any other feature in the codebase.</span></p>
+<p data-say><span class="s">A project with ten devs working on ten features in ten different ways produces pull requests requiring the code reviewers to figure out what's going on in the surrounding code and make sure everything makes sense.</span> <span class="s">It takes a lot of mental energy to review several pull requests in a day and reverse-engineer each one because nothing in the PR is familiar to what we're used to seeing all day in our own code.</span></p>
+</section>
+<section data-speak class="sec" id="s4">
+<div class="sec-head"><h2 data-say data-unit>Suggest Refactors</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Most devs don't enjoy having a pull request rejected.</span> <span class="s">Suppose it's rejected because of a seemingly lateral change, and it feels like the reviewer only wants the code to be written the way they would write it (irrespective of project conventions).</span> <span class="s">In that case, the rejection can feel like an insult and result in a demoralizing experience for the author.</span> <span class="s">Often the author doesn't really care if a line of code is written this way or that way, but having work kicked back and being told to &quot;change it&quot; when the underlying value doesn't actually change can be frustrating.</span></p>
+<p data-say><span class="s">One process I've adopted is coding the suggestion myself.</span> <span class="s">For example, I might see a pull request diff like this (keep in mind this is a fake diff I created on one of my repos to demonstrate the suggestion process):</span></p>
+<p data-say><span class="s">I would like to eliminate the unnecessary user reference on line 34.</span> <span class="s">Line 35 is subjectively arbitrary, and the function on line 36 will accept a user inside that map, so we don't need to notate that explicitly.</span> <span class="s">Let's imagine this project doesn't have a strict and elaborate configuration in the static analysis tool so we still need to manually address things like this.</span></p>
+<p data-say><span class="s">On GitHub, if I only want to suggest a refactor on line 34, I would click the &quot;+&quot; icon next to the line.</span></p>
+<p data-say><span class="s">If I want to suggest a refactor for multiple lines, I click and drag downward to highlight the lines I care about.</span></p>
+<p data-say><span class="s">This will open up my comment dialog, where I can leave a code review comment that will be tightly coupled to this particular block of code.</span> <span class="s">I can click the suggestion icon to pull the code into the comment, where I can offer a live refactor suggestion right here in the review:</span></p>
+<p data-say><span class="s">When I'm ready, I click &quot;Start a review,&quot; or if this is not my first suggestion on this review, the button would still be green but read something different, like &quot;Add suggestion to review.&quot;</span></p>
+<p data-say><span class="s">Once all my suggestions are offered, I submit my review and check the &quot;request changes&quot; option so that the author knows I have changes I'd like addressed.</span> <span class="s">The author can dismiss them or apply them with a single button click for each suggestion:</span></p>
+<p data-say><span class="s">I've personally found incredible success with this approach for a few reasons:</span></p>
+<ul>
+<li data-say><span class="s">It eliminates back-and-forth dialogue that can waste time.</span></li>
+<li data-say><span class="s">It eliminates any misinterpretation of a verbal comment if I had written out the suggestion with plain words and hoped the author understood how to apply the direction.</span></li>
+<li data-say><span class="s">It simplifies the process for the author when applying these suggestions because they don't need to go back to their editor or IDE, code the suggestions, and re-submit the pull request.</span></li>
+<li data-say><span class="s">My contributions to the PR are actual contributions.</span> <span class="s">I actually helped out, so if the engineering manager ever does an activity audit on GitHub to see who's writing code and who's slacking off, they will see that my activity is very high.</span></li>
+<li data-say><span class="s">It keeps my chops up.</span> <span class="s">Coding is easy when we code all day.</span> <span class="s">Leadership roles can introduce huge gaps between programming tasks.</span> <span class="s">Days, weeks, or even months can go by where I'm not &quot;tasked&quot; to code something, and I like to be able to code at any moment as if I haven't taken a day off in twenty years, so it's up to me to ensure I'm finding opportunities to program when I can.</span></li>
+</ul>
+</section>
+<section data-speak class="sec" id="s5">
+<div class="sec-head"><h2 data-say data-unit>Rule Enforcement</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Imagine spending twenty minutes going through a several-file pull request, offering ten to fifteen change suggestions, and substantially improving the overall commit.</span> <span class="s">Then you notice that the pull request has been merged, and none of your suggestions were applied.</span> <span class="s">Other devs approved the pull request without making any change suggestions, and the author didn't feel like dealing with your one rejection because they got two approvals, and maybe that's all the branch requires.</span></p>
+<p data-say><span class="s">This is, unfortunately, a common scenario on projects where team cohesion and accountability aren't where they should be.</span> <span class="s">The good news is all those suggestions can be attached to a new branch for which we can open a new pull request and get all the credit for simply doing those refactors as a patch commit.</span> <span class="s">It's not the end of the world, but it's pretty annoying, and it's hard to miss a rejection review, so odds are the author skipped the rejection on purpose.</span> <span class="s">The most common excuse I hear is the author felt they didn't have time to make all the changes because the PM was breathing down their neck to deliver the feature.</span></p>
+<p data-say><span class="s">This is fine, though the process is still broken.</span> <span class="s">I'll typically ask the author then, &quot;Moving forward, please let me know if you don't have time or capacity to implement my change suggestions.</span> <span class="s">I'm happy to merge them separately.</span> <span class="s">If you disagree with the suggestions, that's another scenario entirely.</span> <span class="s">We should have a quick chat to identify the gap and see our options before dismissing the review.&quot;</span></p>
+</section>
+<section data-speak class="sec" id="s6">
+<div class="sec-head"><h2 data-say data-unit>Change It Up</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">On pair programming projects where two devs are behind every pull request, I find it's really common (usually among the junior devs) for one dev in the pair to submit the pull request and the other to approve it.</span> <span class="s">It's not so much that this is cheating the system, but it's circumventing the whole point of a code review, which is to get a fresh set of eyes on our code to see if we missed something while we were deep in the weeds writing the code.</span></p>
+<p data-say><span class="s">Devs commonly jump back and forth to specific places in a file or the project as we build up mental maps of reference points.</span> <span class="s">In doing so, we can gloss over typos, incomplete code, or even blocks of code we commented out during testing and troubleshooting.</span> <span class="s">Even skimming over our own pull request, we may not notice the commented-out code, but a fresh set of eyes can see the diff and ask, &quot;Why is this code commented out?</span> <span class="s">We never comment out code in our project.</span> <span class="s">Should we uncomment it, or can we delete it?&quot;</span></p>
+<p data-say><span class="s">So, as a rule on my projects, I require at least three approvals on every pull request, so even if one dev of the pair approves it, the PR still needs two other devs to get in there and share accountability.</span> <span class="s">Remember, it's not so much that we're asking the other devs if our code is good enough, but rather, it's in our best interest to share some accountability with our peers.</span></p>
+<p data-say><span class="s">Imagine we introduce a bug, force-push it to the master branch, and break the application.</span> <span class="s">The execs would have every right to be upset with us because we acted carelessly and jeopardized the sprint.</span> <span class="s">If, however, our bug was missed by three other devs, then the frustration can be channeled towards the bug and the process instead of at the people.</span> <span class="s">We haven't even considered QA or UAT yet, either.</span> <span class="s">It's easy to point the finger at someone and accuse them of incompetence.</span> <span class="s">It's a lot harder to point the finger at five or six people on multiple teams and accuse them all of being incompetent.</span></p>
+<p data-say><span class="s">If that's the reality, then it's proof in the pudding, and we may want to transition some folks off the project and start rebuilding the engineering team.</span> <span class="s">That's pretty drastic and I've never seen it happen in person before.</span> <span class="s">More likely, we address the process.</span> <span class="s">Maybe we add another required approval or change the code review process to a mob review over a video conference app so the whole team can review the code together in real time.</span> <span class="s">Whatever the process, just remember every project is different and every team is different, so don't get too caught up in your current reality and be ready to change it up at your next gig.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-32.html">← Chapter Twenty-Nine - Data Persistence</a>
+    <a href="succeed-34.html">Chapter Thirty-One - Architecture →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

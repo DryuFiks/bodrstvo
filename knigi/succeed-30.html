@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Twenty-Seven - Functional Programming: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Twenty-Seven - Functional Programming</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Currying</a></li><li><a href="#s2" lang="en">Composition</a></li><li><a href="#s3" lang="en">Summary</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TWENTY-SEVEN</h3>
+<h3 class="sub" data-say data-unit>Functional Programming</h3>
+<p data-say><span class="s">Before we dive in, please understand this chapter is in no way a complete, in-depth guide to functional programming.</span> <span class="s">It's far from it; this chapter barely scratches the surface of FP, but I cover two principles that drastically improved my projects and helped me grow my career: currying and composition.</span> <span class="s">I highly recommend you read Professor Frisby's Mostly Adequate Guide To Functional Programming for an in-depth guide.</span> <span class="s">It's free and excellent, and I refer back to it regularly to check myself and ensure my understanding of something is still correct.</span> <span class="s">I also recommend a repo by the user Hemanth called Functional Programming Jargon, which measurably helped me initially when the FP buzzwords like Monad, Monoid, and Functor made no sense to me.</span></p>
+<p data-say><span class="s">Once you start getting excited with FP, play with some Clojure or Haskell stuff in your spare time.</span> <span class="s">Remember, these are just tools, so while you may want them on your toolbelt, they're not as widely adopted in the grand scheme of things, and the projects that pay top dollar for our services aren't typically Haskell projects.</span></p>
+<p data-say><span class="s">So, similarly to how Object-oriented programming attempted to help organize the world of procedural programming by taking advantage of reuse and inheritance, functional programming aims to simplify logical expressions by taking state out of the equation.</span> <span class="s">It simplifies our project functions by limiting what they accept and what they do internally.</span> <span class="s">Instead of coding a method that does five things and knows about the state of this or self, we code five functions, each with its own tests, each accepting a single param and each doing one thing.</span> <span class="s">It sounds like more work, but it's really just re-organized work, and the payoff is immense.</span></p>
+<p data-say><span class="s">The simpler the function, the more portable and reusable it is.</span> <span class="s">The function no longer needs to know about its context.</span> <span class="s">In OOP, we might have a method like User.validateEmail, which accepts zero params and validates the string assigned to this.email.</span> <span class="s">In FP, we can make a curried function named validateString which will ultimately accept a regular expression pattern and a string to test.</span> <span class="s">We can leverage currying to create pre-loaded context-considerate functions to convey intent better.</span></p>
+<p data-say><span class="s">We'll unpack that in a second, but for now, understand that the goal is simply to create functions we can partially invoke and then compose, so the result of function 1 is passed as the input param to function 2 and so on.</span> <span class="s">Our code begins to tell a story--a chained sequence of human-readable instructions.</span></p>
+<p data-say><span class="s">I wanted to include this chapter for two reasons.</span> <span class="s">The first is that I believe functional programming is the most under-appreciated type of programming, even though it's been around forever.</span> <span class="s">Lisp came out in 1960, and if you've ever piped commands in Unix, you're already on your way to grasping the value of FP.</span> <span class="s">The second reason is that I think the biggest problem with enterprise digital transformation projects is logistics.</span> <span class="s">The projects have too many people with too many tasks and not enough compartmentalization in the infrastructure and codebase.</span> <span class="s">It becomes increasingly difficult to assign and delegate those tasks without blocking, clobbering, or building duplicate and conflicting features.</span></p>
+<p data-say><span class="s">How can we simplify those huge projects?</span> <span class="s">One solution I often recommend is to start leveraging more and more FP because it plays nicely with microservice architectures.</span> <span class="s">Chunks of logic can be carved off and built asynchronously and delivered in parallel with other logic because we're not worried about breaking monolith systems or bloating out huge classes that depend on state.</span> <span class="s">Those systems are a nightmare.</span> <span class="s">Every deployment introduces regressions.</span> <span class="s">Features are put in the backlog because bugs are so prominent and fixes are so urgent.</span></p>
+<p data-say><span class="s">Let's get into the weeds to better understand what I mean.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Currying</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">I briefly mentioned currying so let's start there.</span> <span class="s">Currying is the process of converting a function that accepts multiple parameters into a function that takes them one at a time.</span> <span class="s">Curried functions create a closure, so the inner functions have access to the outer functions' scope.</span></p>
+<p data-say><span class="s">Imagine we have a function that accepts three numbers, adds them, and returns the sum:</span></p>
+<pre class="code" tabindex="0"><code>const addThreeNumbers = (a, b, c) =&gt; a + b + c;</code></pre>
+<p data-say><span class="s">We can curry this function easily in ES6 by chaining fat arrows like so:</span></p>
+<pre class="code" tabindex="0"><code>const addThreeNumbers = a =&gt; b =&gt; c =&gt; a + b + c;</code></pre>
+<p data-say><span class="s">So instead of invoking the function like this:</span></p>
+<pre class="code" tabindex="0"><code>addThreeNumbers(3, 4, 5);</code></pre>
+<p data-say><span class="s">We invoke it like this:</span></p>
+<pre class="code" tabindex="0"><code>addThreeNumbers(3)(4)(5);</code></pre>
+<p data-say><span class="s">That's cool, but why would we want to do this?</span> <span class="s">So far, this is a parallel change and doesn't improve the project.</span></p>
+<p data-say><span class="s">Well, the fewer parameters our functions accept, the simpler and more reusable they can be.</span> <span class="s">And, because our curried function returns subsequent functions that each accept subsequent params, we can pre-load them with context or dependencies.</span></p>
+<p data-say><span class="s">We can also create partial assertion functions called predicates.</span> <span class="s">If you remember from English class in grade school, sentences have a subject and a predicate, and conveniently for us, so do our conditional expressions.</span></p>
+<p data-say><span class="s">Imagine the sentence, &quot;The television weighs 80 pounds.&quot;</span> <span class="s">The subject here is &quot;the television,&quot; and the predicate is &quot;weighs 80 pounds&quot;.</span> <span class="s">In functional programming, we can create predicates that accept a subject when we want to make validations or type assertions.</span> <span class="s">Predicates always return a boolean.</span> <span class="s">The television is either 80 pounds, or it isn't.</span> <span class="s">It's an objective assertion that's either true or false.</span></p>
+<p data-say><span class="s">If we refer back to our user email validation, our curried validateString function will look like this:</span></p>
+<pre class="code" tabindex="0"><code>const validateString = pattern =&gt; string =&gt; pattern.test(string);</code></pre>
+<p data-say><span class="s">Notice we put the subject last in the chain of params.</span> <span class="s">This is so we can pre-load context and dependencies into our curried functions.</span> <span class="s">I mention this because this is typically reversed from standard functions and methods where mandatory params are first, and optional params are last; this is a common hurdle for many devs learning FP.</span></p>
+<p data-say><span class="s">Back to our example; from here, we could reuse this function to create predicates for different strings that have different rules:</span></p>
+<pre class="code" tabindex="0"><code>const isValidEmail = validateString(/\S+@\S+/);
+const isValidUsername = validateString(/^([a-z0-9_-]){3,15}$/i);
+// and so on</code></pre>
+<p data-say><span class="s">Because we aren't accepting all the parameters at once, we can invoke the function with the first param, which returns a function that accepts the next param.</span> <span class="s">This is a game changer in the effort to simplify complicated systems. isValidEmail is now a function that knows about its pattern and accepts a string.</span></p>
+<p data-say><span class="s">Notice the naming convention; isValidEmail, and isValidUsername.</span> <span class="s">We name our predicates in a way that implies what they are asserting.</span> <span class="s">Some additional examples here that we might see in our application could be isExistingCustomer, hasReceivedWelcomeEmail, or canAccessPremiumContent.</span> <span class="s">They can get as low-level as type assertions like isString, isNumber, or even isNumericString.</span></p>
+<p data-say><span class="s">The guts of these functions would be up to you, but we want each only to accept one parameter, the subject (which I'll discuss further in a bit); the simpler, the better.</span> <span class="s">I published an open-source predicates library on npm called Prettycats that includes a bunch of these you can use for free.</span></p>
+<p data-say><span class="s">So if we take one of these predicates as an example, we might imagine the first pass of canAccessPremiumContent looking something like this to get the ball rolling :</span></p>
+<pre class="code" tabindex="0"><code>const canAccessPremiumContent = user =&gt; user.roles.includes('premium');</code></pre>
+<p data-say><span class="s">This is a stylistic decision here and not the safest because we trust user and user.roles, but for this example, you get the idea.</span> <span class="s">As a next step, do we want to simplify the execution process or the internals?</span> <span class="s">Or, in other words, should conditional logic live inside the function or in the context where the function is being called?</span></p>
+<p data-say><span class="s">If we have a user object handy, calling canAccessPremiumContent(user); is quite simple, so maybe that's what we want.</span> <span class="s">This is a slippery slope, though, because if the user object isn't strongly typed, then the volatility of that object may require some intelligent logic inside our function to determine the result and contain error handling for unforeseen changes to the payload, but that can introduce sneaky bugs later on if we aren't careful.</span></p>
+<p data-say><span class="s">The next iteration of this function might punt the burden of extracting the user roles to the caller and might look like this:</span></p>
+<pre class="code" tabindex="0"><code>const canAccessPremiumContent = roles =&gt; roles.includes('premium');</code></pre>
+<p data-say><span class="s">Ok, this is getting simpler, but it still has room for improvement.</span> <span class="s">Now our function accepts an assumed array of strings, so we'd have to invoke it like canAccessPremiumContent(user.roles);, but it's not very well protected still since the function will throw an error if we give it a value that doesn't have a native includes method on its prototype.</span></p>
+<p data-say><span class="s">We can protect it a bit by invoking like canAccessPremiumContent(user.roles || []);, but that only protects against a falsy param like undefined or null, so truthy params of an unexpected type like Number will still throw an error.</span></p>
+<p data-say><span class="s">If we leverage currying, we can privatize and control this risk a bit more:</span></p>
+<pre class="code" tabindex="0"><code>const safeArrayIncludes = value =&gt; (arr = []) =&gt; { 
+  try { 
+    return [...arr].includes(value);
+  } catch (e) { 
+    return false;
+  }
+};
+
+const canAccessPremiumContent = safeArrayIncludes('premium');
+const canAccessAdminContent = safeArrayIncludes('admin');
+
+canAccessPremiumContent(user.roles); // true|false</code></pre>
+<p data-say><span class="s">By removing the context from the function, you can see that we get a generic utility function that knows nothing about roles or users.</span> <span class="s">It can be abstracted into a helper library and used across files and projects.</span> <span class="s">This type of utility logic is typically exempt from intellectual property claims.</span> <span class="s">It's just a pattern, and nothing about it correlates to a client, project, or application.</span> <span class="s">The IP comes with the predicates that use it; canAccessPremiumContent starts to get into the realm of intellectual property.</span> <span class="s">Not all applications have premium content, and depending on the value given to this function, we may be using proprietary data that can't be leveraged in another project.</span></p>
+<p data-say><span class="s">Simply adding a single layer of currying has allowed us to separate application logic from utility logic.</span> <span class="s">It's given context to the intention of the function. canAccessPremiumContent is very descriptive and, more importantly, indifferent to the actual role name here.</span></p>
+<p data-say><span class="s">Imagine the roles are just numbers or gibberish.</span> <span class="s">If we had a function hasRole('asdf1234'), it's not conveying why we care if the user has that role.</span> <span class="s">What's special about that role?</span> <span class="s">We don't ever want someone to look at our code and say, &quot;I see it's doing X but is it supposed to be doing X?</span> <span class="s">Or should it be doing Y?</span> <span class="s">If that role is provided from a variable or inferred through some other function response, we may never see the word &quot;premium&quot; in the data, so it's up to us to name our functions intuitively.</span></p>
+<p data-say><span class="s">Let's put predicates aside for now.</span> <span class="s">When else would we want to leverage currying?</span> <span class="s">My number one personal gain from currying has definitely been easy dependency injection.</span> <span class="s">Dependency injection makes our functions more portable and safe because state and context are provided to the function instead of inferred by the function.</span> <span class="s">It also makes our functions more testable because we can inject mocks and shims; our functions won't know or care if they're running in our application or our tests.</span></p>
+<p data-say><span class="s">Imagine we have a function called sendOrderConfirmationEmail, and it looks like this:</span></p>
+<pre class="code" tabindex="0"><code>// FILE ONE
+const MailSvc = require('/path/to/services/mail/Mail')(config.email.strategy);
+
+const sendOrderConfirmationEmail = orderDetails =&gt; {
+  return MailSvc.send(orderDetails, 'orderConfirmationEmailTemplate');
+};
+
+module.exports = { 
+  sendOrderConfirmationEmail
+};
+
+// FILE TWO - USAGE EXAMPLE
+sendOrderConfirmationEmail(orderDetails)
+  .then(() =&gt; 'Email sent')
+  .catch(err =&gt; `Email could not be sent : ${err.message}`);</code></pre>
+<p data-say><span class="s">This function is pretty simple.</span> <span class="s">It accepts some order details, which would be parsed and interpolated into the email template, and it sends the email to whatever email address is attached to the order.</span> <span class="s">But what about MailSvc?</span> <span class="s">Our exported function references MailSvc in the scope of its declaration.</span> <span class="s">It's essentially memoized and uses whatever strategy is in the config dictionary in that file.</span></p>
+<p data-say><span class="s">If we want to test this file, we need to somehow hijack the require process, so it pulls in our stub or accepts a config override meant for the unit tests.</span> <span class="s">Anytime we use tools that hijack the runtime and do magical things behind the curtain to get our tests running, we lose credibility and assurance that our test is actually proving anything that we need it to.</span> <span class="s">It becomes so esoteric that we risk testing our tests and offering no value to the production deployments.</span></p>
+<p data-say><span class="s">A simple enhancement to this function would be to move that MailSvc require statement to the file using the sendOrderConfirmationEmail function and add it as a curried parameter.</span></p>
+<p data-say><span class="s">For example, I like to use this pattern where I pass in a dependencies object that can grow or shrink as the project evolves, and JS is forgiving enough that most of the time, there are no regressions to address:</span></p>
+<pre class="code" tabindex="0"><code>// FILE ONE
+const sendOrderConfirmationEmail = ({ MailSvc }) =&gt; orderDetails =&gt; {
+  return MailSvc.send(orderDetails, 'orderConfirmationEmailTemplate');
+};
+
+module.exports = { 
+  sendOrderConfirmationEmail
+};
+
+// FILE TWO - USAGE EXAMPLE
+const MailSvc = require('/path/to/services/mail/Mail')(config.email.strategy);
+
+sendOrderConfirmationEmail({ MailSvc })(orderDetails)
+  .then(() =&gt; 'Email sent')
+  .catch(err =&gt; `Email could not be sent : ${err.message}`);</code></pre>
+<p data-say><span class="s">When we want to test this, our assertions can pass in a FakeMailSvc, to which we can attach a spy and assert that the FakeMailSvc.send was called with the appropriate payload.</span> <span class="s">For this example, I would likely create two initial fake services.</span> <span class="s">One happy service and one sad service:</span></p>
+<pre class="code" tabindex="0"><code>// UNIT TEST FILE
+const { sendOrderConfirmationEmail } = require('/path/to/emailFunctions');
+
+const fakeOrderDetails = {
+  email : 'eric@test.com',
+  orderNumber : 'erictest1234'
+};
+
+const FakeMailSvc = {
+  send : () =&gt; Promise.resolve('ok')
+};
+
+const FakeMailSvcFail = {
+  send : () =&gt; Promise.reject({ message : 'failed' })
+};
+
+describe('sendOrderConfirmationEmail', () =&gt; {
+  beforeAll(() =&gt; {
+    spyOn(FakeMailSvc, 'send').and.callThrough();
+    spyOn(FakeMailSvcFail, 'send').and.callThrough();
+  });
+
+  it('sends an email', done =&gt; {
+    const MailSvc = FakeMailSvc;
+    sendOrderConfirmationEmail({ MailSvc })(fakeOrderDetails)
+      .then(res =&gt; {
+        expect(FakeMailSvc.send).toHaveBeenCalledWith(fakeOrderDetails);
+        expect(res).toBe('ok');
+        done();
+       })
+      .catch(done.fail);
+  });
+
+  it(fails gracefully', done =&gt; {
+    const MailSvc = FakeMailSvcFail;
+    sendOrderConfirmationEmail({ MailSvc })(fakeOrderDetails)
+      .then(done.fail)
+      .catch(err =&gt; {
+        expect(FakeMailSvcFail.send).toHaveBeenCalledWith(fakeOrderDetails);
+        expect(err.message).toBe('failed');
+        done();
+      });
+  });
+});</code></pre>
+<p data-say><span class="s">Here you can see we created a FakeMailSvc object and a FakeMailSvcFail object.</span> <span class="s">These are mocks to trick our function into thinking it received code for a live cloud mail service.</span></p>
+<p data-say><span class="s">Before any tests run, we attach a spy, a feature in Jasmine that essentially creates a binding in memory so we can check to see if our object methods were invoked.</span></p>
+<p data-say><span class="s">Now each of our assertions can test that the function returns what it's supposed to and also that it can handle the service failure as well.</span> <span class="s">We can take the surprise out of the failures and account for them instead of reacting to them when the customers or users experience them.</span></p>
+<p data-say><span class="s">You can see here how this simple dependency injection capability can completely liberate our testing efforts.</span> <span class="s">We can now test a range of service mishaps and edge cases with variations of our mocks and truly get 100% test coverage in our project.</span></p>
+<p data-say><span class="s">This type of curried dependency injection also aligns with the strategy pattern, which you might have noticed in the line when we were requiring our MailSvc.</span> <span class="s">Not only can our function accept a range of strategies to send mail on various cloud services like MailChimp or Sendgrid, but we could add a strategy to send mail on a local SMTP server or use a strategy that hooks into some monitoring tools that might not be prevalent or available on lower deployment tiers.</span> <span class="s">We can then write tests for each strategy and ensure our code behaves as expected without discovering unfortunate surprises in production.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Composition</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">So now that we understand the value of curried functions, the next step in evolving our code is to start composing them.</span> <span class="s">In Unix, we just add a pipe.</span> <span class="s">In JavaScript, the most common example is probably promise chains, which are essentially asynchronous functional composition.</span> <span class="s">So if you think of compose as a simpler, synchronous promise chain, you've already grasped this.</span></p>
+<p data-say><span class="s">I've mentioned in previous chapters my love for the JavaScript library Ramda.</span> <span class="s">It's a collection of functions that all play nicely together and polyfill functional programming pattern support in JavaScript.</span> <span class="s">We can use it here and there or pick a couple of functions we like and use it a la carte, or we can completely take over our JS and fill our files with thousands of R.something calls.</span> <span class="s">It's really up to you.</span></p>
+<p data-say><span class="s">Some of the functions are more valuable than others.</span> <span class="s">In ES6, I can chain fat arrows to curry my functions.</span> <span class="s">In ES5, we would have had to return nested functions using the function keyword with curly braces, which would get messy quickly--passing a single function that accepts multiple params to R.curry just auto-curries it for me.</span></p>
+<p data-say><span class="s">One Ramda function I use every day, however, is R.compose, which is essentially this:</span></p>
+<pre class="code" tabindex="0"><code>const compose = (f, g) =&gt; (...args) =&gt; f(g(...args));</code></pre>
+<p data-say><span class="s">Consider this example:</span></p>
+<pre class="code" tabindex="0"><code>const getLinkedAccountIds = R.compose(
+  R.pluck('id'),
+  R.reject(R.isNil),
+  R.flatten,
+  R.defaultTo([]),
+  R.pluck('linkedAccounts'),
+  R.propOr([], 'accountAttributes')
+);</code></pre>
+<p data-say><span class="s">Compose is based on algebra, so we go from right to left, or in this example, from bottom to top.</span> <span class="s">This takes a bit of getting used to if you aren't math savvy, but it's the purest way to do it.</span> <span class="s">Ramda offers an alternative compose function called R.pipe, which flips the direction, allowing you to order your functions left to right or top to bottom.</span></p>
+<p data-say><span class="s">If you've never composed functions before, this might look like magic.</span> <span class="s">Our getLinkedAccountIds function doesn't appear to be accepting anything or doing anything, but it's actually doing a lot.</span></p>
+<p data-say><span class="s">R.compose accepts a series of functions as params, but it's curried, so once you provide all your functions, you invoke it once more with the payload that will be given to the first function in the sequence.</span></p>
+<p data-say><span class="s">Imagine the following object :</span></p>
+<pre class="code" tabindex="0"><code>const account = {
+  id : 123,
+  accountAttributes : [
+    {
+      name : 'foo',
+      linkedAccounts : [{
+        id : 234
+      },
+      {
+        id : 345
+      }]
+    },
+    {
+      name : 'bar',
+      linkedAccounts : [{
+        id : 321
+      }]
+    },
+    {
+      name : 'buz'
+    },
+    {
+      name : 'baz',
+      linkedAccounts : [{
+        id : 456
+      }]
+    }
+  ] 
+};</code></pre>
+<p data-say><span class="s">If we invoke our composed function with this account object, this is our result:</span></p>
+<pre class="code" tabindex="0"><code>getLinkedAccontIds(account); // [234, 345, 321, 456]</code></pre>
+<p data-say><span class="s">As much as I'd love to go line by line and explain what this code is doing, the point of this example isn't to teach you Ramda but rather to show you how powerful functional composition is.</span> <span class="s">I can't emphasize enough that tools should not define your value.</span> <span class="s">They come and go, and while sometimes we get lucky and stumble upon a fantastic tool, we must remember that not all projects are ready for the tool.</span> <span class="s">The tool isn't always appropriate for every team or codebase; eventually, it'll phase out as they all do.</span></p>
+<p data-say><span class="s">So what's the takeaway?</span> <span class="s">We can accomplish a lot with very little code here.</span> <span class="s">The utility logic doing all the grunt work has been abstracted away, and the library already tests it.</span> <span class="s">We're left with an intuitive application function that gets linked account ids and a series of instructions for how we intend to accomplish that.</span></p>
+<p data-say><span class="s">We don't need to code a bunch of for loops here.</span> <span class="s">We don't need to tell the computer how to do its job.</span> <span class="s">We simply provide a list of instructions based on a type we've created, be it a strict type or implied type, via an object dictionary.</span> <span class="s">You can see how we may want to put validation ahead of this, either by type assertion or schema validation, as we did with predicates earlier.</span></p>
+<p data-say><span class="s">Ideally, we don't want our composition to handle too many edge cases because we litter the story with protective instructions that don't change the intent.</span> <span class="s">Still, you can see how easy it is to do with lines like R.defaultTo([]), which is essentially just going to ensure that if the previous line returns undefined, the following line doesn't receive undefined because R.flatten expects an array; most likely an array of arrays.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Summary</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Curry and compose are cool, but what about all the other FP paradigms?</span> <span class="s">What if our project isn't using a functional language; maybe PHP, Python, or Java?</span> <span class="s">We can absolutely use FP patterns in all of these languages.</span> <span class="s">Transitioning from Java to Scala is a real and tangible scenario if we want to leverage FP's power more but want to stay on JVM.</span></p>
+<p data-say><span class="s">Not only do functional patterns and principles help simplify the codebase and deployment efforts, but they also enable serverless cloud-based delegation.</span> <span class="s">AWS Lambas, for example, need to be fire-and-forget, so the sooner we stop caring so much about state in all our logic, the sooner we can quickly punt tasks to the cloud and ease the load on our system.</span></p>
+<p data-say><span class="s">From here, I recommend you try to get familiar with more FP concepts like Monads, Monoids, Functors, Lenses, and Applicatives.</span> <span class="s">When you're ready to take your JavaScript FP game to the next level, check out the JS library Sanctuary and read up on the Fantasy Land spec and see how bullet-proof your Node and JS projects will become.</span></p>
+<p data-say><span class="s">And lastly, if you're concerned that this chapter might be taking you too far out of your comfort zone, rest assured that a high percentage of projects that I work on don't have any FP in them.</span> <span class="s">Some projects aren't appropriate for FP, like video games.</span> <span class="s">Additionally, clients often set guidelines and restrictions.</span> <span class="s">While I can recommend improvements and patterns, they can't unjustifiably disrupt the business, so sometimes Java stays Java, or Ruby stays Ruby.</span> <span class="s">We keep the patterns already in place, so our new code isn't some parasite that doesn't match the rest of the repository.</span></p>
+<p data-say><span class="s">The nice thing is once you ramp up this skill, you'll have that much more leverage to pick and choose the projects you want to work on, so you can do what makes you happy, whatever that may be.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-29.html">← Chapter Twenty-Six - Pure Programming</a>
+    <a href="succeed-31.html">Chapter Twenty-Eight - Version Control →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

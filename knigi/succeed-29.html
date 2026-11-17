@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Twenty-Six - Pure Programming: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Twenty-Six - Pure Programming</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TWENTY-SIX</h3>
+<h3 class="sub" data-say data-unit>Pure Programming</h3>
+<p data-say><span class="s">Pure programming is a way to create functions whose output is defined by their input and have no side effects.</span> <span class="s">Pure functions are only one component in a collection of functional programming methodologies.</span> <span class="s">Still, its value is unparalleled as it can also be used in object-oriented and procedural programming languages.</span> <span class="s">Let's digest what a pure function is, starting with &quot;a function whose output is defined by its input.&quot;</span> <span class="s">What does that mean?</span></p>
+<p data-say><span class="s">Let's take an elementary function as an example.</span> <span class="s">We'll make a function called addTwo, which will accept two numbers and return the sum.</span></p>
+<pre class="code" tabindex="0"><code>const addTwo = (a, b) =&gt; a + b;</code></pre>
+<p data-say><span class="s">If we give this function 5 and 3, it returns 8 every single time.</span> <span class="s">Very simple.</span> <span class="s">The output &quot;8&quot; is defined by the input &quot;5&quot; and &quot;3&quot;.</span> <span class="s">The term for this part of the pure function is a &quot;deterministic function.&quot;</span></p>
+<pre class="code" tabindex="0"><code>addTwo(5, 3); // 8</code></pre>
+<p data-say><span class="s">It's very straightforward and obvious, but how could we change this function so that its output is not defined by its input, so you can understand why this is so important?</span></p>
+<p data-say><span class="s">What if we add a condition here:</span></p>
+<pre class="code" tabindex="0"><code>const addTwo = (a, b) =&gt; {
+  let sum = a + b;
+
+  if (user.isAwesome) { 
+    sum += 5;
+  }
+
+  return sum;
+};</code></pre>
+<p data-say><span class="s">Now, for users who are not awesome, the function returns 8, but for awesome users, the function returns 13.</span> <span class="s">The function is no longer intuitive, especially because it is named addTwo, not addTwoAndMaybeAnAwesomeUserBonus.</span></p>
+<p data-say><span class="s">This example may seem silly, but where would this scenario pop up in the real world?</span> <span class="s">I see it all the time in React components.</span> <span class="s">A function is supposed to do something, but if some value in the state meets some condition, the function returns something else instead, like null.</span></p>
+<p data-say><span class="s">This adds a lot of complexity when we introduce testing because now our tests need to consider external context factors like state or like user in our first example.</span> <span class="s">If we want our code to be portable and reusable, like I mentioned when talking about the strategy pattern, it needs to be agnostic and unaware of its surroundings.</span> <span class="s">The output needs to be defined by the input, not by the input and some other stateful criteria.</span> <span class="s">Any data the function needs to deal with inside its context needs to be given to it as parameters.</span></p>
+<p data-say><span class="s">The second part of the pure function definition is that it has no side effects.</span> <span class="s">If something else in the app changes when we run our function, it adds a lot of confusion and complexity, severely slowing down troubleshooting and debugging efforts.</span> <span class="s">One primary cause of this is mutation, which is when we change a referenced piece of data in memory so the next time it's accessed, it's different than before.</span></p>
+<p data-say><span class="s">Imagine our function accepts two objects instead of two numbers and imagine its purpose is to merge them together:</span></p>
+<pre class="code" tabindex="0"><code>const mergeTwo = (a, b) =&gt; ({ ...a, ...b });</code></pre>
+<p data-say><span class="s">The function should ultimately return a brand new object that is the direct result of merging the two given to it.</span> <span class="s">In other words, imagine objectA lives in memory in bank 1, and objectB lives in memory in bank 2:</span></p>
+<pre class="code" tabindex="0"><code>const objectA = {
+  id   : 123,
+  name : &quot;Sean Cannon&quot;,
+  age  : 42
+};
+
+const objectB = {
+  id     : 456,
+  userId : 123,
+  role   : &quot;Instructor&quot;
+};</code></pre>
+<p data-say><span class="s">Our pure function will only read from banks 1 and 2 and will return a brand new merged object that will be written to memory in bank 3 if it happens to be saved to a variable:</span></p>
+<pre class="code" tabindex="0"><code>mergeTwo(objectA, objectB);  
+
+// Result:
+// {
+//   age    : 42,
+//   id     : 456,
+//   name   : &quot;Sean Cannon&quot;,
+//   role   : &quot;Instructor&quot;,
+//   userId : 123
+// }
+//
+// objectA:
+// {
+//   id   : 123,
+//   name : &quot;Sean Cannon&quot;,
+//   age  : 42
+// };
+// 
+// objectB:
+// {
+//   id     : 456,
+//   userId : 123,
+//   role   : &quot;Instructor&quot;
+// };</code></pre>
+<p data-say><span class="s">If our function writes to banks 1 or 2, then we're creating a side effect, and our function is not pure:</span></p>
+<pre class="code" tabindex="0"><code>const mergeTwo = Object.assign(a, b);</code></pre>
+<p data-say><span class="s">Other parts of the app that expect objects A and B to contain certain data will unexpectedly receive objects that contain different data thanks to our function, or rather &quot;no thanks&quot; to our function.</span> <span class="s">This is bad news:</span></p>
+<pre class="code" tabindex="0"><code>mergeTwo(objectA, objectB);  
+
+// Result:
+// {
+//   age    : 42,
+//   id     : 456,
+//   name   : &quot;Sean Cannon&quot;,
+//   role   : &quot;Instructor&quot;,
+//   userId : 123
+// }
+//
+// objectA:
+// {
+//   id     : 456,
+//   name   : &quot;Sean Cannon&quot;,
+//   age    : 42,
+//   userId : 123,
+//   role   : &quot;Instructor&quot; 
+// };
+// 
+// objectB:
+// {
+//   id     : 456,
+//   userId : 123,
+//   role   : &quot;Instructor&quot;
+// };</code></pre>
+<p data-say><span class="s">Rule of thumb, if your function receives an object or array, it should clone them.</span> <span class="s">If your goal is state management, you need a state machine that's very tightly coupled to the state itself, so it's simple to manage.</span> <span class="s">Some languages like PHP will take care of this for you and default to passing by value instead of passing by reference, and you have to explicitly notate that you're mutating your function's input if you choose to do so.</span></p>
+<p data-say><span class="s">In languages that pass by reference, like JavaScript, you need to be careful and manually copy your data.</span> <span class="s">Please note that this will slow down your app slightly and increase memory and processing requirements.</span> <span class="s">Still, the cost savings in reduced troubleshooting can typically pay for the hardware so many times over that it's not even worth debating.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-28.html">← Chapter Twenty-Five - Clean Code</a>
+    <a href="succeed-30.html">Chapter Twenty-Seven - Functional Programming →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

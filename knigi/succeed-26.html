@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Twenty-Three - Documentation: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Two - Practicals · Оригинал на английском</p>
+    <h1 lang="en">Chapter Twenty-Three - Documentation</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Coupled Documentation</a></li><li><a href="#s2" lang="en">Decoupled Documentation</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER TWENTY-THREE</h3>
+<h3 class="sub" data-say data-unit>Documentation</h3>
+<p data-say><span class="s">In this chapter, we'll talk about the process of documenting our project and how to avoid writing endless pages of docs nobody will ever read.</span> <span class="s">I'm breaking this lesson up into two main types of documentation: coupled, which is deployed with the code, and decoupled, which is deployed separately from the code.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Coupled Documentation</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">I can recall two very distinct points in my career involving documentation, both when I decided to go overboard with it and then when I decided to abandon it altogether.</span></p>
+<p data-say><span class="s">Nearly twenty years ago, Yahoo created a front-end JavaScript library called YUI.</span> <span class="s">This was before jQuery gained popularity, and it was fascinating stuff to me at the time.</span> <span class="s">I remember opening the source files and learning and understanding the library's guts mainly because the in-code documentation was so prominent--paragraphs of comments describing every function, variable, and expression.</span></p>
+<p data-say><span class="s">As a relative novice JS dev at the time, this was fantastic for me.</span> <span class="s">I didn't have to read the ugly code syntax; I could just read the human-friendly words above the code to understand it all.</span> <span class="s">Every block of documentation was wrapped with over 50 asterisks and perfectly indented.</span> <span class="s">I decided to adopt this approach for all my projects regardless of the language.</span> <span class="s">I spent several months strictly adhering to the perfectly OCD commenting process.</span> <span class="s">Every line of code had at least one accompanying comment.</span></p>
+<p data-say><span class="s">Of course, I eventually realized that I was spending more time commenting than coding and who else but Sean was ever going to be looking at this code in the future?</span></p>
+<p data-say><span class="s">Fast forward a few years, I read the book Clean Code by Robert C. Martin, which completely changed my outlook on commenting.</span> <span class="s">He proposed that code should describe its intentions and not just execute its logic.</span> <span class="s">Wrapping bits of logic with intuitively-named functions meant I could start composing those functions to tell a story of intent in my code.</span> <span class="s">There's no need for documentation at that point because the application logic tells a human-readable story, and the utility logic is abstracted away inside those functions.</span></p>
+<p data-say><span class="s">The book recommended that we save comments for describing why our code is doing something instead of describing what it's doing.</span> <span class="s">If we need to explain the why, then the logic is likely unintuitive by design, and we should name our function something self-descriptive and refactor it later.</span></p>
+<p data-say><span class="s">For example, if we allow users to upload photos to a web app, the result will most likely be an RGB format for the screen.</span> <span class="s">If we need to convert CMYK to RGB manually because our remote image service doesn't do that yet (but ultimately, we would prefer it if they did), we might want to wrap our conversion logic in a function named something like ensureRgbUntilMediaServiceCanEnsureForUs.</span> <span class="s">Sure it's a long-winded function name, but there's no question about what it's intended to do or why it's there.</span> <span class="s">No comment is needed.</span> <span class="s">If the media service ever supports this feature on their end, we can likely delete this function and the guts inside it and call it a day.</span> <span class="s">My favorite long and descriptive function name I saw in a recent project:</span></p>
+<pre class="code" tabindex="0"><code>maybeUpdateMediaAssetConversionJobStatusWithErrorAndRethrow(...)</code></pre>
+<p data-say><span class="s">Is there any question about what that function is going to do?</span> <span class="s">It has &quot;maybe&quot; in the name, so we know the update may or may not happen.</span> <span class="s">It even has &quot;rethrow&quot; in the name, so we can infer this function is likely part of an error handler.</span> <span class="s">We can also infer it receives an error as a parameter that will be rethrown when the function is finished trying to update the media asset conversion job status.</span></p>
+<p data-say><span class="s">I want to zoom in more on the importance of describing intent.</span> <span class="s">Imagine we receive a bug ticket that new users aren't being thanked and welcomed when they register.</span> <span class="s">Let's also imagine we work at a place that doesn't have a solid grooming process for user stories.</span> <span class="s">The ticket came from the customer support team relaying some end-user frustration, and we don't have any context whatsoever.</span> <span class="s">Essentially, we reach out to the reporter of the ticket, and they say, &quot;I don't know, the customer just said it would have been nice to thank them for registering and gave us an attitude.&quot;</span></p>
+<p data-say><span class="s">Another day, another dollar.</span> <span class="s">Ok, so we look in the code and see that the final step of the registration flow is calling the Mail service to send an email with the template userRegistrationEmail1.</span> <span class="s">We look inside that template and see that the contents of it are simply advertising the newsletter.</span></p>
+<p data-say><span class="s">So what is the actual bug here, and what is the fix?</span> <span class="s">As it stands:</span></p>
+<ul>
+<li data-say><span class="s">We don't know if users should receive a newsletter and a thank you email and that we're just missing the thank you email send call.</span></li>
+<li data-say><span class="s">We don't know if the Mail service is receiving the wrong template, and the user should be receiving the thank you email instead of the newsletter email.</span></li>
+<li data-say><span class="s">We don't know if the userRegistrationEmail1 template is missing verbiage thanking the user for registering.</span></li>
+</ul>
+<p data-say><span class="s">This process might sound overly analytical and silly if you work in a healthy agile setting with grooming, sprint planning, and regular cross-team communication.</span> <span class="s">The reality, though, is a ton of companies just aren't there; especially older enterprise companies.</span> <span class="s">The registration code may not have been touched for five years, and the product manager and dev who authored it could have left the company.</span> <span class="s">All you really have in front of you is the code, and you need to figure out what's going on and what your options are.</span></p>
+<p data-say><span class="s">Imagine now the email send call was wrapped in a function called sendNewsletterIntroEmail, and the template was called newsletterIntroEmailTemplate.</span> <span class="s">Now we have context; the code is explicit in its intentions.</span> <span class="s">If we add &quot;thank you&quot; verbiage to this email template, it won't comply with the naming convention anymore, and we will introduce confusion.</span> <span class="s">It makes sense then that we can add a new function called sendRegistrationThankYouEmail, ensure a supporting email template, add the logic, and invoke the function right after the newsletter function.</span></p>
+<p data-say><span class="s">We can go a step further by creating a composite function called sendNewUserEmails which invokes the other two functions.</span> <span class="s">That conveys the intention that we want them to be sent at essentially the same time.</span></p>
+<p data-say><span class="s">Now, when we author our unit tests, our assertions are clear as day.</span> <span class="s">We know precisely if the tests are passing because the functions describe what they expect to happen, and that's the next level of self-documenting code.</span> <span class="s">Our unit tests assert what we expect by testing happy paths and what we expect to avoid by testing error handling and UX accommodations on sad paths.</span></p>
+<p data-say><span class="s">Once this syntax is in place, there's no further need for comments.</span> <span class="s">Updates to the code will inherently deliver updates to the documentation as well.</span> <span class="s">Code reviews will be significantly more reliable because devs rarely read surrounding commentary when doing code reviews to see if the comments also need to be updated.</span> <span class="s">Diff tools often collapse surrounding lines anyhow, so ideally, a diff shouldn't just be displaying a change from A to B; it should also make crystal clear sense why the dev is changing from A to B.</span></p>
+<p data-say><span class="s">You can apply this mindset to other areas of your codebase as well.</span> <span class="s">We talked about wrapping logic with an intuitively named function, but what about code that's not an expression?</span> <span class="s">For error codes and other constants, simply provide a name for the value.</span> <span class="s">Instead of just throwing error 1234 and having a published document that explains all your error codes and meanings behind them, keep it in the code and create a dictionary where ERROR_CODE_ACCOUNT_EXPIRED is assigned the value 1234, and then don't ever worry about the value of that error again.</span> <span class="s">The next level up from there might be to create static error types and then throw specific errors instead of intuitively named general errors with a particular code.</span> <span class="s">Depending on your coding language, your options may vary, but the idea is to start making life easier for your future self and the other devs on your team.</span></p>
+<p data-say><span class="s">So given how much pain can come from comments in your code, or even worse, commented-out code that's been committed into the master branch, is there a scenario where comments are helpful or necessary?</span> <span class="s">My experience tells me, yes, but there's a caveat.</span></p>
+<p data-say><span class="s">The comments should ideally only be used to generate public-facing documentation, like API payload schemas.</span> <span class="s">Static analysis should be set up to compare JavaDoc or JSDoc style param identifiers with the function signatures and fail if they are not aligned.</span> <span class="s">In React, this is similar to defining PropTypes and then relying on Webpack to check the type signature against the component usage.</span> <span class="s">This type of documentation is typically for users who need to integrate your software with their project but may not have access or time to read your software's source code.</span></p>
+<p data-say><span class="s">The takeaway here is any comments in the code should be evaluated by some automated process, so our project isn't relying on human eyeballs.</span> <span class="s">Any published documentation should be generated from the code files to ensure a tight coupling and high accuracy and reliability.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Decoupled Documentation</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">So what if published documentation can't be generated from the code, or what if another team manages it, like a technical writer?</span> <span class="s">At this level, the documentation's purpose and audience are likely different.</span> <span class="s">This person reading published documentation is likely a decision maker who needs to determine whether your library is appropriate for their project.</span> <span class="s">They probably don't need all the low-level details of how each function works once the library is approved.</span></p>
+<p data-say><span class="s">I like to focus on process instruction, not use instruction.</span> <span class="s">Detail how to install the library and set up any environment variables or config parameters.</span> <span class="s">Fundamental and concise documentation to get the code running as quickly and painlessly as possible.</span> <span class="s">Once it's running, the developers have a frame of reference that they can use when looking at the low-level generated documentation we mentioned earlier.</span></p>
+<p data-say><span class="s">The nice thing about README files is that they reside with the code.</span> <span class="s">A pull request can include new instructions when new features are deployed and can be published simultaneously.</span> <span class="s">This type of documentation is much more reliable as it has a much higher engagement than long-lived whitepaper-style documentation in tools like Confluence or SharePoint.</span> <span class="s">I've never met anybody who enjoys reading endless pages of docs and diagrams on those tools.</span> <span class="s">Most engineers in my network would probably agree that there's a high likelihood the docs are out of date since the code is often updated and deployed numerous times without any updates to the Confluence pages.</span></p>
+<p data-say><span class="s">Again, the solution is typically to generate the documentation from the code.</span> <span class="s">We could hook into the Atlassian API in our CI pipeline for this scenario.</span> <span class="s">It could generate or update those cloud docs as we deploy to an appropriate tier, and then the application becomes self-documenting.</span></p>
+<p data-say><span class="s">For static documentation in cloud tools, I recommend documenting organizational mappings, like which teams are responsible for which epics and which repositories and pipelines need to adhere to which roadmaps, and so on.</span> <span class="s">This approach becomes useful when calling out shared static references like error codes or global component libraries several projects can leverage, and so on.</span> <span class="s">We want multiple departments to know about these things, so we allow our static docs to link to them, and then the reader can dig into the README or source code depending on how deeply they want to understand the resources.</span></p>
+<p data-say><span class="s">Where a README can have three or four different states on three or four different DevOps environments, a Confluence page should really have a static representation that's indifferent to the project's variability in its deployment lifecycle.</span> <span class="s">And that's really why we want to avoid putting version-specifics inside these static published docs.</span></p>
+<p data-say><span class="s">To recap, non-evaluated documentation typically adds more risk than reward to your project.</span> <span class="s">Try to write self-documenting code that updates as you refactor and aims to integrate as quickly as possible.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-25.html">← Chapter Twenty-Two - Testing</a>
+    <a href="succeed-27.html">Chapter Twenty-Four - Numeronyms →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>

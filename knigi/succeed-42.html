@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter Thirty-Nine - Vertical Relationships: Succeed In Software</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0B7A62">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="reader">
+<main>
+  <header>
+    <a class="back" href="index.html#succeed">← Succeed In Software</a>
+    <p class="eyebrow">Part Three - Collaboration · Оригинал на английском</p>
+    <h1 lang="en">Chapter Thirty-Nine - Vertical Relationships</h1>
+    <p class="lead">Нажмите на любое предложение, чтобы слушать с него. Кнопка у заголовка раздела читает только этот раздел.</p>
+  </header>
+
+  <div class="speakbar" id="speakbar" role="group" aria-label="Озвучка текста">
+    <button type="button" class="sp main" id="sp-all">▶ Слушать всё</button>
+    <button type="button" class="sp" id="sp-pause" disabled>⏸ Пауза</button>
+    <button type="button" class="sp" id="sp-stop" disabled>■ Стоп</button>
+    <details class="sp-more">
+      <summary>Скорость и голос</summary>
+      <div class="sp-opts">
+        <label>Скорость
+          <select id="sp-rate">
+            <option value="0.8">Медленно</option>
+            <option value="1" selected>Обычная</option>
+            <option value="1.2">Быстрее</option>
+            <option value="1.5">Быстро</option>
+          </select>
+        </label>
+        <label>Английский голос
+          <select id="sp-voice-en"></select>
+        </label>
+      </div>
+    </details>
+  </div>
+  <p class="note" id="sp-note" hidden><b>Голосов не найдено.</b> Добавьте английский язык в настройках Windows (Время и язык, Язык и регион): в него входит голос.</p>
+  <nav class="toc" aria-label="Разделы главы"><h2>Разделы главы</h2><ol><li><a href="#s1" lang="en">Project Manager</a></li><li><a href="#s2" lang="en">Tech Lead | Engineering Director</a></li><li><a href="#s3" lang="en">Systems Architect</a></li><li><a href="#s4" lang="en">CTO | VP Of Engineering</a></li><li><a href="#s5" lang="en">CEO | VPs | C-Tiers</a></li><li><a href="#s6" lang="en">Human Resources</a></li></ol></nav>
+
+  <article class="text" lang="en">
+<section data-speak class="sec">
+<h3 class="sub" data-say data-unit>CHAPTER THIRTY-NINE</h3>
+<h3 class="sub" data-say data-unit>Vertical Relationships</h3>
+<p data-say><span class="s">This chapter will cover common vertical relationships and how to make sure you're representing your best self for each audience.</span> <span class="s">When I say vertical relationships, I mean people or departments above you in the organization to whom you report or take direction.</span></p>
+</section>
+<section data-speak class="sec" id="s1">
+<div class="sec-head"><h2 data-say data-unit>Project Manager</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">I mentioned earlier that the product owner and project manager might be the same on smaller projects.</span> <span class="s">We covered the product team in the previous chapter, but now we're dealing with someone who may assign our workload for sprints, deciding which tickets get brought in, and so on.</span> <span class="s">We discussed a scenario earlier in the &quot;Communication Mastery&quot; chapter involving a PM who didn't want to pull technical debt tickets into the sprints and how to handle the dialogue to get them to see the value in our request.</span></p>
+<p data-say><span class="s">The primary goal with the PM is going to be to get them to truly understand that there will be engineering prerequisite work that needs to be done to support feature tickets and that if they want a consistent velocity from us to plan the sprint accurately, then the process also has to accommodate technical infrastructure, technical debt, and buffer for bug triage.</span></p>
+<p data-say><span class="s">We must have a plan for high-priority bugs--how we deal with them when they come into the sprint after the sprint has started and how we merge and deploy them safely, so we don't introduce regressions.</span> <span class="s">Imagine a team of fifteen engineers all merging code into the master branch over several days, and then a bug ticket is presented.</span> <span class="s">The bug affects the current production build, which may be two-to-four weeks behind our development tier.</span></p>
+<p data-say><span class="s">The process needs to be such that a dev can create a branch from that release tag, fix the bug, deploy that branch through an isolated release train, so QA knows they're reviewing a release patch branch, and then also merge the branch into our master branch to align with the current sprint work.</span> <span class="s">This is not always a simple merge and forget.</span> <span class="s">Our sprint often includes major refactors, and the bug fix may no longer be relevant or require an entirely different solution.</span></p>
+<p data-say><span class="s">The point here is that we need to assume that production bug fixes require twice the effort because they're potentially two fixes for one bug.</span> <span class="s">For example, imagine we have a bug in some validation logic in a component.</span> <span class="s">On production, that component lives in a file with another component.</span> <span class="s">Imagine in the last sprint if we abstracted that component into a shared library now owned by another team.</span> <span class="s">That code was tagged already, and it's on the staging tier.</span> <span class="s">In this sprint, we no longer have that component in our repo, so the production bug fix requires that release patch we mentioned earlier, plus another branch off the staging release, and it needs to be deployed to two repos managed by two teams.</span></p>
+<p data-say><span class="s">That's a whole lot of logistics and risk for one bug.</span> <span class="s">It has to be fixed either way, but it should not be done in haste, so we need our project managers to understand that the abstractions which give us engineering wins also give us rollback and patch nightmares.</span> <span class="s">We should plan way ahead for them, or our bug fixes risk introducing new bugs, and then every sprint, we're playing catch-up.</span> <span class="s">We'll never get ahead of patchwork.</span></p>
+</section>
+<section data-speak class="sec" id="s2">
+<div class="sec-head"><h2 data-say data-unit>Tech Lead | Engineering Director</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Often the PM doesn't want to hear about it and wants to assign us tickets and hear us say, &quot;Sure, boss, no problem.&quot;</span> <span class="s">But that only works with cross-team relationships, not vertical relationships.</span> <span class="s">&quot;Sure, boss, no problem&quot; would be sacrificing the quality of our code for the deliverable in question because the compromise is the implementation.</span> <span class="s">In cross-team relationships, we get to keep ownership of the implementation, but in the vertical relationship, the implementation is literally the work, so we need representation here.</span></p>
+<p data-say><span class="s">If we're the tech lead or director, it's up to us to go to bat for our team.</span> <span class="s">We shield our team from the nonsense.</span> <span class="s">If we're just a dev on the project, we need to stop having these battles with the PM and ask our lead to do it for us.</span> <span class="s">The tech lead or engineering director isn't just there to sign off on tooling and strategy.</span> <span class="s">They are in meetings with the execs and represent the engineering department.</span> <span class="s">Junior devs, be vocal with your concerns and get these items on their agenda for their subsequent calls with the PM and the product team because they will likely be involved in sprint planning and grooming, ensuring we have the capacity and velocity to stay on track.</span></p>
+</section>
+<section data-speak class="sec" id="s3">
+<div class="sec-head"><h2 data-say data-unit>Systems Architect</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Let's segue a bit to the architect.</span> <span class="s">Not every project has one, but if it does, we must respect this role and the direction that comes from it.</span> <span class="s">Often the architect will be planning out infrastructure meant to support the product years ahead of schedule.</span> <span class="s">The devs may be assigned tickets to wire up log streams we don't seem to be using, or the architect may get very strict with database schema design and naming conventions and act as a QA of best practices.</span> <span class="s">Devs often won't understand or agree with the direction because they are in the weeds daily--the architect is sitting 10,000 feet above the project while also planting all the seeds to make it work.</span></p>
+<p data-say><span class="s">It's critically important that the devs trust the architect and not only do the work as asked but also build a strong relationship with this person and ask lots of &quot;why&quot; questions.</span> <span class="s">These questions can't be challenges; instead, they need to come from a place of wanting to learn.</span></p>
+<p data-say><span class="s">A dev might ask, &quot;Hey, I see you want us to use a NoSQL database for this new service, but we're using a relational database everywhere else.</span> <span class="s">Can you help me understand why you want us to do this?</span> <span class="s">This is a drastic deviation from the norm, so I'm curious where your mind is going with this.&quot;</span></p>
+<p data-say><span class="s">This puts the architect in the role of being your mentor.</span> <span class="s">I can almost guarantee you the answer will not be, &quot;The database doesn't matter; I just want to try NoSQL.&quot;</span> <span class="s">It's much more likely to be something in the spirit of, &quot;We want a storage layer between our data lake and our search server because ingested third-party data is going to be a mix of JSON/XML/CSV.</span> <span class="s">This NoSQL DB is our denormalized JSON raw storage for the search index process.</span> <span class="s">A relational database will come soon, with a normalized schema containing common fields across all the third-party data.&quot;</span></p>
+<p data-say><span class="s">Building a rapport with a systems architect can help solidify one of the most invaluable relationships in your career.</span></p>
+</section>
+<section data-speak class="sec" id="s4">
+<div class="sec-head"><h2 data-say data-unit>CTO | VP Of Engineering</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Moving up the ladder, we get to the CTO and the VP of Engineering.</span> <span class="s">At this level, we're well outside the implementation details.</span> <span class="s">These roles are working with cloud providers signing multi-million dollar partnership deals, and helping support the CEO with technical jargon that may wow investors.</span></p>
+<p data-say><span class="s">Decisions at this level are often press-release-worthy decisions.</span> <span class="s">&quot;Our company is excited to announce that we are rolling out company-wide support for multi-factor authentication to align with the security team's growing concern for outside threats.</span> <span class="s">The integrity of your personal information is our number one priority, and PRODUCT_X will allow us to leverage the most advanced threat protection on the market.&quot;</span></p>
+<p data-say><span class="s">That trickles down to product and project management and eventually engineering as work tickets to wire up APIs, leverage SDKs, and so on.</span> <span class="s">Our sprints are aligned with roadmaps with promises made to the public, investors, or the board of directors by the CTO, so they care about our velocity because if we miss a deadline, they look bad publicly.</span></p>
+<p data-say><span class="s">I wouldn't worry about trying to build a personal relationship with the CTO or VP of Engineering other than getting to a point where once you leave your company, you would feel confident that if you asked them to recommend you on LinkedIn that they would take time out of their day to do it.</span> <span class="s">As for day-to-day influence, they have too much on their mind to micromanage.</span></p>
+<p data-say><span class="s">Some smaller companies and start-ups have a 20-year-old self-appointed CTO, and they don't even count.</span> <span class="s">I don't take them seriously, and neither should you.</span> <span class="s">You could just as easily form your own company and call yourself CTO, which we'll get into in a later chapter, but the title is just a title; it's what you do with the title that matters.</span></p>
+</section>
+<section data-speak class="sec" id="s5">
+<div class="sec-head"><h2 data-say data-unit>CEO | VPs | C-Tiers</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">Moving up the ladder again, we reach the other VPs and the C-Tier folks, including the CEO.</span> <span class="s">I'll give you the same advice as with the CTO, except to also consider that the larger the company, the more detached the CEO is from anything going on in the company.</span></p>
+<p data-say><span class="s">Enterprise CEOs often act as if they walk on air.</span> <span class="s">I don't have time for people like that.</span> <span class="s">To me, they're just arrogant people in suits, so I don't even bother trying to establish a relationship with them.</span> <span class="s">Smaller companies, agencies, and start-ups are different.</span> <span class="s">The CEO often comes up with the idea that forms the company's backbone.</span> <span class="s">Those individuals can be ambitious visionaries, are often very involved with everything, and can be fun to work with.</span> <span class="s">With these people, we want to set ourselves up to be experienced advisors.</span> <span class="s">We want to give them options, not answers.</span></p>
+<p data-say><span class="s">Remember, the company is often their baby--something they built from the ground up, so the answers must be theirs.</span> <span class="s">They don't want other people taking over the direction of their company.</span> <span class="s">They want to be presented with options and make their own decisions so that the success or failure of the company belongs to them and them alone.</span></p>
+<p data-say><span class="s">This is fine, and it's good for us.</span> <span class="s">Unless our goal is to be co-owner of the company someday, let them have their fun and use their ambition as a conduit to suggest crazy new cool ideas of things we could try.</span> <span class="s">They'll often approve colossal R&amp;D budgets and support the innovation work streams because they understand that's what's going to get their company noticed as a market disruptor.</span></p>
+</section>
+<section data-speak class="sec" id="s6">
+<div class="sec-head"><h2 data-say data-unit>Human Resources</h2><button type="button" class="speak-btn">▶ Слушать</button></div>
+<p data-say><span class="s">The last team in our vertical is Human Resources.</span> <span class="s">They are the end-all-be-all.</span> <span class="s">In the Army, my MOS was 95B Military Police.</span> <span class="s">It was the only MOS where an E-1 private could give orders to a five-star general.</span> <span class="s">It was the MOS that kept all the others in line so nobody could abuse their authority.</span></p>
+<p data-say><span class="s">HR is the same way.</span> <span class="s">They typically have stringent rules to protect the sanctity of the workplace, and nobody is above them.</span> <span class="s">They often have a &quot;We are HR, no matter where we are&quot; attitude, which I love.</span></p>
+<p data-say><span class="s">Build great relationships with the people on the HR team.</span> <span class="s">They all want what's best for us as workers and want to protect us from executive abuse.</span> <span class="s">Sure they may set some rules which seem overly protective, but if we remind ourselves that everybody has a different story and different hardships and that HR is trying to create a safe workspace that allows workers to work without worrying about anything but work, then how can we disagree with that?</span></p>
+<p data-say><span class="s">Our office atmosphere may be fun, but we're not entitled to it.</span> <span class="s">We may make friends, but we're not entitled to them.</span> <span class="s">We may find romance, but we're not entitled to it.</span> <span class="s">We may be able to decorate our office or cubicle, but we're not entitled to it.</span> <span class="s">You see the theme here.</span> <span class="s">If we appreciate the perks and don't try to bring our outside life into our work life, everything works out great.</span></p>
+</section>
+  </article>
+
+  <nav class="pager" aria-label="Главы">
+    <a href="succeed-41.html">← Chapter Thirty-Eight - Cross-Team Relationships</a>
+    <a href="succeed-43.html">Chapter Forty - Developer Relationships →</a>
+  </nav>
+
+  <footer class="credit">
+    «Succeed In Software», Sean Cannon. © Sean Cannon. Лицензия <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>.
+    Источник: <a href="https://github.com/succeedinsoftware/book" target="_blank" rel="noopener">github.com/succeedinsoftware/book</a>.
+    Текст оригинала, без перевода и правок. Рисунки, сноски и вёрстка опущены, добавлена разметка для озвучки. Только для некоммерческого чтения, переработки не распространяются.
+  </footer>
+</main>
+<script src="../speak.js"></script>
+</body>
+</html>
